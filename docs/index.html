@@ -1,0 +1,2795 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Centro de Evaluación Neuropsicológica Online | Test de cribado</title>
+  <meta
+    name="description"
+    content="Centro de Evaluación Neuropsicológica Online con evaluaciones gratuitas de cribado psicológico y neuropsicológico para adultos, adolescentes, niños, padres y educadores."
+  >
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <link rel="canonical" href="https://testneurodivergentes.com/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://testneurodivergentes.com/sitemap.xml">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Centro de Evaluación Neuropsicológica Online">
+  <meta property="og:title" content="Centro de Evaluación Neuropsicológica Online | Test de cribado">
+  <meta
+    property="og:description"
+    content="Guía pilar en español sobre test psicológicos online de cribado: TDAH, TEA, ansiedad, depresión, burnout, sueño, autoestima y funciones ejecutivas."
+  >
+  <meta property="og:url" content="https://testneurodivergentes.com/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Centro de Evaluación Neuropsicológica Online | Test de cribado">
+  <meta
+    name="twitter:description"
+    content="Evaluaciones gratuitas de cribado psicológico y neuropsicológico para adultos, adolescentes, niños, familias, docentes y profesionales."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #ffffff;
+      --bg-soft: #f8fafc;
+      --paper: rgba(255, 255, 255, 0.96);
+      --panel: rgba(255, 255, 255, 0.96);
+      --panel-soft: rgba(248, 250, 252, 0.96);
+      --ink: #0f172a;
+      --muted: #475569;
+      --line: rgba(15, 23, 42, 0.12);
+      --accent: #3b82f6;
+      --accent-dark: #1d4ed8;
+      --accent-soft: rgba(59, 130, 246, 0.10);
+      --warm: #f59e0b;
+      --warm-soft: rgba(245, 158, 11, 0.10);
+      --warning: #ef4444;
+      --danger-soft: rgba(239, 68, 68, 0.10);
+      --shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --max-width: 1800px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top, rgba(37, 99, 235, 0.08), transparent 28%),
+        radial-gradient(circle at right, rgba(245, 158, 11, 0.08), transparent 24%),
+        linear-gradient(180deg, #ffffff 0%, #fcfdff 48%, #ffffff 100%);
+      line-height: 1.7;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      margin: 0;
+      font-family: "Fraunces", Georgia, serif;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+    }
+
+    p,
+    li,
+    td,
+    th,
+    summary {
+      font-size: 1rem;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 1rem;
+      top: -4rem;
+      z-index: 20;
+      padding: 0.85rem 1rem;
+      border-radius: 999px;
+      background: var(--accent-dark);
+      color: #fff;
+      text-decoration: none;
+      transition: top 0.2s ease;
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    .container {
+      width: min(90%, var(--max-width));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 15;
+      border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+      backdrop-filter: blur(14px);
+      background: rgba(255, 255, 255, 0.92);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.8rem 1rem;
+      padding: 0.85rem 0 1rem;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      text-decoration: none;
+      flex: 1 1 18rem;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-weight: 800;
+      font-size: 0.97rem;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-mark::before {
+      content: "";
+      width: 0.9rem;
+      height: 0.9rem;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), #38bdf8);
+      box-shadow: 0 0 0 0.28rem rgba(59, 130, 246, 0.14);
+    }
+
+    .brand-note {
+      color: var(--muted);
+      font-size: 0.77rem;
+      display: none;
+    }
+
+    .desktop-nav {
+      display: none;
+    }
+
+    .desktop-nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    .desktop-nav a,
+    .menu-panel a,
+    .chip-link,
+    .topic-link {
+      text-decoration: none;
+    }
+
+    .desktop-nav a:hover,
+    .menu-panel a:hover,
+    .chip-link:hover,
+    .topic-link:hover {
+      color: var(--accent-dark);
+    }
+
+    .mobile-menu {
+      display: block;
+      position: relative;
+      margin-left: auto;
+    }
+
+    .mobile-menu summary {
+      list-style: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.9rem 1rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.96);
+      border: 1px solid var(--line);
+      font-weight: 700;
+      box-shadow: var(--shadow);
+    }
+
+    .mobile-menu summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .mobile-menu summary::before {
+      content: "";
+      width: 1rem;
+      height: 0.8rem;
+      flex: 0 0 auto;
+      background:
+        linear-gradient(currentColor, currentColor) 0 0 / 100% 2px no-repeat,
+        linear-gradient(currentColor, currentColor) 0 50% / 100% 2px no-repeat,
+        linear-gradient(currentColor, currentColor) 0 100% / 100% 2px no-repeat;
+      opacity: 0.85;
+    }
+
+    .menu-panel {
+      position: absolute;
+      right: 0;
+      top: calc(100% + 0.6rem);
+      width: min(20rem, calc(100vw - 2rem));
+      display: grid;
+      gap: 0.55rem;
+      padding: 1rem;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.98);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .menu-panel a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 3rem;
+      padding: 0.8rem 1rem;
+      border-radius: 999px;
+      background: var(--bg-soft);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .hero {
+      padding: 2rem 0 1.6rem;
+    }
+
+    .breadcrumb {
+      display: inline-flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      padding: 0.8rem 1rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .breadcrumb span[aria-hidden="true"] {
+      opacity: 0.4;
+    }
+
+    .hero-shell {
+      margin-top: 1rem;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .hero-panel,
+    .card,
+    .callout,
+    .faq-item,
+    .table-wrap,
+    .footer-shell {
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+      backdrop-filter: none;
+    }
+
+    .hero-panel {
+      padding: 1.4rem;
+      border-radius: 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 16% 22%, rgba(59, 130, 246, 0.18), transparent 30%),
+        radial-gradient(circle at 88% 18%, rgba(245, 158, 11, 0.16), transparent 24%);
+      pointer-events: none;
+      opacity: 0.58;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .eyebrow,
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      width: fit-content;
+      padding: 0.55rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(59, 130, 246, 0.10);
+      color: var(--accent-dark);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 8vw, 4.9rem);
+      max-width: 12ch;
+    }
+
+    .hero-lead {
+      max-width: 70ch;
+      font-size: 1.06rem;
+      color: var(--muted);
+    }
+
+    .hero-actions,
+    .chip-row,
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .button,
+    .button-secondary,
+    .topic-link,
+    .pill-route {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      min-height: 3rem;
+      padding: 0.9rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, color 0.18s ease, background 0.18s ease;
+    }
+
+    .button {
+      background: linear-gradient(135deg, var(--accent), #2563eb);
+      color: #fff;
+      text-decoration: none;
+      box-shadow: 0 14px 28px rgba(37, 99, 235, 0.22);
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 34px rgba(37, 99, 235, 0.26);
+    }
+
+    .button-secondary {
+      background: #ffffff;
+      color: var(--ink);
+      border: 1px solid var(--line);
+      text-decoration: none;
+    }
+
+    .metrics {
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    .metric-card,
+    .audience-card,
+    .route-card,
+    .faq-mini,
+    .step-card {
+      padding: 1.05rem;
+      border-radius: 0;
+      background: transparent;
+      border: 0;
+    }
+
+    .metric-card strong,
+    .audience-card strong,
+    .route-card strong {
+      display: block;
+      font-size: 1.08rem;
+      line-height: 1.3;
+    }
+
+    .metric-card p,
+    .audience-card p,
+    .route-card p,
+    .faq-mini p,
+    .step-card p {
+      margin: 0.45rem 0 0;
+      color: var(--muted);
+    }
+
+    .section-stack {
+      display: grid;
+      gap: 1rem;
+      padding: 0 0 1rem;
+    }
+
+    .grid-two,
+    .grid-three,
+    .grid-four,
+    .route-grid,
+    .faq-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .card {
+      padding: 1.45rem 0 1.7rem;
+      border-radius: 0;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+    }
+
+    .card.route-directory {
+      padding-inline: 0;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+      backdrop-filter: none;
+      border-bottom: 0;
+    }
+
+    .section-kicker {
+      color: var(--accent-dark);
+      font-size: 0.84rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.9rem, 6vw, 3rem);
+      margin-bottom: 0.85rem;
+      max-width: 18ch;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      max-width: 76ch;
+    }
+
+    .callout {
+      padding: 1.1rem 1.2rem;
+      border-radius: 0;
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.10), rgba(255, 255, 255, 0.96));
+    }
+
+    .callout strong {
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+
+    .content-list,
+    .topic-list,
+    .reference-list {
+      padding-left: 1.2rem;
+      margin: 0.85rem 0 0;
+    }
+
+    .content-list li,
+    .topic-list li,
+    .reference-list li {
+      margin-top: 0.5rem;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: 0;
+      margin-top: 1rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 640px;
+      background: rgba(255, 255, 255, 0.98);
+    }
+
+    caption {
+      padding: 1rem 1rem 0;
+      text-align: left;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    th,
+    td {
+      padding: 0.95rem 1rem;
+      border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      font-size: 0.94rem;
+      color: var(--accent-dark);
+      background: rgba(59, 130, 246, 0.08);
+    }
+
+    .audience-card,
+    .route-card,
+    .faq-mini,
+    .step-card {
+      box-shadow: none;
+    }
+
+    .audience-card h3,
+    .route-card h3,
+    .faq-mini h4,
+    .step-card h3 {
+      font-size: 1.28rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .route-grid {
+      gap: 0;
+      margin-top: 1.4rem;
+      border-top: 1px solid rgba(148, 163, 184, 0.12);
+    }
+
+    .route-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 0.9rem;
+      padding: 1.2rem 0 1.4rem;
+      border-radius: 0;
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+      box-shadow: none;
+    }
+
+    .pill-route {
+      width: fit-content;
+      min-height: auto;
+      padding: 0.45rem 0;
+      background: transparent;
+      color: var(--accent-dark);
+      border: 0;
+      border-radius: 0;
+      justify-content: flex-start;
+    }
+
+    .pill-route::after {
+      content: "";
+      display: block;
+      width: 100%;
+      max-width: 8rem;
+      height: 1px;
+      margin-top: 0.45rem;
+      background: linear-gradient(90deg, rgba(59, 130, 246, 1), rgba(59, 130, 246, 0));
+    }
+
+    .topic-section {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .topic-slab {
+      padding: 1.25rem 0 1.45rem;
+      border-radius: 0;
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+    }
+
+    .topic-slab h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .topic-slab h4 {
+      font-size: 1.08rem;
+      margin: 1rem 0 0.35rem;
+    }
+
+    .topic-link {
+      margin-top: 1rem;
+      width: fit-content;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      color: var(--accent-dark);
+      padding: 0.4rem 0;
+      min-height: auto;
+      justify-content: flex-start;
+    }
+
+    .topic-link:hover,
+    .button-secondary:hover,
+    .pill-route:hover {
+      transform: translateY(-1px);
+      background: var(--accent-soft);
+    }
+
+    .pill-route:hover {
+      transform: none;
+      background: transparent;
+      color: #fff;
+    }
+
+    .topic-link:hover {
+      transform: none;
+      background: transparent;
+      color: #fff;
+    }
+
+    .topic-link::after {
+      content: "";
+      display: block;
+      width: 100%;
+      max-width: 8rem;
+      height: 1px;
+      margin-top: 0.45rem;
+      background: linear-gradient(90deg, rgba(245, 158, 11, 1), rgba(245, 158, 11, 0));
+    }
+
+    .faq-item {
+      border-radius: 0;
+      overflow: visible;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+    }
+
+    .faq-item summary {
+      cursor: pointer;
+      padding: 1rem 2.6rem 1rem 0;
+      font-weight: 800;
+      list-style: none;
+      position: relative;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: "+";
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--accent-dark);
+      font-size: 1.45rem;
+      font-weight: 500;
+    }
+
+    .faq-item[open] summary::after {
+      content: "–";
+    }
+
+    .faq-answer {
+      padding: 0 0 1.1rem;
+      color: var(--muted);
+    }
+
+    .region-band {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1rem;
+    }
+
+    .chip-link {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.6rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(248, 250, 252, 0.92);
+      border: 1px solid var(--line);
+      color: var(--muted);
+    }
+
+    .footer-shell {
+      margin: 1.2rem 0 2.4rem;
+      border-radius: 0;
+      padding: 1.4rem 0 0;
+      border-top: 1px solid rgba(148, 163, 184, 0.12);
+    }
+
+    .footer-shell p,
+    .footer-shell li {
+      color: var(--muted);
+    }
+
+    .legal-note {
+      margin-top: 1rem;
+      padding: 1rem;
+      border-radius: 0;
+      background: rgba(239, 246, 255, 0.96);
+      border: 0;
+    }
+
+    .reference-list a,
+    .table-wrap a {
+      color: var(--accent-dark);
+    }
+
+    @media (min-width: 768px) {
+      .brand-note {
+        display: block;
+      }
+
+      .hero {
+        padding: 2.3rem 0 2rem;
+      }
+
+      .hero-panel,
+      .card,
+      .footer-shell {
+        padding-top: 1.8rem;
+        padding-bottom: 1.9rem;
+      }
+
+      .card.route-directory {
+        padding-inline: 0;
+      }
+
+      .metrics,
+      .grid-two {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .grid-three,
+      .faq-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .grid-four,
+      .route-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .header-inner {
+        flex-wrap: nowrap;
+        gap: 1rem 1.4rem;
+      }
+
+      .desktop-nav {
+        display: flex;
+        width: auto;
+        flex: 1 1 auto;
+        justify-content: flex-end;
+        overflow: visible;
+        flex-wrap: wrap;
+        padding-bottom: 0;
+        gap: 0.6rem;
+        align-items: center;
+        font-size: 0.95rem;
+        scrollbar-width: none;
+        scroll-snap-type: none;
+      }
+
+      .desktop-nav a {
+        flex: 0 0 auto;
+        padding: 0.78rem 1rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.96);
+        border: 1px solid rgba(15, 23, 42, 0.10);
+        color: var(--muted);
+        font-size: 0.9rem;
+        font-weight: 700;
+        line-height: 1;
+        transition: border-color 0.18s ease, background 0.18s ease, color 0.18s ease, transform 0.18s ease;
+      }
+
+      .desktop-nav a:hover,
+      .desktop-nav a:focus-visible {
+        background: rgba(59, 130, 246, 0.12);
+        border-color: rgba(59, 130, 246, 0.22);
+        color: var(--accent-dark);
+        transform: translateY(-1px);
+      }
+
+      .mobile-menu {
+        display: none;
+      }
+
+      .hero-shell {
+        grid-template-columns: minmax(0, 1.3fr) minmax(320px, 0.7fr);
+        align-items: stretch;
+      }
+
+      .section-stack {
+        gap: 1.2rem;
+        padding-bottom: 1.4rem;
+      }
+
+      .grid-three {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .grid-four {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .route-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0 1.8rem;
+      }
+    }
+
+    @media (min-width: 1180px) {
+      .hero-panel:first-child {
+        padding-right: 2.4rem;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://testneurodivergentes.com/#organization",
+          "name": "Centro de Evaluación Neuropsicológica Online",
+          "url": "https://testneurodivergentes.com/",
+          "description": "Proyecto digital en español enfocado en psicoeducación y cribado orientativo psicológico y neuropsicológico."
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://testneurodivergentes.com/#website",
+          "url": "https://testneurodivergentes.com/",
+          "name": "Centro de Evaluación Neuropsicológica Online",
+          "inLanguage": "es",
+          "publisher": {
+            "@id": "https://testneurodivergentes.com/#organization"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://testneurodivergentes.com/#webpage",
+          "url": "https://testneurodivergentes.com/",
+          "name": "Centro de Evaluación Neuropsicológica Online",
+          "description": "Pillar page sobre test psicológicos online de cribado para neurodesarrollo, ansiedad, estado de ánimo, sueño y funciones ejecutivas.",
+          "isPartOf": {
+            "@id": "https://testneurodivergentes.com/#website"
+          },
+          "breadcrumb": {
+            "@id": "https://testneurodivergentes.com/#breadcrumb"
+          },
+          "inLanguage": "es"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://testneurodivergentes.com/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Inicio",
+              "item": "https://testneurodivergentes.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Centro de Evaluación Neuropsicológica Online",
+              "item": "https://testneurodivergentes.com/"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://testneurodivergentes.com/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "¿Qué es un test psicológico online de cribado?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Es un cuestionario orientativo que organiza señales, síntomas y dificultades funcionales para ayudar a identificar si conviene una evaluación profesional más profunda. No sustituye una valoración clínica."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Un test online puede darme un diagnóstico?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Un test de cribado no diagnostica. Solo muestra indicadores de riesgo, patrones de atención o señales emocionales que deben interpretarse dentro de una evaluación profesional completa."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Qué diferencia hay entre cribado y evaluación clínica?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "El cribado es un primer filtro breve y práctico. La evaluación clínica incluye entrevista, historia del desarrollo, revisión funcional, observación y, cuando corresponde, pruebas más amplias."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Qué orienta un test de TDAH para adultos?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ayuda a detectar indicadores de inatención, impulsividad, manejo del tiempo, desorganización y deterioro funcional cotidiano. No confirma por sí solo un trastorno."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Qué orienta un cribado de TEA?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Puede señalar rasgos relacionados con comunicación social, sensibilidad sensorial, intereses muy focalizados, rigidez conductual y esfuerzo de adaptación, pero no sustituye una valoración especializada."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Qué diferencia hay entre estrés y ansiedad?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "El estrés suele estar más ligado a demandas externas identificables, mientras que la ansiedad puede persistir como preocupación anticipatoria, evitación y activación corporal incluso cuando el detonante no es tan evidente."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Qué es burnout según la OMS?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "La OMS lo describe como un fenómeno ocupacional asociado al estrés crónico del trabajo que no ha sido gestionado con éxito. No lo clasifica como una enfermedad médica independiente."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Por qué el sueño importa tanto en una evaluación?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Dormir mal afecta atención, memoria, energía, regulación emocional y rendimiento diario. Por eso la calidad del sueño puede amplificar o imitar problemas cognitivos y emocionales."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Cuándo conviene buscar ayuda profesional de inmediato?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Cuando hay ideas de hacerse daño, riesgo para terceros, desorientación grave, ataques intensos, consumo problemático o deterioro marcado del funcionamiento. En esos casos hay que contactar servicios de urgencia o salud mental de inmediato."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Sirve este recurso para países hispanohablantes distintos?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sí. Está escrito en español claro para personas de distintos países y contextos educativos, familiares y laborales, aunque siempre conviene adaptar los siguientes pasos a los servicios de salud disponibles en cada lugar."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio">
+        <span class="brand-mark">Centro de Evaluación Neuropsicológica Online</span>
+        <span class="brand-note">Cribado orientativo, educación y próximos pasos en salud mental</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#neurodesarrollo">Neurodesarrollo</a>
+        <a href="#ansiedad">Ansiedad</a>
+        <a href="#estado-animo">Estado de ánimo</a>
+        <a href="#funciones-ejecutivas">Funciones ejecutivas</a>
+        <a href="#sueno">Sueño</a>
+        <a href="#quienes-somos">Quiénes somos</a>
+        <a href="#proximos-pasos">Próximos pasos</a>
+        <a href="#evaluaciones">Evaluaciones</a>
+      </nav>
+
+      <details class="mobile-menu">
+        <summary>Menú</summary>
+        <nav class="menu-panel" aria-label="Menú móvil">
+          <a href="#inicio">Inicio</a>
+          <a href="#neurodesarrollo">Neurodesarrollo</a>
+          <a href="#ansiedad">Ansiedad</a>
+          <a href="#estado-animo">Estado de ánimo</a>
+          <a href="#funciones-ejecutivas">Funciones ejecutivas</a>
+          <a href="#sueno">Sueño</a>
+          <a href="#quienes-somos">Quiénes somos</a>
+          <a href="#proximos-pasos">Próximos pasos</a>
+          <a href="#evaluaciones">Evaluaciones</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="hero" id="inicio">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+          <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a itemprop="item" href="https://testneurodivergentes.com/"><span itemprop="name">Inicio</span></a>
+            <meta itemprop="position" content="1">
+          </span>
+          <span aria-hidden="true">/</span>
+          <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <span itemprop="name">Centro de Evaluación Neuropsicológica Online</span>
+            <meta itemprop="position" content="2">
+          </span>
+        </nav>
+
+        <div class="hero-shell">
+          <article class="hero-panel">
+            <div class="hero-content">
+              <span class="eyebrow">Pillar page en español para salud mental y neuropsicología</span>
+              <h1>Centro de Evaluación Neuropsicológica Online</h1>
+              <p class="hero-lead">
+                Evaluaciones gratuitas de cribado psicológico y neuropsicológico para adultos, adolescentes, niños,
+                padres y educadores. Esta página reúne información amplia sobre test psicológicos online, TDAH,
+                autismo, ansiedad, depresión, burnout, funciones ejecutivas, autoestima, sueño, impulsividad y
+                regulación emocional para que la persona comprenda mejor sus señales antes de decidir el siguiente paso.
+              </p>
+              <p class="hero-lead">
+                No estás entrando a una landing breve ni a una colección vacía de formularios. Estás en el núcleo
+                educativo del proyecto: una guía extensa diseñada para responder dudas frecuentes, explicar qué es un
+                test de cribado, aclarar sus límites, ordenar las áreas de evaluación y ayudarte a usar los resultados
+                con criterio, calma y responsabilidad.
+              </p>
+              <div class="hero-actions">
+                <a class="button" href="#evaluaciones">Comenzar evaluación</a>
+                <a class="button-secondary" href="#faq">Ver preguntas frecuentes</a>
+              </div>
+              <div class="callout">
+                <strong>Aviso importante</strong>
+                <p>
+                  Los resultados representan únicamente un cribado orientativo y nunca sustituyen una evaluación
+                  realizada por un profesional de la salud mental.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <aside class="hero-panel">
+            <div class="hero-content">
+              <span class="tag">Qué vas a encontrar aquí</span>
+              <div class="metrics">
+                <div class="metric-card">
+                  <strong>Mapa completo de evaluaciones</strong>
+                  <p>
+                    Rutas internas preparadas para TDAH, TEA, ansiedad general, ansiedad social, depresión, burnout,
+                    estrés, organización, procrastinación, déficit ejecutivo, sueño, autoestima, impulsividad,
+                    perfeccionismo y dependencia emocional.
+                  </p>
+                </div>
+                <div class="metric-card">
+                  <strong>Contenido pensado para múltiples perfiles</strong>
+                  <p>
+                    Adultos que sospechan un patrón, padres que observan señales tempranas, docentes que necesitan un
+                    lenguaje claro, universitarios bajo presión, empresas preocupadas por burnout y psicólogos que
+                    quieren recursos de orientación previos a la consulta.
+                  </p>
+                </div>
+                <div class="metric-card">
+                  <strong>Enfoque de uso responsable</strong>
+                  <p>
+                    Esta home prioriza educación, prevención y detección temprana. No ofrece etiquetas definitivas ni
+                    promesas clínicas rápidas; ofrece contexto para tomar decisiones más informadas.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <div class="container section-stack">
+      <section class="grid-two" aria-label="Resumen inicial">
+        <article class="card" id="quienes-somos">
+          <p class="section-kicker">Quiénes somos</p>
+          <h2 class="section-title">Un centro digital de orientación, no un sustituto de la consulta clínica.</h2>
+          <p class="section-intro">
+            El proyecto <strong>Centro de Evaluación Neuropsicológica Online</strong> está concebido como un entorno
+            digital de psicoeducación y cribado orientativo en español. Su propósito es ordenar información compleja,
+            ayudar a reconocer señales tempranas y ofrecer una puerta de entrada más comprensible a la evaluación
+            psicológica y neuropsicológica.
+          </p>
+          <p>
+            En muchos países hispanohablantes la primera barrera no es únicamente económica: también es informativa.
+            Hay personas que no saben qué significan los síntomas, qué tipo de profesional consultar, cómo distinguir
+            una dificultad pasajera de un patrón persistente, o qué esperar de un test online. Esta página se creó
+            justamente para cerrar esa brecha con explicaciones amplias, lenguaje claro y una arquitectura que permita
+            pasar de la curiosidad a la orientación, y de la orientación a una ayuda más especializada cuando sea
+            necesaria.
+          </p>
+          <p>
+            También es importante ser honestos sobre el alcance. Un sitio web, por muy completo que sea, no puede
+            valorar la historia vital completa, el desarrollo temprano, el entorno familiar, la intensidad del malestar,
+            el nivel de funcionamiento diario, la presencia de comorbilidades ni las necesidades culturales de cada
+            persona. Por eso el centro no promete diagnósticos. Su valor real está en ayudar a detectar patrones,
+            ordenar preguntas, disminuir confusión y facilitar conversaciones más productivas con profesionales de la
+            salud mental, educación y medicina.
+          </p>
+        </article>
+
+        <article class="card">
+          <p class="section-kicker">Por qué existe esta página</p>
+          <h2 class="section-title">Antes de responder un test, la persona necesita contexto confiable.</h2>
+          <p>
+            Quien busca en internet frases como <em>test psicológico online</em>, <em>test de salud mental</em>,
+            <em>síntomas TDAH</em>, <em>test de autismo</em> o <em>pruebas neuropsicológicas gratis</em> no suele estar
+            buscando entretenimiento. A menudo está intentando entender cansancio mental, fallos de organización,
+            ansiedad persistente, dificultades sociales, estrés laboral, desregulación emocional o conflictos escolares
+            y familiares que ya afectan la vida cotidiana.
+          </p>
+          <p>
+            El problema es que muchas páginas se limitan a dos extremos: o presentan cuestionarios demasiado breves y
+            descontextualizados, o publican contenidos alarmistas que sugieren diagnósticos implícitos. Esta home adopta
+            una tercera vía: explicar con profundidad qué evalúa cada área, quién debería responderla, qué tipo de
+            síntomas orientativos suelen motivar una consulta, cómo se interpretan los puntajes de manera responsable y
+            cuándo conviene buscar ayuda profesional sin seguir esperando.
+          </p>
+          <p>
+            Al hacerlo, la página se convierte en la autoridad central del sitio. Desde aquí se distribuye enlazado
+            interno hacia futuras páginas de evaluación, pero antes de invitar a hacer clic en cualquier test, primero
+            ofrece valor real, educación y prevención. Esa secuencia mejora la experiencia de usuario, fortalece la
+            confianza y alinea el contenido con un enfoque de EEAT: experiencia útil, conocimiento bien organizado,
+            transparencia sobre límites y un tono claramente responsable.
+          </p>
+          <div class="callout">
+            <strong>Recordatorio clave</strong>
+            <p>
+              Los resultados representan únicamente un cribado orientativo y nunca sustituyen una evaluación realizada
+              por un profesional de la salud mental.
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <section class="grid-two" aria-label="Detección temprana y público objetivo">
+        <article class="card">
+          <p class="section-kicker">Detección temprana</p>
+          <h2 class="section-title">Detectar señales a tiempo puede cambiar el curso del malestar.</h2>
+          <p>
+            Detectar temprano no significa etiquetar a la ligera. Significa reconocer que ciertas señales persistentes
+            merecen atención antes de que se acumulen años de desgaste, culpa o deterioro funcional. En neurodesarrollo,
+            por ejemplo, la inatención, la impulsividad, la rigidez, las diferencias sensoriales o las dificultades de
+            interacción pueden confundirse durante mucho tiempo con falta de disciplina, mala actitud, timidez extrema o
+            simple cansancio. En ansiedad y estado de ánimo ocurre algo similar: el sufrimiento suele normalizarse hasta
+            que ya afecta trabajo, estudio, sueño, relaciones y autoestima.
+          </p>
+          <p>
+            La detección temprana es valiosa porque permite observar patrones cuando todavía es posible intervenir con
+            menos deterioro acumulado. En niños puede ayudar a coordinar escuela, familia y profesionales antes de que
+            se consoliden etiquetas injustas. En adolescentes puede favorecer la comprensión de cambios emocionales,
+            hábitos de sueño y demandas académicas. En adultos puede poner nombre a problemas de organización, agotamiento,
+            procrastinación crónica o ansiedad social que llevan años siendo malinterpretados.
+          </p>
+          <div class="table-wrap">
+            <table>
+              <caption>Por qué conviene observar señales persistentes</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Área</th>
+                  <th scope="col">Si se ignora demasiado tiempo</th>
+                  <th scope="col">Qué puede aportar un cribado inicial</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Neurodesarrollo</td>
+                  <td>Confusión, culpa, bajo rendimiento, conflictos familiares o laborales.</td>
+                  <td>Ordena señales y sugiere si conviene una evaluación más profunda.</td>
+                </tr>
+                <tr>
+                  <td>Ansiedad y estado de ánimo</td>
+                  <td>Evitación creciente, agotamiento, aislamiento o empeoramiento del estrés.</td>
+                  <td>Ayuda a reconocer intensidad, frecuencia e impacto funcional.</td>
+                </tr>
+                <tr>
+                  <td>Funciones ejecutivas y sueño</td>
+                  <td>Desorganización crónica, errores repetidos y menor claridad mental.</td>
+                  <td>Permite diferenciar patrones cognitivos de hábitos modificables.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="card">
+          <p class="section-kicker">Quiénes deberían usar estos test</p>
+          <h2 class="section-title">No solo están pensados para quien dice “creo que me pasa algo”.</h2>
+          <div class="grid-two">
+            <div class="audience-card">
+              <h3>Adultos</h3>
+              <p>Para quienes observan inatención, procrastinación, ansiedad, agotamiento o problemas de regulación emocional.</p>
+            </div>
+            <div class="audience-card">
+              <h3>Padres y madres</h3>
+              <p>Para quienes quieren ordenar señales en casa y decidir si conviene consultar con psicología, pediatría o neurodesarrollo.</p>
+            </div>
+            <div class="audience-card">
+              <h3>Educadores y docentes</h3>
+              <p>Para comprender mejor patrones de atención, conducta, estrés y adaptación escolar sin caer en interpretaciones simplistas.</p>
+            </div>
+            <div class="audience-card">
+              <h3>Universitarios</h3>
+              <p>Para estudiantes que notan sobrecarga, bloqueo, ansiedad social, mala organización o agotamiento académico sostenido.</p>
+            </div>
+            <div class="audience-card">
+              <h3>Empresas y líderes</h3>
+              <p>Para detectar señales de burnout, estrés crónico o dificultades de funcionamiento antes de que afecten bienestar y productividad.</p>
+            </div>
+            <div class="audience-card">
+              <h3>Psicólogos y orientadores</h3>
+              <p>Como material previo o recurso psicoeducativo para que la persona llegue a consulta con preguntas mejor estructuradas.</p>
+            </div>
+          </div>
+          <p>
+            También es útil para familias que sospechan diferencias del neurodesarrollo, para cuidadores que observan
+            cambios abruptos en conducta o rendimiento, y para personas que ya están en tratamiento pero desean comprender
+            mejor el lenguaje de los cuestionarios. La clave está en usar el recurso como una herramienta de orientación
+            y no como sentencia final.
+          </p>
+        </article>
+      </section>
+
+      <section class="grid-two" id="como-funciona">
+        <article class="card">
+          <p class="section-kicker">Qué es un test de cribado</p>
+          <h2 class="section-title">Un primer filtro para organizar señales, no una etiqueta automática.</h2>
+          <p>
+            Un <strong>test de cribado psicológico online</strong> es una herramienta breve o intermedia diseñada para
+            detectar indicadores tempranos de una posible dificultad. Suele reunir preguntas sobre frecuencia de
+            síntomas, intensidad del malestar, impacto funcional, historia de ciertas conductas y situaciones del día a
+            día. Cuando está bien planteado, no intenta “adivinar” una condición, sino señalar si la combinación de
+            respuestas justifica mirar el tema con más atención.
+          </p>
+          <p>
+            En salud mental y neuropsicología, el cribado es especialmente útil porque muchas personas llegan a consulta
+            con años de dudas pero sin un marco claro para describir lo que viven. El cuestionario ayuda a convertir
+            sensaciones difusas en áreas concretas: atención, control inhibitorio, ansiedad anticipatoria, bajo estado
+            de ánimo, agotamiento, sensibilidad social, calidad del sueño o funciones ejecutivas. Esa organización es
+            valiosa incluso cuando el resultado no sale elevado, porque también orienta sobre qué mirar después.
+          </p>
+          <h3>Cómo funciona un proceso de cribado responsable</h3>
+          <ul class="content-list">
+            <li>Pregunta por síntomas, hábitos y funcionamiento cotidiano, no solo por ideas abstractas.</li>
+            <li>Busca patrones persistentes en distintos contextos, no eventos aislados.</li>
+            <li>Interpreta respuestas como indicadores de riesgo, no como diagnóstico definitivo.</li>
+            <li>Invita a revisar contexto, historia y siguientes pasos cuando aparecen señales significativas.</li>
+          </ul>
+          <h3>Qué tan confiables son</h3>
+          <p>
+            La confiabilidad de un cribado depende de varios factores: calidad de las preguntas, claridad del lenguaje,
+            honestidad de quien responde, adecuación del test a la edad y presencia de variables que pueden confundir el
+            resultado, como cansancio extremo, estrés agudo, consumo de sustancias o dificultades médicas. Un buen
+            cuestionario puede ser muy útil para orientar, pero siempre necesita interpretación responsable y, en muchos
+            casos, confirmación clínica.
+          </p>
+        </article>
+
+        <article class="card">
+          <p class="section-kicker">Beneficios, límites y uso adecuado</p>
+          <h2 class="section-title">Lo valioso del cribado está en abrir conversación y priorizar decisiones.</h2>
+          <h3>Beneficios concretos</h3>
+          <ul class="content-list">
+            <li>Ayuda a identificar señales tempranas cuando todavía no hay claridad sobre lo que ocurre.</li>
+            <li>Facilita conversaciones con familia, docentes, universidad, empresa o profesionales.</li>
+            <li>Permite decidir qué área conviene explorar primero sin perder tiempo.</li>
+            <li>Reduce la sensación de caos al convertir malestar difuso en preguntas más específicas.</li>
+          </ul>
+          <h3>Limitaciones que nunca deberían ocultarse</h3>
+          <ul class="content-list">
+            <li>No reemplaza entrevista clínica, historia del desarrollo ni evaluación funcional completa.</li>
+            <li>No distingue por sí solo entre causas parecidas, por ejemplo ansiedad, sueño deficiente o TDAH.</li>
+            <li>Puede verse influido por el momento emocional, la fatiga o la interpretación subjetiva de las preguntas.</li>
+            <li>No capta por completo el contexto cultural, educativo, familiar o laboral de cada persona.</li>
+          </ul>
+          <h3>Cuándo buscar ayuda profesional</h3>
+          <p>
+            Conviene dar el siguiente paso cuando los síntomas duran semanas o meses, generan sufrimiento claro,
+            empeoran relaciones, afectan estudio o trabajo, alteran sueño o alimentación, provocan aislamiento o
+            aumentan conductas de riesgo. En niños y adolescentes hay que vigilar especialmente cuando la conducta o las
+            emociones interfieren con la escuela, la vida familiar o la convivencia con pares. Si existe peligro
+            inmediato, ideación autolesiva, descontrol severo o incapacidad para cuidarse, la prioridad no es repetir un
+            test: es buscar atención urgente.
+          </p>
+          <div class="callout">
+            <strong>Uso responsable del resultado</strong>
+            <p>
+              Los resultados representan únicamente un cribado orientativo y nunca sustituyen una evaluación realizada
+              por un profesional de la salud mental.
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <section class="card route-directory" id="evaluaciones">
+        <p class="section-kicker">Mapa central del sitio</p>
+        <h2 class="section-title">Evaluaciones preparadas para distribuir autoridad SEO y orientar al usuario.</h2>
+        <p class="section-intro">
+          Esta home enlaza a las áreas estratégicas del proyecto para que la navegación sea clara tanto para personas
+          como para motores de búsqueda. Cada bloque responde a una intención distinta: síntomas de TDAH, test de
+          autismo, ansiedad, depresión, burnout, organización, procrastinación, déficit ejecutivo, autoestima, sueño e
+          impulsividad. El objetivo no es dispersar, sino ayudar a que cada visitante encuentre rápido el recorrido que
+          mejor encaja con su duda principal.
+        </p>
+        <div class="route-grid">
+          <article class="route-card">
+            <div>
+              <p class="section-kicker">Neurodesarrollo</p>
+              <h3>TDAH Adultos</h3>
+              <p>Indicadores de inatención, impulsividad, manejo del tiempo y deterioro funcional en la adultez.</p>
+            </div>
+            <a class="pill-route" href="/evaluaciones/tdah-adultos">Realizar evaluación</a>
+          </article>
+          <article class="route-card">
+            <div>
+              <p class="section-kicker">Neurodesarrollo</p>
+              <h3>TDAH Infantil</h3>
+              <p>Señales tempranas en infancia y adolescencia, observables en casa, escuela y rutinas.</p>
+            </div>
+            <a class="pill-route" href="/evaluaciones/tdah-infantil">Realizar evaluación</a>
+          </article>
+          <article class="route-card">
+            <div>
+              <p class="section-kicker">Neurodesarrollo</p>
+              <h3>TEA Adultos</h3>
+              <p>Orientación inicial sobre comunicación social, rigidez, sensibilidad sensorial y camuflaje.</p>
+            </div>
+            <a class="pill-route" href="/evaluaciones/tea-adultos">Realizar evaluación</a>
+          </article>
+          <article class="route-card">
+            <div>
+              <p class="section-kicker">Neurodesarrollo</p>
+              <h3>TEA Infantil</h3>
+              <p>Cribado inicial para observar desarrollo social, intereses restringidos y adaptaciones sensoriales.</p>
+            </div>
+            <a class="pill-route" href="/evaluaciones/tea-infantil">Realizar evaluación</a>
+          </article>
+          <article class="route-card">
+            <div>
+              <p class="section-kicker">Ansiedad</p>
+              <h3>Ansiedad General</h3>
+              <p>Preocupación persistente, tensión física, anticipación negativa y dificultad para desconectar.</p>
+            </div>
+            <a class="pill-route" href="/evaluaciones/ansiedad-general">Realizar evaluación</a>
+          </article>
+          <article class="route-card">
+            <div>
+              <p class="section-kicker">Ansiedad</p>
+              <h3>Ansiedad Social</h3>
+              <p>Miedo a exposición, juicio externo, vergüenza intensa y conductas evitativas.</p>
+            </div>
+            <a class="pill-route" href="/evaluaciones/ansiedad-social">Realizar evaluación</a>
+          </article>
+          <article class="route-card">
+            <div>
+              <p class="section-kicker">Estado de ánimo</p>
+              <h3>Depresión</h3>
+              <p>Ánimo bajo, pérdida de interés, fatiga, lentitud, culpa y alteraciones del funcionamiento diario.</p>
+            </div>
+            <a class="pill-route" href="/evaluaciones/depresion">Realizar evaluación</a>
+          </article>
+          <article class="route-card">
+            <div>
+              <p class="section-kicker">Estado de ánimo</p>
+              <h3>Burnout</h3>
+              <p>Agotamiento relacionado con el trabajo, cinismo, desconexión y menor eficacia percibida.</p>
+            </div>
+            <a class="pill-route" href="/evaluaciones/burnout">Realizar evaluación</a>
+          </article>
+          <article class="route-card">
+            <div>
+              <p class="section-kicker">Estado de ánimo</p>
+              <h3>Estrés</h3>
+              <p>Alta carga, hiperactivación, irritabilidad, tensión sostenida y desgaste del cuerpo y la mente.</p>
+            </div>
+            <a class="pill-route" href="/evaluaciones/estres">Realizar evaluación</a>
+          </article>
+          <article class="route-card">
+            <div>
+              <p class="section-kicker">Funciones ejecutivas</p>
+              <h3>Organización</h3>
+              <p>Dificultad para ordenar tareas, sostener rutinas, jerarquizar prioridades y cerrar pendientes.</p>
+            </div>
+            <a class="pill-route" href="/evaluaciones/organizacion">Realizar evaluación</a>
+          </article>
+          <article class="route-card">
+            <div>
+              <p class="section-kicker">Funciones ejecutivas</p>
+              <h3>Procrastinación</h3>
+              <p>Postergación repetida, bloqueo ante tareas, evitación y malestar asociado a la ejecución.</p>
+            </div>
+            <a class="pill-route" href="/evaluaciones/procrastinacion">Realizar evaluación</a>
+          </article>
+          <article class="route-card">
+            <div>
+              <p class="section-kicker">Funciones ejecutivas</p>
+              <h3>Déficit Ejecutivo</h3>
+              <p>Planificación, control inhibitorio, memoria de trabajo y flexibilidad cognitiva comprometidas.</p>
+            </div>
+            <a class="pill-route" href="/evaluaciones/deficit-ejecutivo">Realizar evaluación</a>
+          </article>
+          <article class="route-card">
+            <div>
+              <p class="section-kicker">Sueño</p>
+              <h3>Calidad del Sueño</h3>
+              <p>Sueño insuficiente, despertares, mala recuperación y repercusión sobre energía, atención y memoria.</p>
+            </div>
+            <a class="pill-route" href="/evaluaciones/calidad-sueno">Realizar evaluación</a>
+          </article>
+          <article class="route-card">
+            <div>
+              <p class="section-kicker">Regulación emocional</p>
+              <h3>Autoestima</h3>
+              <p>Autocrítica intensa, inseguridad, comparación constante y sensación de insuficiencia.</p>
+            </div>
+            <a class="pill-route" href="/evaluaciones/autoestima">Realizar evaluación</a>
+          </article>
+          <article class="route-card">
+            <div>
+              <p class="section-kicker">Regulación emocional</p>
+              <h3>Impulsividad</h3>
+              <p>Reacciones rápidas, decisiones precipitadas, dificultad para pausar y arrepentimiento posterior.</p>
+            </div>
+            <a class="pill-route" href="/evaluaciones/impulsividad">Realizar evaluación</a>
+          </article>
+          <article class="route-card">
+            <div>
+              <p class="section-kicker">Regulación emocional</p>
+              <h3>Perfeccionismo</h3>
+              <p>Autoexigencia alta, miedo al error, bloqueo por estándares rígidos y desgaste emocional.</p>
+            </div>
+            <a class="pill-route" href="/evaluaciones/perfeccionismo">Realizar evaluación</a>
+          </article>
+          <article class="route-card">
+            <div>
+              <p class="section-kicker">Regulación emocional</p>
+              <h3>Dependencia emocional</h3>
+              <p>Necesidad intensa de aprobación, temor a abandono y dificultad para sostener límites sanos.</p>
+            </div>
+            <a class="pill-route" href="/evaluaciones/dependencia-emocional">Realizar evaluación</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="card topic-section" id="neurodesarrollo">
+        <p class="section-kicker">Neurodesarrollo</p>
+        <h2 class="section-title">TDAH y TEA: comprender señales tempranas en adultos, infancia y adolescencia.</h2>
+        <p class="section-intro">
+          El área de neurodesarrollo suele generar búsquedas intensas en internet porque muchas familias y muchos
+          adultos llevan años intentando entender patrones de atención, impulsividad, rigidez, sobrecarga sensorial,
+          diferencias de comunicación social o sensación de esfuerzo permanente para adaptarse. En este contexto, los
+          test de cribado sirven como una primera orientación. No dicen “esto es definitivo”, pero sí pueden ayudar a
+          decidir si vale la pena profundizar.
+        </p>
+        <div class="callout">
+          <strong>Importante en neurodesarrollo</strong>
+          <p>
+            Los resultados representan únicamente un cribado orientativo y nunca sustituyen una evaluación realizada
+            por un profesional de la salud mental.
+          </p>
+        </div>
+        <div class="grid-two">
+          <article class="topic-slab">
+            <h3>TDAH en adultos</h3>
+            <p>
+              El TDAH en adultos no siempre se presenta como hiperactividad visible. Muchas veces se manifiesta como una
+              sensación persistente de desorden mental, dificultad para iniciar tareas, mala estimación del tiempo,
+              olvidos frecuentes, impulsividad en decisiones, problemas para sostener rutinas y desgaste por tener que
+              compensar constantemente. Hay personas que han sido funcionales durante años gracias a esfuerzo extremo,
+              presión externa o apoyo del entorno, pero colapsan cuando aumentan las demandas laborales, familiares o
+              académicas.
+            </p>
+            <h4>Qué evalúa un cribado orientativo</h4>
+            <ul class="topic-list">
+              <li>Inatención en tareas largas, repetitivas o con baja recompensa inmediata.</li>
+              <li>Impulsividad verbal, económica o conductual.</li>
+              <li>Dificultad para priorizar, organizar y terminar actividades.</li>
+              <li>Impacto del patrón sobre trabajo, hogar, pareja y autocuidado.</li>
+            </ul>
+            <h4>Quién debería responderlo</h4>
+            <p>
+              Adultos que sienten que siempre van tarde, pierden cosas, dejan proyectos a medias, se bloquean con tareas
+              administrativas, dependen demasiado de la urgencia o viven con la sensación de que su potencial nunca se
+              traduce en consistencia cotidiana.
+            </p>
+            <a class="topic-link" href="/evaluaciones/tdah-adultos">Realizar evaluación</a>
+          </article>
+
+          <article class="topic-slab">
+            <h3>TDAH infantil</h3>
+            <p>
+              En niños y adolescentes, las señales pueden aparecer como distracción constante, dificultad para seguir
+              instrucciones, movimientos excesivos, impulsividad, errores por descuido, frustración rápida o una mezcla
+              de varios de estos factores. Sin embargo, no todo niño inquieto tiene TDAH ni todo menor inatento está
+              desinteresado. Por eso los cuestionarios deben usarse como apoyo a la observación, nunca como veredicto.
+            </p>
+            <h4>Qué evalúa un cribado orientativo</h4>
+            <ul class="topic-list">
+              <li>Persistencia de la inatención y la hiperactividad en distintos contextos.</li>
+              <li>Interferencia en escuela, juego, convivencia y rutinas del hogar.</li>
+              <li>Necesidad constante de recordatorios, supervisión o corrección.</li>
+              <li>Patrones de impulsividad que generan conflictos o riesgo.</li>
+            </ul>
+            <h4>Cuándo conviene realizarlo</h4>
+            <p>
+              Cuando la familia o la escuela observan que la dificultad no es ocasional, sino repetida, y empieza a
+              afectar autoestima, aprendizaje, conducta o relaciones con pares y adultos.
+            </p>
+            <a class="topic-link" href="/evaluaciones/tdah-infantil">Realizar evaluación</a>
+          </article>
+
+          <article class="topic-slab">
+            <h3>TEA en adultos</h3>
+            <p>
+              Muchas personas adultas exploran la posibilidad de rasgos del espectro autista después de años sintiéndose
+              “fuera de sincronía” socialmente, agotadas por la necesidad de enmascarar, afectadas por sensibilidad
+              sensorial, rigidez de rutinas o dificultad para leer ciertas claves implícitas en interacción. El cribado
+              no reemplaza una evaluación especializada, pero puede ofrecer un mapa inicial de experiencias que merecen
+              ser revisadas con más detalle.
+            </p>
+            <h4>Qué síntomas orientativos suelen explorarse</h4>
+            <ul class="topic-list">
+              <li>Diferencias en reciprocidad social y uso del lenguaje no verbal.</li>
+              <li>Patrones de rigidez, necesidad de previsibilidad o malestar frente a cambios.</li>
+              <li>Intereses intensos o muy focalizados.</li>
+              <li>Sobrecarga sensorial y fatiga por adaptación social continua.</li>
+            </ul>
+            <h4>Quién debería responderlo</h4>
+            <p>
+              Adultos que se reconocen en relatos de camuflaje social, agotamiento postinteracción, necesidad fuerte de
+              estructura o sensación de haber aprendido guiones sociales más que de habitarlos con naturalidad.
+            </p>
+            <a class="topic-link" href="/evaluaciones/tea-adultos">Realizar evaluación</a>
+          </article>
+
+          <article class="topic-slab">
+            <h3>TEA infantil</h3>
+            <p>
+              En infancia, el cribado de TEA puede enfocarse en comunicación social, juego, intereses repetitivos,
+              adaptaciones sensoriales, flexibilidad frente a cambios y manera de relacionarse con el entorno. No
+              pretende reducir a un niño a una lista de síntomas; busca identificar si ciertas diferencias persistentes
+              justifican una mirada clínica y de desarrollo más profunda.
+            </p>
+            <h4>Cuándo realizarlo</h4>
+            <ul class="topic-list">
+              <li>Si hay preocupación sostenida sobre lenguaje, interacción o juego social.</li>
+              <li>Si los cambios de rutina provocan desregulación intensa y repetida.</li>
+              <li>Si la familia nota intereses muy restringidos o sensibilidad sensorial marcada.</li>
+              <li>Si escuela y hogar observan el patrón de manera consistente.</li>
+            </ul>
+            <h4>Qué hacer después</h4>
+            <p>
+              Registrar ejemplos concretos, dialogar con profesionales y buscar una evaluación del desarrollo o de salud
+              mental infantil cuando las señales se mantienen y afectan adaptación o bienestar.
+            </p>
+            <a class="topic-link" href="/evaluaciones/tea-infantil">Realizar evaluación</a>
+          </article>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <caption>Qué diferencia una evaluación de neurodesarrollo orientativa</caption>
+            <thead>
+              <tr>
+                <th scope="col">Subárea</th>
+                <th scope="col">Qué orienta</th>
+                <th scope="col">Quién suele beneficiarse</th>
+                <th scope="col">Cuándo priorizar ayuda profesional</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>TDAH Adultos</td>
+                <td>Atención, impulsividad, organización y deterioro funcional.</td>
+                <td>Adultos con caos cotidiano, procrastinación y sobrecarga.</td>
+                <td>Cuando el patrón ya impacta trabajo, pareja, finanzas o autocuidado.</td>
+              </tr>
+              <tr>
+                <td>TDAH Infantil</td>
+                <td>Inatención, hiperactividad, impulsividad y seguimiento de rutinas.</td>
+                <td>Padres, madres, cuidadores y docentes.</td>
+                <td>Cuando afecta escuela, convivencia o seguridad del menor.</td>
+              </tr>
+              <tr>
+                <td>TEA Adultos</td>
+                <td>Comunicación social, rigidez, sensibilidad y camuflaje.</td>
+                <td>Adultos que buscan entender diferencias persistentes de adaptación.</td>
+                <td>Cuando hay agotamiento, aislamiento o malestar acumulado.</td>
+              </tr>
+              <tr>
+                <td>TEA Infantil</td>
+                <td>Desarrollo social, juego, intereses y respuesta sensorial.</td>
+                <td>Familias y educadores que observan diferencias persistentes.</td>
+                <td>Cuando las señales interfieren con comunicación, escuela o regulación.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="faq-grid">
+          <article class="faq-mini">
+            <h4>¿Un test online confirma TDAH?</h4>
+            <p>No. Ayuda a identificar indicadores y a decidir si conviene una evaluación clínica o neuropsicológica más completa.</p>
+          </article>
+          <article class="faq-mini">
+            <h4>¿El autismo en adultos puede pasar desapercibido?</h4>
+            <p>Sí. Algunas personas compensan durante años, pero con gran desgaste interno y sensación de desajuste persistente.</p>
+          </article>
+          <article class="faq-mini">
+            <h4>¿Qué pesa más: un rasgo aislado o el funcionamiento?</h4>
+            <p>El funcionamiento. La frecuencia, persistencia y el impacto real suelen ser más útiles que una señal aislada.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="card topic-section" id="ansiedad">
+        <p class="section-kicker">Ansiedad</p>
+        <h2 class="section-title">Ansiedad general, ansiedad social y ataques de pánico: detectar el patrón detrás del malestar.</h2>
+        <p class="section-intro">
+          La ansiedad puede sentirse como pensamiento acelerado, alerta constante, anticipación de problemas, miedo al
+          juicio, tensión corporal, insomnio o episodios intensos de pánico. Muchas personas llegan a un test pensando
+          que “solo están muy nerviosas” o “simplemente son tímidas”, cuando en realidad hay un patrón que ya consume
+          tiempo, energía y oportunidades.
+        </p>
+        <div class="grid-three">
+          <article class="topic-slab">
+            <h3>Ansiedad general</h3>
+            <p>
+              La ansiedad general suele girar alrededor de preocupación persistente, dificultad para frenar escenarios
+              negativos y sensación de que la mente nunca descansa. Puede mezclarse con tensión muscular, problemas de
+              sueño, irritabilidad y fatiga. El cribado explora cuánto ocupa la preocupación, con qué frecuencia aparece
+              y cuánto interfiere en decisiones, atención y bienestar.
+            </p>
+            <h4>Quién debería responderla</h4>
+            <p>
+              Personas que viven anticipando errores, gastos, conflictos, enfermedades o fracasos incluso cuando no hay
+              un detonante claro, y sienten que la preocupación ya dejó de ser útil para convertirse en carga.
+            </p>
+            <a class="topic-link" href="/evaluaciones/ansiedad-general">Realizar evaluación</a>
+          </article>
+          <article class="topic-slab">
+            <h3>Ansiedad social</h3>
+            <p>
+              No es solamente vergüenza. La ansiedad social implica miedo persistente a exponerse, ser observado,
+              equivocarse, hablar, pedir algo, comer frente a otros o parecer extraño. Ese miedo puede llevar a evitar
+              reuniones, presentaciones, videollamadas, entrevistas, citas o situaciones cotidianas que exigen contacto
+              interpersonal. El cribado ayuda a distinguir entre timidez y sufrimiento sostenido con impacto funcional.
+            </p>
+            <h4>Qué orienta</h4>
+            <p>
+              Frecuencia de evitación, intensidad del miedo al juicio, síntomas físicos y repercusión en estudios,
+              trabajo, amistades o pareja.
+            </p>
+            <a class="topic-link" href="/evaluaciones/ansiedad-social">Realizar evaluación</a>
+          </article>
+          <article class="topic-slab">
+            <h3>Ataques de pánico</h3>
+            <p>
+              Los ataques de pánico pueden sentirse como una ola abrupta de terror, falta de aire, palpitaciones,
+              despersonalización, miedo a perder el control o sensación de amenaza intensa. Un episodio aislado no basta
+              para concluir un trastorno, pero sí merece atención cuando se repite, genera evitación o deja a la persona
+              viviendo con temor al siguiente episodio. El cribado ordena frecuencia, detonantes y efectos posteriores.
+            </p>
+            <h4>Cuándo conviene realizarlo</h4>
+            <p>
+              Si ya hubo episodios intensos, visitas a urgencias sin explicación clara, miedo a salir solo o evitación de
+              lugares por temor a experimentar otra crisis.
+            </p>
+            <a class="topic-link" href="#proximos-pasos">Conocer más</a>
+          </article>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <caption>Comparación breve entre subtipos de ansiedad orientados por cribado</caption>
+            <thead>
+              <tr>
+                <th scope="col">Tipo</th>
+                <th scope="col">Indicadores frecuentes</th>
+                <th scope="col">Qué suele afectar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ansiedad general</td>
+                <td>Preocupación excesiva, tensión, rumiación, fatiga mental.</td>
+                <td>Sueño, concentración, sensación de descanso y toma de decisiones.</td>
+              </tr>
+              <tr>
+                <td>Ansiedad social</td>
+                <td>Miedo al juicio, vergüenza intensa, evitación de exposición.</td>
+                <td>Relaciones, presentaciones, estudios, entrevistas y networking.</td>
+              </tr>
+              <tr>
+                <td>Pánico</td>
+                <td>Crisis abruptas con síntomas físicos intensos y miedo posterior.</td>
+                <td>Movilidad, autonomía y sensación de seguridad cotidiana.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="faq-grid">
+          <article class="faq-mini">
+            <h4>¿Estrés y ansiedad son lo mismo?</h4>
+            <p>No. Se relacionan, pero el estrés suele estar más unido a demandas externas y la ansiedad a preocupación y anticipación persistente.</p>
+          </article>
+          <article class="faq-mini">
+            <h4>¿La ansiedad puede parecer TDAH?</h4>
+            <p>Sí. La preocupación sostenida fragmenta atención y memoria, por eso hay que interpretar cada área con cuidado.</p>
+          </article>
+          <article class="faq-mini">
+            <h4>¿Un ataque de pánico confirma un trastorno?</h4>
+            <p>No necesariamente. El patrón, la repetición y la evitación posterior son claves para decidir si se requiere evaluación más profunda.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="card topic-section" id="estado-animo">
+        <p class="section-kicker">Estado de ánimo</p>
+        <h2 class="section-title">Depresión, burnout y estrés: cuando el cansancio ya no es solo cansancio.</h2>
+        <p class="section-intro">
+          El estado de ánimo se afecta de formas distintas. A veces predomina la tristeza; otras, el vacío, la
+          irritabilidad, el agotamiento extremo o la desconexión emocional con el trabajo y la vida diaria. Un test
+          online bien usado ayuda a distinguir mejor entre depresión, estrés sostenido y burnout relacionado con el
+          contexto laboral o académico, siempre como paso inicial de orientación.
+        </p>
+        <div class="grid-three">
+          <article class="topic-slab">
+            <h3>Depresión</h3>
+            <p>
+              El cribado de depresión suele explorar ánimo bajo, pérdida de interés o placer, culpa, desesperanza,
+              fatiga, lentitud, cambios de sueño y dificultades para sostener la vida diaria. No todo episodio de tristeza
+              es depresión, pero cuando los síntomas persisten e interfieren con trabajo, estudio, relación con otros o
+              autocuidado, conviene darle un espacio serio.
+            </p>
+            <h4>Quién debería responderlo</h4>
+            <p>
+              Personas que sienten que ya no disfrutan casi nada, se ven atrapadas en agotamiento emocional o notan una
+              caída clara en motivación, energía o funcionamiento general.
+            </p>
+            <a class="topic-link" href="/evaluaciones/depresion">Realizar evaluación</a>
+          </article>
+          <article class="topic-slab">
+            <h3>Burnout</h3>
+            <p>
+              La OMS describe el burnout como un fenómeno ocupacional vinculado al estrés crónico en el trabajo que no
+              ha sido gestionado con éxito. Suele incluir agotamiento, distancia mental o cinismo respecto al trabajo y
+              sensación de menor eficacia. Un cribado orientativo permite ver si el malestar está concentrado en el
+              contexto laboral o si conviene explorar también ansiedad, depresión, sueño y regulación emocional.
+            </p>
+            <h4>Cuándo realizarlo</h4>
+            <p>
+              Si el trabajo deja de sentirse exigente y pasa a sentirse invivible, si hay fatiga sostenida incluso después
+              de descansar o si el rendimiento cae acompañado de desapego intenso.
+            </p>
+            <a class="topic-link" href="/evaluaciones/burnout">Realizar evaluación</a>
+          </article>
+          <article class="topic-slab">
+            <h3>Estrés</h3>
+            <p>
+              El estrés puede ser una respuesta comprensible a carga alta, cambio constante o presión acumulada, pero
+              cuando se vuelve crónico deteriora sueño, atención, estado de ánimo y tolerancia emocional. Un test de
+              estrés ayuda a medir cuánto ocupa la activación, qué tan difícil es recuperar calma y si el cuerpo ya está
+              mostrando señales de saturación.
+            </p>
+            <h4>Qué puede aportar el resultado</h4>
+            <p>
+              Permite decidir si conviene intervenir primero con descanso, organización y regulación, o si la intensidad
+              del malestar ya justifica evaluación profesional más específica.
+            </p>
+            <a class="topic-link" href="/evaluaciones/estres">Realizar evaluación</a>
+          </article>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <caption>Estado de ánimo: claves de lectura inicial</caption>
+            <thead>
+              <tr>
+                <th scope="col">Área</th>
+                <th scope="col">Pregunta central del cribado</th>
+                <th scope="col">Qué conviene observar después</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Depresión</td>
+                <td>¿Hay tristeza, vacío o pérdida de interés con impacto funcional?</td>
+                <td>Duración, intensidad, seguridad personal, sueño, apetito y red de apoyo.</td>
+              </tr>
+              <tr>
+                <td>Burnout</td>
+                <td>¿El malestar está fuertemente ligado al trabajo o estudio crónico?</td>
+                <td>Condiciones laborales, descanso, límites, sobrecarga y recursos del entorno.</td>
+              </tr>
+              <tr>
+                <td>Estrés</td>
+                <td>¿La activación constante está bloqueando la recuperación mental y física?</td>
+                <td>Fuentes externas, hábitos de sueño, organización y pausas reales.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="faq-grid">
+          <article class="faq-mini">
+            <h4>¿Burnout y depresión son idénticos?</h4>
+            <p>No. Pueden parecerse y coexistir, pero el burnout se describe desde el contexto ocupacional y no sustituye una evaluación del estado de ánimo.</p>
+          </article>
+          <article class="faq-mini">
+            <h4>¿El estrés prolongado puede bajar el rendimiento?</h4>
+            <p>Sí. Disminuye claridad mental, atención y tolerancia emocional, y eso se refleja en tareas simples y complejas.</p>
+          </article>
+          <article class="faq-mini">
+            <h4>¿Cuándo deja de ser “normal” sentirse agotado?</h4>
+            <p>Cuando el cansancio es sostenido, no se recupera con descanso razonable y empieza a afectar funcionamiento o seguridad.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="card topic-section" id="funciones-ejecutivas">
+        <p class="section-kicker">Funciones ejecutivas</p>
+        <h2 class="section-title">Organización, procrastinación, memoria y déficit ejecutivo en la vida real.</h2>
+        <p class="section-intro">
+          Las funciones ejecutivas son el sistema de dirección de la conducta: ayudan a planificar, iniciar, sostener,
+          inhibir, priorizar, cambiar de estrategia y mantener información activa mientras resolvemos tareas. Cuando
+          fallan, la persona puede verse inteligente y capaz pero vivir atrapada en desorden, retrasos, olvidos y una
+          sensación constante de estar apagando incendios.
+        </p>
+        <div class="grid-two">
+          <article class="topic-slab">
+            <h3>Organización y planificación</h3>
+            <p>
+              Un cribado de organización no mira solo si alguien tiene su escritorio en orden. Observa si la persona
+              logra estructurar pasos, convertir metas en acciones, estimar tiempos, sostener rutinas y completar tareas
+              sin depender siempre de la presión de última hora. Muchas dificultades de organización no son pereza:
+              responden a problemas de inicio, secuenciación o sobrecarga mental.
+            </p>
+            <h4>Qué puede revelar</h4>
+            <ul class="topic-list">
+              <li>Dependencia excesiva de recordatorios o urgencias.</li>
+              <li>Dificultad para convertir prioridades en acciones concretas.</li>
+              <li>Acumulación de pendientes simples que se vuelven complejos por demora.</li>
+              <li>Sensación de estar ocupado todo el tiempo sin avanzar de forma estable.</li>
+            </ul>
+            <a class="topic-link" href="/evaluaciones/organizacion">Realizar evaluación</a>
+          </article>
+          <article class="topic-slab">
+            <h3>Procrastinación y déficit ejecutivo</h3>
+            <p>
+              La procrastinación no siempre es falta de voluntad. A veces responde a miedo al error, baja activación,
+              saturación emocional, búsqueda de recompensa inmediata o dificultad para iniciar tareas ambiguas. El
+              déficit ejecutivo, por su parte, puede incluir problemas de memoria de trabajo, control inhibitorio,
+              flexibilidad cognitiva y seguimiento de objetivos. El cribado ayuda a distinguir si el patrón principal es
+              evitación, mala autorregulación o mezcla de varias áreas.
+            </p>
+            <h4>Cuándo conviene responderlo</h4>
+            <p>
+              Si acumulas retrasos repetidos, olvidas pasos, saltas entre tareas, no logras sostener foco o sientes que
+              cada actividad requiere un esfuerzo desproporcionado para arrancar.
+            </p>
+            <a class="topic-link" href="/evaluaciones/procrastinacion">Realizar evaluación</a>
+          </article>
+          <article class="topic-slab">
+            <h3>Memoria de trabajo y control inhibitorio</h3>
+            <p>
+              La memoria de trabajo permite retener y manipular información a corto plazo, como cuando sigues
+              instrucciones, redactas, calculas o mantienes un objetivo mientras descartas distracciones. El control
+              inhibitorio ayuda a frenar respuestas automáticas, no interrumpir, no desviarse y elegir mejor entre
+              impulsos y objetivos. Cuando ambos fallan, la vida cotidiana se vuelve más errática y costosa.
+            </p>
+            <h4>Qué señales suelen aparecer</h4>
+            <p>
+              Olvido de pasos intermedios, dificultad para terminar lo que se empezó, interrupciones frecuentes, errores
+              evitables y necesidad de releer o repetir tareas por pérdida de foco.
+            </p>
+            <a class="topic-link" href="/evaluaciones/deficit-ejecutivo">Realizar evaluación</a>
+          </article>
+          <article class="topic-slab">
+            <h3>Flexibilidad cognitiva</h3>
+            <p>
+              Esta función permite cambiar de estrategia, tolerar ajustes, revisar prioridades y no quedarse atrapado en
+              una única forma de hacer las cosas. Una baja flexibilidad cognitiva puede expresarse como rigidez,
+              frustración ante cambios, bloqueo cuando un plan falla o incapacidad para reordenar la tarea sin perder
+              demasiado tiempo y energía.
+            </p>
+            <h4>Por qué importa</h4>
+            <p>
+              Porque la vida diaria rara vez sigue un guion perfecto. Quien no puede adaptarse fácilmente suele pagar un
+              costo emocional y ejecutivo mayor en estudios, trabajo y convivencia.
+            </p>
+            <a class="topic-link" href="/evaluaciones/deficit-ejecutivo">Conocer más</a>
+          </article>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <caption>Funciones ejecutivas: áreas que suele mirar un cribado</caption>
+            <thead>
+              <tr>
+                <th scope="col">Componente</th>
+                <th scope="col">Cómo se nota en el día a día</th>
+                <th scope="col">Ruta sugerida</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Organización</td>
+                <td>Caos de prioridades, olvido de pendientes, dificultad para estructurar.</td>
+                <td><a href="/evaluaciones/organizacion">/evaluaciones/organizacion</a></td>
+              </tr>
+              <tr>
+                <td>Procrastinación</td>
+                <td>Demora repetida, bloqueo de inicio, tareas que se hacen solo bajo urgencia.</td>
+                <td><a href="/evaluaciones/procrastinacion">/evaluaciones/procrastinacion</a></td>
+              </tr>
+              <tr>
+                <td>Déficit ejecutivo</td>
+                <td>Problemas de memoria de trabajo, flexibilidad y control inhibitorio.</td>
+                <td><a href="/evaluaciones/deficit-ejecutivo">/evaluaciones/deficit-ejecutivo</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="faq-grid">
+          <article class="faq-mini">
+            <h4>¿Procrastinar siempre es flojera?</h4>
+            <p>No. Puede estar ligada a miedo, saturación, ansiedad, déficit ejecutivo o necesidad de alta estimulación para arrancar.</p>
+          </article>
+          <article class="faq-mini">
+            <h4>¿La memoria también se afecta por sueño y estrés?</h4>
+            <p>Sí. Por eso conviene interpretar cualquier cribado dentro del contexto general de descanso y carga emocional.</p>
+          </article>
+          <article class="faq-mini">
+            <h4>¿Organización y TDAH están siempre unidos?</h4>
+            <p>No siempre. La desorganización puede aparecer por TDAH, ansiedad, depresión, burnout, hábitos o combinaciones de factores.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="card topic-section" id="regulacion-emocional">
+        <p class="section-kicker">Regulación emocional</p>
+        <h2 class="section-title">Autoestima, impulsividad, dependencia emocional y perfeccionismo.</h2>
+        <p class="section-intro">
+          Regular emociones no es “ser frío”, sino poder notar lo que ocurre, tolerarlo, modular la respuesta y seguir
+          actuando con cierto grado de dirección. Cuando esta capacidad se altera, la persona puede reaccionar de forma
+          intensa, buscar validación compulsiva, castigarse por errores mínimos o vivir en ciclos de culpa y sobreesfuerzo.
+        </p>
+        <div class="grid-four">
+          <article class="topic-slab">
+            <h3>Autoestima</h3>
+            <p>
+              Un test de autoestima orienta sobre autocrítica, percepción de valor personal, confianza, comparación y
+              sensibilidad a la desaprobación. La baja autoestima no siempre es la raíz del problema, pero sí puede
+              amplificar ansiedad, procrastinación y dependencia de aprobación externa.
+            </p>
+            <a class="topic-link" href="/evaluaciones/autoestima">Realizar evaluación</a>
+          </article>
+          <article class="topic-slab">
+            <h3>Impulsividad</h3>
+            <p>
+              La impulsividad puede expresarse como hablar sin filtrar, tomar decisiones rápidas, interrumpir, comprar o
+              responder sin pausa. Un cribado permite explorar frecuencia, contexto y consecuencias, y ayuda a separar el
+              rasgo de la simple espontaneidad saludable.
+            </p>
+            <a class="topic-link" href="/evaluaciones/impulsividad">Realizar evaluación</a>
+          </article>
+          <article class="topic-slab">
+            <h3>Dependencia emocional</h3>
+            <p>
+              Aquí se observan señales como miedo intenso al abandono, dificultad para poner límites, necesidad de
+              confirmación constante y sensación de desregulación fuerte cuando una relación se vuelve incierta.
+            </p>
+            <a class="topic-link" href="/evaluaciones/dependencia-emocional">Realizar evaluación</a>
+          </article>
+          <article class="topic-slab">
+            <h3>Perfeccionismo</h3>
+            <p>
+              El perfeccionismo puede verse productivo desde fuera, pero por dentro suele alimentar ansiedad, bloqueo,
+              insatisfacción crónica y miedo a entregar algo “insuficiente”. El cribado ayuda a medir cuánto cuesta.
+            </p>
+            <a class="topic-link" href="/evaluaciones/perfeccionismo">Realizar evaluación</a>
+          </article>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <caption>Regulación emocional: preguntas típicas que un cribado ayuda a responder</caption>
+            <thead>
+              <tr>
+                <th scope="col">Tema</th>
+                <th scope="col">Pregunta clave</th>
+                <th scope="col">Impacto frecuente</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Autoestima</td>
+                <td>¿Tu diálogo interno te sostiene o te derrumba?</td>
+                <td>Inseguridad, evitación y dependencia del resultado externo.</td>
+              </tr>
+              <tr>
+                <td>Impulsividad</td>
+                <td>¿Puedes frenar antes de actuar o responder?</td>
+                <td>Conflictos, errores, arrepentimiento y decisiones costosas.</td>
+              </tr>
+              <tr>
+                <td>Dependencia emocional</td>
+                <td>¿Tu estabilidad depende demasiado de una relación?</td>
+                <td>Ansiedad relacional, límites débiles y miedo al abandono.</td>
+              </tr>
+              <tr>
+                <td>Perfeccionismo</td>
+                <td>¿La exigencia mejora tu trabajo o te paraliza?</td>
+                <td>Bloqueo, procrastinación y agotamiento.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card topic-section" id="sueno">
+        <p class="section-kicker">Sueño</p>
+        <h2 class="section-title">Calidad del sueño, atención y memoria: la base invisible de muchas dificultades.</h2>
+        <p class="section-intro">
+          Dormir bien no es un lujo: es un requisito básico para aprender, regular emociones, mantener atención y
+          consolidar memoria. Cuando la calidad del sueño se deteriora, la persona puede sentirse torpe, olvidadiza,
+          irritable, lenta o hipersensible. Por eso esta área merece un espacio propio dentro de un centro de evaluación
+          neuropsicológica online.
+        </p>
+        <div class="grid-two">
+          <article class="topic-slab">
+            <h3>Calidad del sueño e importancia del descanso</h3>
+            <p>
+              Un cribado de sueño explora latencia, despertares, sensación de descanso, somnolencia diurna, consistencia
+              de horarios y consecuencias funcionales. No todo mal dormir equivale a un trastorno del sueño, pero sí puede
+              empeorar atención, estado de ánimo, productividad y manejo del estrés. Muchas personas intentan entender
+              problemas cognitivos sin revisar primero cuánto y cómo están durmiendo.
+            </p>
+            <h4>Quién debería responderlo</h4>
+            <p>
+              Personas con fatiga mental constante, neblina cognitiva, irritabilidad, dificultades para despertar o
+              percepción de que el descanso nunca alcanza para recuperar claridad.
+            </p>
+            <a class="topic-link" href="/evaluaciones/calidad-sueno">Realizar evaluación</a>
+          </article>
+          <article class="topic-slab">
+            <h3>Cómo influye sobre la atención y la memoria</h3>
+            <p>
+              Cuando falta sueño suficiente o reparador, el cerebro filtra peor la información, se distrae con más
+              facilidad y retiene menos detalles. También cae la flexibilidad cognitiva: cuesta más adaptarse, planear y
+              resistir impulsos. Por eso los problemas de sueño pueden intensificar síntomas que parecen TDAH, ansiedad o
+              déficit ejecutivo, y un buen proceso de cribado necesita contemplar esa interacción.
+            </p>
+            <h4>Qué hacer con el resultado</h4>
+            <p>
+              Si el test apunta a mala calidad de sueño, conviene revisar hábitos, horarios, uso de pantallas, carga
+              laboral y síntomas físicos, y considerar consulta profesional si la alteración persiste o se acompaña de
+              deterioro notable.
+            </p>
+            <a class="topic-link" href="/evaluaciones/calidad-sueno">Conocer más</a>
+          </article>
+        </div>
+        <div class="faq-grid">
+          <article class="faq-mini">
+            <h4>¿Dormir mal puede parecer déficit de atención?</h4>
+            <p>Sí. Reduce foco, memoria, claridad y tolerancia emocional, por lo que puede imitar o intensificar otros perfiles.</p>
+          </article>
+          <article class="faq-mini">
+            <h4>¿La memoria depende del sueño?</h4>
+            <p>Mucho. El descanso ayuda a consolidar aprendizaje y a mantener mejor rendimiento durante el día siguiente.</p>
+          </article>
+          <article class="faq-mini">
+            <h4>¿Conviene evaluar sueño antes de sacar conclusiones rápidas?</h4>
+            <p>Casi siempre sí, especialmente cuando la queja principal es atención, lentitud mental o fatiga persistente.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="grid-two" id="eeat">
+        <article class="card">
+          <p class="section-kicker">Autoridad y evidencia</p>
+          <h2 class="section-title">Cómo se desarrollan buenos cuestionarios de cribado y qué evidencia los respalda.</h2>
+          <p>
+            Un cuestionario serio no nace de ocurrencias sueltas. Parte de marcos clínicos ampliamente conocidos,
+            literatura sobre síntomas y funcionamiento, y principios de medición que buscan formular preguntas claras,
+            pertinentes y comprensibles para la población a la que van dirigidas. En salud mental y neuropsicología, los
+            mejores cribados intentan cubrir dos frentes al mismo tiempo: la presencia de señales relevantes y su impacto
+            sobre la vida diaria.
+          </p>
+          <p>
+            La evidencia científica alrededor de los cribados no significa que el test “acierte siempre”; significa que
+            puede ser útil para priorizar, detectar, orientar y decidir si conviene una evaluación más profunda. El valor
+            aumenta cuando se usa junto con historia personal, observación contextual, información de familiares o
+            docentes y una conversación clínica posterior. En otras palabras, la evidencia respalda el uso prudente del
+            cribado como primer filtro, no como reemplazo de la clínica.
+          </p>
+          <h3>Qué significa interpretar con responsabilidad</h3>
+          <ul class="content-list">
+            <li>Mirar tendencias, no obsesionarse con una única respuesta.</li>
+            <li>Relacionar el resultado con funcionamiento real, no solo con identificación personal.</li>
+            <li>Comparar varias áreas cuando hay solapamientos entre síntomas.</li>
+            <li>Usar el puntaje como guía para la conversación, no como destino final.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <p class="section-kicker">Limitaciones e interpretación</p>
+          <h2 class="section-title">Qué hacer después del resultado y cómo evitar conclusiones apresuradas.</h2>
+          <p>
+            Un puntaje alto puede significar que hay indicadores importantes que conviene revisar, pero no basta para
+            etiquetar una condición. Un puntaje bajo tampoco invalida por completo el malestar, sobre todo si la persona
+            compensa, minimiza síntomas o responde en un momento inusual. La interpretación siempre mejora cuando se
+            pregunta: ¿desde cuándo ocurre?, ¿en qué contextos aparece?, ¿qué tanto interfiere?, ¿qué otras áreas podrían
+            estar influyendo?, ¿qué cambios recientes hubo en sueño, trabajo, escuela, relaciones o salud física?
+          </p>
+          <p>
+            Después del resultado, el mejor paso suele ser uno de estos: profundizar con otro cribado más específico,
+            registrar ejemplos cotidianos, hablar con un profesional o buscar apoyo en el contexto inmediato. Esto es
+            especialmente importante cuando las señales se mezclan, por ejemplo TDAH con ansiedad, burnout con depresión,
+            o problemas ejecutivos agravados por mal sueño. Interpretar bien significa sostener la complejidad en lugar
+            de reducirla a una palabra.
+          </p>
+          <div class="callout">
+            <strong>Frase que conviene recordar</strong>
+            <p>
+              Los resultados representan únicamente un cribado orientativo y nunca sustituyen una evaluación realizada
+              por un profesional de la salud mental.
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <section class="card" id="seo-local">
+        <p class="section-kicker">Contenido útil para países hispanohablantes</p>
+        <h2 class="section-title">Una guía en español pensada para contextos diversos, no para un solo país.</h2>
+        <p class="section-intro">
+          El acceso a evaluación psicológica y neuropsicológica cambia mucho entre países, ciudades y sistemas de salud.
+          Por eso esta home está redactada para servir a personas de distintos lugares del mundo hispanohablante:
+          familias en México, estudiantes en Colombia, trabajadores en Argentina, docentes en Chile, madres en Perú,
+          adultos en España, cuidadores en Centroamérica, profesionales en el Caribe y comunidades migrantes que buscan
+          información clara en su idioma.
+        </p>
+        <p>
+          El lenguaje evita localismos innecesarios y prioriza conceptos que pueden entenderse ampliamente: cribado,
+          evaluación inicial, detección temprana, indicadores, probabilidad, funcionamiento diario y próximos pasos.
+          También reconoce que la ruta posterior depende del contexto: en algunos lugares el primer contacto será
+          pediatría, medicina general, psicología clínica, psiquiatría o servicios escolares; en otros, una consulta
+          privada o comunitaria. La misión de esta página es ayudarte a llegar mejor preparado a ese siguiente recurso,
+          sea cual sea el nombre institucional que tenga en tu país.
+        </p>
+        <div class="region-band" aria-label="Cobertura hispanohablante">
+          <span class="chip-link">México</span>
+          <span class="chip-link">Colombia</span>
+          <span class="chip-link">Argentina</span>
+          <span class="chip-link">Chile</span>
+          <span class="chip-link">Perú</span>
+          <span class="chip-link">Ecuador</span>
+          <span class="chip-link">Guatemala</span>
+          <span class="chip-link">Honduras</span>
+          <span class="chip-link">El Salvador</span>
+          <span class="chip-link">Nicaragua</span>
+          <span class="chip-link">Costa Rica</span>
+          <span class="chip-link">Panamá</span>
+          <span class="chip-link">República Dominicana</span>
+          <span class="chip-link">Puerto Rico</span>
+          <span class="chip-link">Uruguay</span>
+          <span class="chip-link">Paraguay</span>
+          <span class="chip-link">Bolivia</span>
+          <span class="chip-link">España</span>
+        </div>
+      </section>
+
+      <section class="card" id="proximos-pasos">
+        <p class="section-kicker">Próximos pasos</p>
+        <h2 class="section-title">Qué hacer después de un test de cribado y cuándo no conviene esperar más.</h2>
+        <div class="grid-three">
+          <article class="step-card">
+            <h3>1. Registrar ejemplos reales</h3>
+            <p>
+              Anota situaciones concretas: olvidos, episodios de ansiedad, momentos de bloqueo, problemas de sueño,
+              conflictos por impulsividad o señales observadas por familia y docentes. Los ejemplos ayudan mucho más que
+              una impresión vaga cuando llega el momento de consultar.
+            </p>
+          </article>
+          <article class="step-card">
+            <h3>2. Mirar el funcionamiento</h3>
+            <p>
+              Pregúntate cómo afecta el patrón al estudio, trabajo, relaciones, salud física, economía, crianza y
+              descanso. La intensidad del impacto funcional suele orientar la urgencia del siguiente paso.
+            </p>
+          </article>
+          <article class="step-card">
+            <h3>3. Buscar el recurso adecuado</h3>
+            <p>
+              Dependiendo de la edad y del contexto, puede ser psicología clínica, psicología infantil, psiquiatría,
+              pediatría, orientación escolar o medicina general con derivación posterior.
+            </p>
+          </article>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <caption>Situaciones que justifican distintos niveles de prioridad</caption>
+            <thead>
+              <tr>
+                <th scope="col">Situación</th>
+                <th scope="col">Prioridad sugerida</th>
+                <th scope="col">Acción recomendada</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Síntomas persistentes con impacto moderado en estudio, trabajo o convivencia.</td>
+                <td>Alta, pero programable</td>
+                <td>Agendar evaluación profesional y llevar registro de ejemplos.</td>
+              </tr>
+              <tr>
+                <td>Deterioro creciente, insomnio fuerte, ansiedad intensa o agotamiento sostenido.</td>
+                <td>Alta</td>
+                <td>Buscar consulta lo antes posible y revisar también hábitos y red de apoyo.</td>
+              </tr>
+              <tr>
+                <td>Ideas de autolesión, riesgo para terceros, desorientación grave o incapacidad de cuidarse.</td>
+                <td>Urgente</td>
+                <td>Contactar servicios de emergencia o atención en crisis de inmediato.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Usar bien esta página significa salir con más claridad, no con más miedo. Si un resultado orientativo te hace
+          pensar “esto explica muchas cosas”, úsalo para construir una ruta de evaluación más inteligente. Si te deja con
+          dudas, úsalo como punto de partida para preguntar mejor. Y si te alerta sobre un nivel de sufrimiento que ya
+          no se sostiene, conviértelo en acción: pedir ayuda a tiempo es una forma concreta de cuidado.
+        </p>
+      </section>
+
+      <section class="card" id="faq">
+        <p class="section-kicker">FAQ</p>
+        <h2 class="section-title">50 preguntas frecuentes sobre test psicológicos online y cribado neuropsicológico.</h2>
+        <p class="section-intro">
+          Esta sección reúne preguntas estilo <em>People Also Ask</em> para responder dudas comunes antes y después de
+          realizar un test. Las respuestas son extensas para que puedas entender mejor el uso real de estas herramientas.
+        </p>
+
+        <details class="faq-item">
+          <summary>1. ¿Qué es un test psicológico online de cribado?</summary>
+          <div class="faq-answer">
+            Es una herramienta de orientación inicial que ayuda a detectar señales, síntomas o dificultades funcionales
+            que podrían merecer una evaluación más profunda. No pretende sustituir la consulta ni resumir toda la
+            complejidad de la salud mental en un número. Su función es filtrar, priorizar y ordenar información: qué
+            áreas generan más malestar, qué tipo de señales aparecen y qué preguntas conviene llevar luego a un
+            profesional. Bien usado, un test de cribado reduce incertidumbre y mejora la calidad del siguiente paso.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>2. ¿Un test online puede darme un diagnóstico?</summary>
+          <div class="faq-answer">
+            No. Un diagnóstico requiere una evaluación clínica o neuropsicológica más amplia, con entrevista, historia
+            del desarrollo, revisión de contexto y análisis del impacto funcional. El test online puede mostrar
+            indicadores de riesgo o probabilidad, pero no sustituye esos procesos. Si el resultado te preocupa, la mejor
+            lectura es: “esto sugiere que conviene explorar más”, no “esto prueba definitivamente que tengo tal
+            condición”. Esa diferencia protege tanto tu salud como la calidad de las decisiones que tomes después.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>3. ¿Qué diferencia hay entre cribado y evaluación clínica?</summary>
+          <div class="faq-answer">
+            El cribado es un primer filtro: rápido, útil, accesible y enfocado en detectar si hay señales importantes.
+            La evaluación clínica es mucho más completa. Suele incluir preguntas detalladas sobre síntomas, duración,
+            historia personal, relaciones, escuela o trabajo, salud física, antecedentes familiares y funcionamiento
+            diario. En algunos casos también integra observación, escalas adicionales o pruebas cognitivas. El cribado
+            abre la puerta; la evaluación clínica ayuda a entender realmente qué está pasando y cuál es la mejor ruta de
+            apoyo.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>4. ¿Qué tipo de personas usan estas pruebas?</summary>
+          <div class="faq-answer">
+            Las usan adultos que sospechan TDAH, ansiedad, burnout o problemas ejecutivos; padres y madres que notan
+            señales en sus hijos; docentes que desean ordenar observaciones; universitarios con sobrecarga; empresas
+            interesadas en bienestar emocional; y personas ya en tratamiento que buscan un recurso psicoeducativo
+            complementario. No hay un único perfil. Lo importante es entender que el test sirve mejor cuando la persona
+            quiere comprender un patrón, no buscar una respuesta cerrada a cualquier costo.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>5. ¿Sirve para adultos aunque mis dificultades empezaran en la infancia?</summary>
+          <div class="faq-answer">
+            Sí. De hecho, muchas dificultades del neurodesarrollo o de regulación emocional llegan a la adultez con otra
+            apariencia. Lo que antes era hiperactividad visible puede volverse inquietud interna, desorganización o
+            fatiga por compensación. Un cribado para adultos puede ayudarte a conectar señales actuales con patrones
+            antiguos, aunque la confirmación de esa historia necesita exploración clínica más detallada. Lo valioso es
+            que permite ordenar recuerdos y experiencias que antes parecían desconectados.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>6. ¿Un padre puede responder por su hijo?</summary>
+          <div class="faq-answer">
+            Sí, siempre que el cuestionario esté diseñado para observadores o cuidadores. En infancia y adolescencia
+            suele ser útil complementar la percepción del menor con lo que ven padres, madres, cuidadores y docentes,
+            porque muchas señales aparecen de forma distinta según el contexto. Aun así, el objetivo no es hablar “por
+            encima” del niño, sino reunir información de varios entornos para detectar patrones consistentes. La
+            interpretación final siempre debe hacerse con prudencia y, si es necesario, con apoyo profesional.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>7. ¿Los docentes pueden beneficiarse de estas herramientas?</summary>
+          <div class="faq-answer">
+            Sí, especialmente como apoyo de observación y lenguaje compartido. Un docente no diagnostica, pero sí puede
+            notar dificultades persistentes en atención, organización, interacción social, respuesta emocional o manejo
+            del estrés académico. Los test de cribado ayudan a convertir impresiones generales en preguntas más útiles
+            para la familia y para el profesional. También reducen el riesgo de atribuir todo a falta de esfuerzo o mala
+            conducta cuando puede haber un patrón neuropsicológico o emocional subyacente.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>8. ¿Cuándo no conviene depender solo de un test?</summary>
+          <div class="faq-answer">
+            Nunca conviene depender solo del test, pero hay momentos en los que resulta especialmente arriesgado hacerlo:
+            cuando hay ideas de autolesión, deterioro fuerte, desregulación intensa, ataques de pánico, conflicto
+            familiar grave, problemas de consumo o diferencias importantes entre lo que la persona siente y lo que otros
+            observan. En esas situaciones el test puede acompañar, pero no reemplaza una valoración profesional. También
+            es insuficiente cuando varias áreas se mezclan y el cuadro es difícil de distinguir.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>9. ¿Qué hago si mis resultados me preocupan?</summary>
+          <div class="faq-answer">
+            Primero, evita leer el resultado como sentencia final. Revisa qué área salió elevada, qué ejemplos cotidianos
+            respaldan ese patrón y cuánto interfiere en tu vida. Luego decide el siguiente paso más útil: realizar una
+            evaluación más específica, pedir cita con un profesional, hablar con la escuela o registrar durante una o dos
+            semanas situaciones concretas. Si el malestar es intenso o hay riesgo inmediato, prioriza atención urgente.
+            El mejor uso del test es convertir preocupación difusa en acción bien orientada.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>10. ¿Puedo repetir la evaluación?</summary>
+          <div class="faq-answer">
+            Sí, pero con propósito. Repetirla varias veces en el mismo día rara vez aporta valor y a veces aumenta
+            confusión. Tiene más sentido volver a hacerla después de un período razonable, cuando hubo cambios en sueño,
+            tratamiento, carga laboral, rutina escolar o estado emocional. También sirve repetirla si la primera vez
+            respondiste con prisas, sin concentración o en un momento muy atípico. Lo importante es comparar tendencias,
+            no perseguir un resultado “perfecto”.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>11. ¿Qué orienta un test de TDAH para adultos?</summary>
+          <div class="faq-answer">
+            Suele orientar sobre inatención, impulsividad, manejo del tiempo, dificultad para terminar tareas,
+            desorganización, olvidos, cambios rápidos de foco y repercusión funcional. También puede explorar cuánto
+            esfuerzo requiere sostener rutinas básicas, cumplir plazos o administrar tareas sin entrar en ciclos de
+            urgencia. Lo importante es que no se limita a “¿te distraes mucho?” sino que intenta conectar síntomas con
+            trabajo, hogar, finanzas, relaciones y bienestar. Esa conexión funcional es la que vuelve útil el cribado.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>12. ¿Cómo se ve el TDAH inatento en la adultez?</summary>
+          <div class="faq-answer">
+            Puede verse como dificultad crónica para iniciar, priorizar, ordenar pasos, sostener tareas largas o recordar
+            detalles importantes. A veces se acompaña de olvido de citas, correos sin responder, múltiples pendientes
+            abiertos y sensación de vivir siempre atrasado. Desde fuera la persona puede parecer capaz, incluso muy
+            competente, pero internamente se siente sobrecargada y obligada a compensar todo el tiempo. Un cribado ayuda
+            a detectar si ese patrón es consistente o si conviene mirar otras causas como ansiedad o sueño insuficiente.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>13. ¿El TDAH infantil siempre implica hiperactividad?</summary>
+          <div class="faq-answer">
+            No. Algunos niños muestran mucha actividad motora e impulsividad, pero otros destacan más por distracción,
+            olvido, dificultad para seguir instrucciones o desconexión aparente. Por eso es un error pensar que solo
+            existe cuando el menor “no se queda quieto”. El cribado infantil ayuda a mirar ambos frentes: atención y
+            regulación conductual. Aun así, hay que interpretar el resultado considerando edad, entorno escolar, sueño,
+            estilo de crianza y otras variables del desarrollo.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>14. ¿Qué orienta un cribado de TEA?</summary>
+          <div class="faq-answer">
+            Puede orientar sobre diferencias en comunicación social, sensibilidad sensorial, necesidad de rutina,
+            intereses muy focalizados, rigidez frente a cambios y esfuerzo de adaptación. En adultos también puede
+            explorar experiencias de camuflaje social, agotamiento postinteracción o sensación persistente de desajuste.
+            El objetivo no es decidir de forma automática si alguien está dentro o fuera del espectro, sino identificar
+            si hay suficientes indicadores como para justificar una valoración más especializada del desarrollo y la
+            interacción.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>15. ¿El autismo en adultos puede pasar desapercibido?</summary>
+          <div class="faq-answer">
+            Sí. Muchas personas aprenden estrategias de adaptación, imitación social o enmascaramiento que reducen la
+            visibilidad externa del patrón, aunque el costo interno sea alto. Pueden pasar años sintiendo fatiga social,
+            rigidez, sobrecarga sensorial o dificultad para comprender ciertas dinámicas sin tener un marco claro para
+            explicarlo. Un cribado orientativo no confirma el diagnóstico, pero puede ayudar a reconocer un perfil que
+            antes se interpretaba como rareza, exageración, timidez extrema o simple “manera de ser”.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>16. ¿Qué señales justifican hablar con un profesional sobre un niño?</summary>
+          <div class="faq-answer">
+            Conviene consultar cuando la conducta, las emociones o las dificultades de atención y socialización persisten
+            durante semanas o meses, afectan escuela o casa, generan sufrimiento, provocan conflictos repetidos o limitan
+            la autonomía del menor. También si la familia observa diferencias del desarrollo, cambios bruscos o problemas
+            de sueño y regulación muy marcados. No hace falta esperar a que todo sea extremo. La intervención temprana
+            suele ser más útil precisamente cuando el malestar todavía es manejable.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>17. ¿Un resultado bajo descarta dificultades?</summary>
+          <div class="faq-answer">
+            No necesariamente. Puede ocurrir que la persona compense bien, minimice síntomas, responda en un momento
+            inusual o que la dificultad principal no sea la que ese test estaba diseñado para detectar. También hay
+            perfiles en los que el malestar es real pero no encaja del todo con el cuestionario usado. Un resultado bajo
+            puede tranquilizar parcialmente, pero nunca debe utilizarse para invalidar por completo lo que la persona
+            vive, sobre todo si el funcionamiento sigue claramente afectado.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>18. ¿Un resultado alto confirma un trastorno?</summary>
+          <div class="faq-answer">
+            Tampoco. Un resultado alto sugiere que hay indicadores relevantes y que conviene profundizar. Puede reflejar
+            una condición específica, una combinación de factores o incluso un momento de malestar agudo que intensifica
+            las respuestas. La utilidad del puntaje alto está en priorizar la consulta y observar mejor el contexto, no
+            en cerrar la conversación. Es una señal para mirar de cerca, no una conclusión definitiva.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>19. ¿Hay solapamiento entre TDAH, ansiedad y falta de sueño?</summary>
+          <div class="faq-answer">
+            Muchísimo. La ansiedad sostenida puede fragmentar la atención; el sueño deficiente puede reducir memoria,
+            foco y autocontrol; y el TDAH puede incrementar estrés y desorganización. Por eso algunos síntomas se parecen
+            tanto entre sí. Un buen proceso de cribado ayuda a detectar qué áreas aparecen elevadas, pero la lectura
+            responsable requiere mirar el conjunto y no quedarse con la primera explicación disponible. A veces la clave
+            está en la combinación, no en una sola etiqueta.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>20. ¿Por qué es importante mirar el funcionamiento diario?</summary>
+          <div class="faq-answer">
+            Porque la presencia de síntomas aislados dice poco si no sabemos cuánto interfieren. Dos personas pueden
+            sentirse distraídas, pero solo una tener problemas graves para sostener estudio, trabajo, autocuidado o
+            relaciones. La evaluación del funcionamiento permite distinguir entre una dificultad leve, una etapa
+            exigente y un patrón que ya requiere intervención. En salud mental, el impacto real en la vida cotidiana es
+            uno de los criterios más útiles para decidir prioridad y tipo de ayuda.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>21. ¿Qué diferencia hay entre estrés y ansiedad?</summary>
+          <div class="faq-answer">
+            El estrés suele aparecer como respuesta a demandas externas identificables: carga de trabajo, problemas
+            económicos, exámenes, cambios o presión constante. La ansiedad puede permanecer incluso cuando el detonante
+            no es tan claro, y se expresa como preocupación, hipervigilancia, miedo anticipatorio o evitación. Ambos
+            afectan cuerpo y mente, y pueden coexistir. El cribado ayuda a ver si el problema central parece venir de
+            una sobrecarga contextual o de un patrón ansioso más amplio.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>22. ¿Qué evalúa un test de ansiedad general?</summary>
+          <div class="faq-answer">
+            Suele evaluar frecuencia de preocupación, dificultad para detener pensamientos, tensión física, inquietud,
+            cansancio, irritabilidad, problemas de sueño y efecto sobre la vida diaria. Lo relevante no es si alguna vez
+            te preocupas, sino si esa preocupación se volvió persistente, excesiva y desgastante. También importa cuánto
+            influye en tu capacidad para trabajar, estudiar, disfrutar, descansar o concentrarte. El puntaje orienta; la
+            interpretación la termina de dar el contexto.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>23. ¿Qué orienta un test de ansiedad social?</summary>
+          <div class="faq-answer">
+            Orienta sobre miedo al juicio, vergüenza intensa, evitación de exposición, temor a equivocarse frente a
+            otros, malestar al hablar, comer o pedir algo en público, y síntomas físicos asociados a esas situaciones.
+            También puede ayudar a ver cuánto limita la vida académica, laboral o afectiva. No toda timidez es ansiedad
+            social, pero cuando la evitación crece y reduce oportunidades, conviene revisar el patrón con más atención.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>24. ¿Cómo reconocer indicadores de pánico?</summary>
+          <div class="faq-answer">
+            Los indicadores suelen incluir episodios repentinos de miedo intenso, palpitaciones, falta de aire,
+            sensación de irrealidad, temblor, mareo, dolor o presión en el pecho y temor a perder el control. Lo que
+            vuelve importante el patrón no es solo el episodio, sino el miedo posterior a que se repita y la evitación de
+            lugares o situaciones. Un cribado puede ayudarte a ordenar esos elementos, pero si los episodios son fuertes
+            o frecuentes conviene consulta profesional pronta.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>25. ¿La ansiedad puede parecerse a un problema de atención?</summary>
+          <div class="faq-answer">
+            Sí. Cuando la mente está ocupada en anticipar problemas o revisar escenarios negativos, queda menos espacio
+            mental para sostener foco, recordar instrucciones o terminar tareas. Desde fuera puede verse como distracción,
+            pero el motor principal es la activación ansiosa. Eso no significa que toda dificultad de atención sea
+            ansiedad; significa que ambas áreas merecen explorarse juntas cuando el cuadro no es claro.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>26. ¿Los adolescentes pueden beneficiarse de un cribado de ansiedad?</summary>
+          <div class="faq-answer">
+            Sí, especialmente cuando el malestar afecta sueño, rendimiento, socialización, asistencia a clases o estado
+            de ánimo. La adolescencia es una etapa de cambios intensos, por lo que no todo nerviosismo indica un
+            problema; aun así, un cribado bien usado puede ayudar a distinguir entre un nivel esperable de presión y un
+            patrón que ya requiere apoyo. También facilita conversaciones más concretas entre familia, escuela y
+            profesionales.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>27. ¿Qué señales sugieren pedir ayuda antes de que empeore?</summary>
+          <div class="faq-answer">
+            Preocupación que no cede, evitación creciente, ataques de pánico, insomnio persistente, caída clara del
+            rendimiento, aislamiento, irritabilidad intensa o sensación de vivir en alerta continua. También cuando la
+            persona empieza a dejar actividades importantes por miedo, agotamiento o bloqueo. Pedir ayuda antes de tocar
+            fondo no es exagerar; es usar la detección temprana a favor del bienestar.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>28. ¿La evitación social siempre significa ansiedad social?</summary>
+          <div class="faq-answer">
+            No. También puede relacionarse con depresión, agotamiento, diferencias del neurodesarrollo, duelo,
+            inseguridad, trauma o simplemente una necesidad temporal de descanso. Lo que importa es analizar por qué la
+            persona evita, qué siente antes, durante y después, y cuánto interfiere ese patrón en su vida. El cribado de
+            ansiedad social puede ser útil, pero no debe leerse fuera del contexto más amplio.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>29. ¿Un ataque de pánico implica un trastorno de pánico?</summary>
+          <div class="faq-answer">
+            No necesariamente. Puede ocurrir en distintos contextos, incluidos estrés extremo, ansiedad social,
+            experiencias traumáticas o problemas físicos. Para pensar en un patrón más específico conviene revisar
+            repetición, miedo al siguiente episodio, cambios de conducta y evitación asociada. Por eso el test es solo el
+            comienzo: ayuda a ver si lo que pasó fue aislado o si ya se está construyendo un ciclo que merece atención
+            clínica más detallada.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>30. ¿Qué hábitos complementan una valoración de ansiedad?</summary>
+          <div class="faq-answer">
+            Registrar sueño, consumo de cafeína y alcohol, horarios, eventos estresantes, ejercicio, momentos de mayor
+            activación y situaciones evitadas. Ese seguimiento aporta contexto y ayuda a diferenciar ansiedad basal de
+            respuestas ligadas a hábitos o demandas puntuales. No sustituye la evaluación, pero mejora mucho la calidad
+            de la interpretación y permite detectar factores modificables desde el primer momento.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>31. ¿Qué orienta un cribado de depresión?</summary>
+          <div class="faq-answer">
+            Suele orientar sobre tristeza persistente, pérdida de interés, fatiga, sensación de vacío, culpa,
+            desesperanza, dificultad para concentrarse, cambios de sueño o apetito y reducción del funcionamiento. El
+            objetivo es medir si el desánimo ya dejó de ser una reacción pasajera y se ha convertido en una experiencia
+            que altera la vida diaria. Cuando el resultado sale elevado, conviene explorar duración, seguridad personal y
+            nivel de apoyo disponible.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>32. ¿Qué es burnout según la OMS y por qué no es lo mismo que depresión?</summary>
+          <div class="faq-answer">
+            La OMS lo describe como un fenómeno ocupacional relacionado con estrés crónico del trabajo que no se ha
+            gestionado con éxito. Se asocia a agotamiento, distanciamiento mental o cinismo respecto al trabajo y menor
+            sensación de eficacia. Puede coexistir con depresión o parecerse a ella, pero no es idéntico. Distinguirlos
+            importa porque la intervención puede necesitar cambios de contexto laboral, límites, descanso y también, en
+            algunos casos, evaluación clínica del estado de ánimo.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>33. ¿Cómo influye el estrés laboral en la concentración?</summary>
+          <div class="faq-answer">
+            El estrés crónico consume recursos cognitivos. La persona trabaja con la mente ocupada, cambia de tarea con
+            dificultad, comete más errores, olvida detalles y tolera peor la frustración. A veces parece un problema de
+            capacidad, cuando en realidad es un problema de saturación sostenida. Por eso un cribado de estrés o burnout
+            puede ser tan relevante como uno de atención cuando el malestar está muy ligado al trabajo.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>34. ¿Un cribado puede ayudarme a hablar con mi empresa o universidad?</summary>
+          <div class="faq-answer">
+            Sí, en el sentido de que te da lenguaje más claro para describir lo que ocurre. No funciona como certificado
+            oficial, pero sí como herramienta para estructurar una conversación sobre carga, bienestar, necesidad de
+            ajustes, tiempos o búsqueda de apoyo. Muchas personas llegan mejor preparadas a esas conversaciones cuando
+            antes pudieron nombrar si el problema principal parece estrés, ansiedad, agotamiento o dificultad ejecutiva.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>35. ¿Qué significa déficit ejecutivo?</summary>
+          <div class="faq-answer">
+            Se refiere a dificultades en funciones como planificar, iniciar tareas, organizar pasos, inhibir impulsos,
+            sostener foco, cambiar de estrategia y manejar información de forma activa. No es un insulto ni una forma de
+            decir que alguien “no sabe administrarse”; es una descripción funcional de procesos que pueden estar
+            debilitados por distintos motivos. Un cribado ayuda a identificar si ese patrón merece exploración más
+            específica.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>36. ¿Por qué la procrastinación no siempre es pereza?</summary>
+          <div class="faq-answer">
+            Porque detrás puede haber ansiedad, miedo al error, baja activación, sobrecarga cognitiva, perfeccionismo o
+            dificultad para iniciar tareas ambiguas. Muchas personas quieren avanzar, pero se bloquean justo antes de
+            empezar o sienten que solo pueden rendir bajo urgencia extrema. Ver la procrastinación como un patrón
+            multifactorial ayuda a intervenir mejor y evita respuestas moralizantes que solo empeoran la culpa.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>37. ¿Qué relación hay entre memoria de trabajo y planificación?</summary>
+          <div class="faq-answer">
+            La memoria de trabajo permite mantener activas metas, instrucciones y pasos intermedios mientras realizas una
+            tarea. Si falla, la planificación se resiente: cuesta seguir secuencias, recordar qué venía después o
+            sostener la estructura de una actividad compleja. Por eso problemas de memoria de trabajo suelen expresarse
+            como desorganización o tareas mal cerradas. Un cribado ejecutivo intenta detectar justamente esa conexión.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>38. ¿La desorganización puede tener varias causas?</summary>
+          <div class="faq-answer">
+            Sí. Puede vincularse con TDAH, ansiedad, depresión, agotamiento, hábitos débiles, contextos caóticos, falta
+            de sueño o una combinación de factores. Por eso no conviene sacar conclusiones rápidas basadas solo en el
+            síntoma “soy desordenado”. El valor del cribado está en ayudarte a decidir si la raíz parece más ejecutiva,
+            emocional, contextual o mixta. Esa distinción mejora mucho el tipo de ayuda que buscas después.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>39. ¿Qué evalúa un test de impulsividad?</summary>
+          <div class="faq-answer">
+            Suele evaluar rapidez para responder, dificultad para pausar, tendencia a interrumpir, decisiones
+            precipitadas, conductas de búsqueda inmediata de recompensa y consecuencias posteriores. La impulsividad puede
+            aparecer en TDAH, ansiedad, consumo, desregulación emocional u otros contextos, así que el cribado sirve para
+            medir el patrón, no para asignarle automáticamente una sola causa. Entender cuándo y cómo aparece es tan
+            importante como saber cuánto aparece.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>40. ¿La autoestima baja puede alterar cómo respondo un cuestionario?</summary>
+          <div class="faq-answer">
+            Sí. La autocrítica intensa puede hacer que una persona evalúe todo de forma más negativa, minimice logros o
+            sobredimensione errores. Eso no vuelve inútil el test, pero sí recuerda que toda autoevaluación pasa por el
+            filtro de la propia percepción. Por eso es tan valioso complementar resultados con ejemplos concretos,
+            funcionamiento real y, cuando se pueda, una conversación clínica que ayude a matizar la interpretación.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>41. ¿Qué papel tiene el sueño en la atención y la memoria?</summary>
+          <div class="faq-answer">
+            Un papel central. El sueño ayuda a consolidar aprendizaje, sostener atención, recuperar energía y pensar con
+            claridad. Cuando es insuficiente o de mala calidad, aumenta la distracción, cae la memoria de trabajo y se
+            vuelve más difícil inhibir impulsos o tolerar frustración. Por eso muchas quejas cognitivas se entienden
+            mejor cuando primero se revisa descanso, horarios y somnolencia diurna.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>42. ¿Dormir mal puede empeorar síntomas parecidos al TDAH?</summary>
+          <div class="faq-answer">
+            Sí. La falta de sueño puede imitar o intensificar problemas de foco, lentitud mental, irritabilidad y mala
+            regulación. Esto no significa que todo aparente TDAH sea solo sueño, sino que el descanso es una variable
+            crítica que no conviene ignorar. Un cribado responsable siempre gana valor cuando se interpreta junto a
+            hábitos de sueño, energía diurna y contexto general de estrés.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>43. ¿Cómo interpretar resultados mixtos en varias áreas?</summary>
+          <div class="faq-answer">
+            Los resultados mixtos son comunes. Una persona puede puntuar alto en ansiedad y funciones ejecutivas, o en
+            autoestima y depresión, o en sueño y atención. Eso no invalida el test; simplemente refleja que el malestar
+            real rara vez viene en compartimentos aislados. Lo útil es observar qué áreas parecen causa principal, cuáles
+            podrían ser consecuencia y cuáles merecen revisión paralela. A veces el mejor siguiente paso es priorizar la
+            que genera más deterioro inmediato.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>44. ¿Por qué la detección temprana es tan valiosa?</summary>
+          <div class="faq-answer">
+            Porque evita años de confusión, culpa y desgaste innecesario. Identificar señales a tiempo permite ajustar
+            hábitos, pedir apoyo, consultar antes de que el malestar escale y reducir el impacto sobre escuela, trabajo,
+            relaciones y autoestima. En infancia puede prevenir interpretaciones injustas; en adultez puede ayudar a
+            entender por qué ciertas dificultades se repiten desde hace años. Detectar temprano no es sobrediagnosticar:
+            es abrir la conversación antes de que el sufrimiento se cronifique.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>45. ¿Qué debo llevar a una consulta después de hacer un test?</summary>
+          <div class="faq-answer">
+            Lleva el resultado, ejemplos concretos de situaciones cotidianas, preguntas que te surgieron, información
+            sobre sueño, estrés, antecedentes y, si aplica, observaciones de familiares o docentes. También ayuda pensar
+            qué esperas de la consulta: claridad diagnóstica, estrategias, derivación, apoyo escolar o regulación del
+            malestar. Cuanto más específico sea el material que lleves, más útil será la conversación clínica.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>46. ¿Cómo hablar con un familiar que se resiste a buscar ayuda?</summary>
+          <div class="faq-answer">
+            Conviene hablar desde el impacto observable y el cuidado, no desde la acusación. En lugar de “tienes tal
+            problema”, suele funcionar mejor “he notado que esto te está costando y me preocupa”. Un test de cribado
+            puede servir como punto de partida si se presenta como herramienta de orientación, no como prueba irrefutable.
+            A veces lo más útil es invitar a explorar juntos, respetar tiempos y centrarse en el bienestar cotidiano.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>47. ¿Sirve este recurso para personas de distintos países hispanohablantes?</summary>
+          <div class="faq-answer">
+            Sí. Está pensado para un español claro y amplio, útil en diversos contextos de Latinoamérica, España y
+            comunidades hispanohablantes en otros territorios. Lo que puede variar es la ruta posterior: en algunos
+            lugares será más fácil llegar a psicología clínica, en otros a pediatría, medicina general u orientación
+            escolar. La información base, sin embargo, busca ser lo bastante universal como para orientar sin depender de
+            un sistema de salud específico.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>48. ¿Qué señales requieren ayuda urgente?</summary>
+          <div class="faq-answer">
+            Ideas de hacerse daño o dañar a otros, pérdida marcada de control, desorientación severa, incapacidad para
+            cuidarse, crisis muy intensas, consumo problemático con riesgo o cualquier situación donde la seguridad esté
+            comprometida. En esos casos no conviene quedarse comparando tests ni buscando más contenido. Lo adecuado es
+            contactar servicios de emergencia, líneas de crisis o atención médica inmediata según el país y el contexto.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>49. ¿Cómo se elaboran buenos cuestionarios de cribado?</summary>
+          <div class="faq-answer">
+            Se basan en marcos clínicos conocidos, revisión de síntomas y funcionamiento, redacción clara, validación de
+            preguntas y uso prudente de resultados. Un buen cuestionario evita prometer certezas imposibles, delimita su
+            alcance y propone siguientes pasos adecuados. Su calidad no se mide solo por la cantidad de preguntas, sino
+            por la pertinencia de lo que explora y por la honestidad con la que reconoce sus límites.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>50. ¿Cuál es la mejor manera de usar esta home del sitio?</summary>
+          <div class="faq-answer">
+            Úsala como mapa y como contexto. Lee primero la sección general para entender qué es un cribado, identifica
+            luego el área que más se parece a tu situación, revisa las tablas y preguntas frecuentes, y solo después pasa
+            a una evaluación específica. De esa manera el test deja de ser un clic aislado y se convierte en parte de un
+            proceso más inteligente. Ese es el corazón de esta página: educar, orientar y ayudarte a tomar mejores
+            decisiones antes de cualquier interpretación.
+          </div>
+        </details>
+      </section>
+
+      <footer class="footer-shell">
+        <p class="section-kicker">Fuentes base y cierre</p>
+        <h2 class="section-title">Referencias oficiales para orientar el contenido y un último recordatorio ético.</h2>
+        <p>
+          Esta página está escrita con un enfoque de salud digital responsable y se apoya en lineamientos y materiales
+          informativos de instituciones reconocidas para comprender TDAH, ansiedad, depresión, salud mental infantil,
+          burnout y sueño. Aun así, el valor principal del sitio no está en reemplazar esos recursos ni en competir con
+          una consulta profesional, sino en traducir información compleja a una experiencia de orientación más clara para
+          el público hispanohablante.
+        </p>
+        <ul class="reference-list">
+          <li><a href="https://www.nimh.nih.gov/health/publications/attention-deficit-hyperactivity-disorder-what-you-need-to-know" target="_blank" rel="noreferrer">NIMH: guía sobre TDAH en niños, adolescentes y adultos</a></li>
+          <li><a href="https://www.nimh.nih.gov/health/topics/anxiety-disorders" target="_blank" rel="noreferrer">NIMH: trastornos de ansiedad</a></li>
+          <li><a href="https://www.nimh.nih.gov/health/publications/depression" target="_blank" rel="noreferrer">NIMH: depresión</a></li>
+          <li><a href="https://www.nimh.nih.gov/health/publications/children-and-mental-health" target="_blank" rel="noreferrer">NIMH: cuándo los niños pueden beneficiarse de una evaluación</a></li>
+          <li><a href="https://medlineplus.gov/lab-tests/autism-spectrum-disorder-asd-screening/" target="_blank" rel="noreferrer">MedlinePlus: cribado de TEA y sus límites diagnósticos</a></li>
+          <li><a href="https://medlineplus.gov/autismspectrumdisorder.html" target="_blank" rel="noreferrer">MedlinePlus: información general sobre autismo</a></li>
+          <li><a href="https://www.who.int/standards/classifications/frequently-asked-questions/burn-out-an-occupational-phenomenon" target="_blank" rel="noreferrer">OMS: burnout como fenómeno ocupacional</a></li>
+          <li><a href="https://www.nhlbi.nih.gov/health/sleep/why-sleep-important" target="_blank" rel="noreferrer">NHLBI: por qué el sueño es importante</a></li>
+          <li><a href="https://www.nhlbi.nih.gov/health/sleep-deprivation/health-effects" target="_blank" rel="noreferrer">NHLBI: efectos de la privación de sueño sobre la salud y el funcionamiento</a></li>
+        </ul>
+        <div class="legal-note">
+          <strong>Uso responsable final</strong>
+          <p>
+            Los resultados representan únicamente un cribado orientativo y nunca sustituyen una evaluación realizada por
+            un profesional de la salud mental. Si existe riesgo inmediato o malestar intenso, busca ayuda urgente en los
+            servicios disponibles de tu localidad.
+          </p>
+        </div>
+      </footer>
+    </div>
+  </main>
+</body>
+</html>
