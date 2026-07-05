@@ -1,13 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
+<html lang="es"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Tests Neurodivergentes Online | Guía y test de cribado</title>
-  <meta
-    name="description"
-    content="Tests Neurodivergentes Online con evaluaciones gratuitas de cribado psicológico y neuropsicológico para adultos, adolescentes, niños, padres y educadores."
-  >
+  <meta name="description" content="Tests Neurodivergentes Online con evaluaciones gratuitas de cribado psicológico y neuropsicológico para adultos, adolescentes, niños, padres y educadores.">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <link rel="canonical" href="https://testneurodivergentes.com/">
   <link rel="sitemap" type="application/xml" title="Sitemap" href="https://testneurodivergentes.com/sitemap.xml">
@@ -15,20 +11,14 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Tests Neurodivergentes Online">
   <meta property="og:title" content="Tests Neurodivergentes Online | Guía y test de cribado">
-  <meta
-    property="og:description"
-    content="Guía pilar en español sobre test psicológicos online de cribado: TDAH, TEA, ansiedad, depresión, burnout, sueño, autoestima y funciones ejecutivas."
-  >
+  <meta property="og:description" content="Guía pilar en español sobre test psicológicos online de cribado: TDAH, TEA, ansiedad, depresión, burnout, sueño, autoestima y funciones ejecutivas.">
   <meta property="og:url" content="https://testneurodivergentes.com/">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Tests Neurodivergentes Online | Guía y test de cribado">
-  <meta
-    name="twitter:description"
-    content="Evaluaciones gratuitas de cribado psicológico y neuropsicológico para adultos, adolescentes, niños, familias, docentes y profesionales."
-  >
+  <meta name="twitter:description" content="Evaluaciones gratuitas de cribado psicológico y neuropsicológico para adultos, adolescentes, niños, familias, docentes y profesionales.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
   <style>
     :root {
       color-scheme: light;
@@ -75,10 +65,6 @@
       overflow-x: hidden;
     }
 
-    body.menu-open {
-      overflow: hidden;
-    }
-
     a {
       color: inherit;
     }
@@ -104,8 +90,6 @@
     th,
     summary {
       font-size: 1rem;
-      overflow-wrap: anywhere;
-      hyphens: auto;
     }
 
     .skip-link {
@@ -141,10 +125,10 @@
 
     .header-inner {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
+      grid-template-columns: minmax(0, 1fr);
       align-items: start;
       gap: 0.85rem 1rem;
-      padding: 0.76rem 0 0.9rem;
+      padding: 0.85rem 0 1rem;
     }
 
     .brand {
@@ -157,14 +141,10 @@
     }
 
     .brand-mark {
-      display: grid;
-      grid-template-columns: auto minmax(0, 1fr);
-      grid-template-areas:
-        "dot title"
-        "dot sub";
-      align-items: start;
-      column-gap: 0.7rem;
-      row-gap: 0.02rem;
+      display: inline-flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.55rem;
       font-weight: 800;
       font-size: clamp(0.96rem, 3.9vw, 1.12rem);
       letter-spacing: 0.02em;
@@ -173,30 +153,11 @@
 
     .brand-mark::before {
       content: "";
-      grid-area: dot;
       width: 0.9rem;
       height: 0.9rem;
       border-radius: 50%;
       background: linear-gradient(135deg, var(--accent), #38bdf8);
       box-shadow: 0 0 0 0.28rem rgba(59, 130, 246, 0.14);
-      margin-top: 0.18rem;
-    }
-
-    .brand-line {
-      grid-area: title;
-      display: block;
-      min-width: 0;
-    }
-
-    .brand-line-sub {
-      grid-area: sub;
-      display: block;
-      min-width: 0;
-      font-size: 0.84em;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
     }
 
     .brand-note {
@@ -232,8 +193,7 @@
       display: block;
       position: relative;
       margin-left: 0;
-      justify-self: end;
-      z-index: 30;
+      justify-self: start;
     }
 
     .mobile-menu summary {
@@ -242,21 +202,19 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 2.75rem;
-      height: 2.75rem;
-      min-height: 2.75rem;
-      padding: 0;
-      border-radius: 0;
-      background: transparent;
-      border: 0;
+      gap: 0.75rem;
+      min-height: 3.15rem;
+      padding: 0.9rem 1rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.96);
+      border: 1px solid var(--line);
       font-weight: 700;
-      box-shadow: none;
-      position: relative;
+      box-shadow: var(--shadow);
     }
 
     .mobile-menu[open] summary {
-      background: transparent;
-      border-color: transparent;
+      background: rgba(59, 130, 246, 0.08);
+      border-color: rgba(59, 130, 246, 0.22);
     }
 
     .mobile-menu summary::-webkit-details-marker {
@@ -265,8 +223,8 @@
 
     .mobile-menu summary::before {
       content: "";
-      width: 1.15rem;
-      height: 0.92rem;
+      width: 1rem;
+      height: 0.8rem;
       flex: 0 0 auto;
       background:
         linear-gradient(currentColor, currentColor) 0 0 / 100% 2px no-repeat,
@@ -275,68 +233,32 @@
       opacity: 0.85;
     }
 
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
-    }
-
-    .mobile-menu[open] {
-      position: fixed;
-      inset: 0;
-      z-index: 60;
-    }
-
-    .mobile-menu[open] summary {
-      position: fixed;
-      top: calc(1rem + env(safe-area-inset-top, 0px));
-      right: 5%;
-      z-index: 62;
-    }
-
     .menu-panel {
-      position: fixed;
-      inset: 0;
-      width: 100vw;
-      min-height: 100dvh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 0.3rem;
-      padding:
-        calc(6.5rem + env(safe-area-inset-top, 0px))
-        5%
-        calc(2rem + env(safe-area-inset-bottom, 0px));
-      background:
-        radial-gradient(circle at top left, rgba(59, 130, 246, 0.1), transparent 28%),
-        linear-gradient(180deg, #ffffff, #f8fafc);
+      position: absolute;
+      left: 0;
+      top: calc(100% + 0.6rem);
+      width: min(22rem, calc(100vw - 1rem));
+      display: grid;
+      gap: 0.55rem;
+      padding: 0.85rem;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.98);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
     }
 
     .menu-panel a {
-      display: flex;
+      display: inline-flex;
       align-items: center;
       justify-content: flex-start;
-      width: 100%;
-      min-height: 3.6rem;
-      padding: 0.95rem 0;
-      border-radius: 0;
-      background: transparent;
-      border: 0;
-      border-bottom: 1px solid rgba(15, 23, 42, 0.1);
-      color: var(--ink);
-      font-size: clamp(1.18rem, 5vw, 1.55rem);
+      min-height: 3rem;
+      padding: 0.8rem 1rem;
+      border-radius: 999px;
+      background: var(--bg-soft);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      color: var(--muted);
       font-weight: 700;
       text-align: left;
-    }
-
-    .menu-panel a:last-child {
-      border-bottom: 0;
     }
 
     .hero {
@@ -366,7 +288,6 @@
       margin-top: 1rem;
       display: grid;
       gap: 1rem;
-      grid-template-columns: minmax(0, 1fr);
     }
 
     .hero-panel,
@@ -496,7 +417,6 @@
     .metrics {
       display: grid;
       gap: 0.85rem;
-      grid-template-columns: minmax(0, 1fr);
     }
 
     .metric-card,
@@ -531,7 +451,6 @@
       display: grid;
       gap: 1rem;
       padding: 0 0 1rem;
-      grid-template-columns: minmax(0, 1fr);
     }
 
     .grid-two,
@@ -541,14 +460,12 @@
     .faq-grid {
       display: grid;
       gap: 1rem;
-      grid-template-columns: minmax(0, 1fr);
     }
 
     .card {
       padding: 1.45rem 0 1.7rem;
       border-radius: 0;
       border-bottom: 1px solid rgba(148, 163, 184, 0.12);
-      min-width: 0;
     }
 
     .card.route-directory {
@@ -606,8 +523,6 @@
 
     .table-wrap {
       overflow-x: auto;
-      width: 100%;
-      max-width: 100%;
       border-radius: 0;
       margin-top: 1rem;
     }
@@ -698,7 +613,6 @@
     .topic-section {
       display: grid;
       gap: 1rem;
-      grid-template-columns: minmax(0, 1fr);
     }
 
     .topic-slab {
@@ -841,8 +755,21 @@
     }
 
     @media (min-width: 640px) {
+      .header-inner {
+        grid-template-columns: minmax(0, 1fr) auto;
+      }
+
       .brand {
         max-width: min(24rem, calc(100vw - 9rem));
+      }
+
+      .mobile-menu {
+        justify-self: end;
+      }
+
+      .menu-panel {
+        left: auto;
+        right: 0;
       }
 
       .brand-note {
@@ -1129,10 +1056,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="#inicio">
-        <span class="brand-mark">
-          <span class="brand-line">Tests Neurodivergentes</span>
-          <span class="brand-line-sub">Online</span>
-        </span>
+        <span class="brand-mark">Tests Neurodivergentes Online</span>
         <span class="brand-note">Guía clara para entender señales, responder test y decidir próximos pasos</span>
       </a>
 
@@ -1149,7 +1073,7 @@
       </nav>
 
       <details class="mobile-menu">
-        <summary aria-label="Abrir menú"><span class="sr-only">Menú</span></summary>
+        <summary>Menú</summary>
         <nav class="menu-panel" aria-label="Menú móvil">
           <a href="#inicio">Inicio</a>
           <a href="#neurodesarrollo">Neurodesarrollo</a>
@@ -1168,13 +1092,13 @@
   <main id="contenido">
     <section class="hero" id="inicio">
       <div class="container">
-        <nav class="breadcrumb" aria-label="Breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
-          <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <nav class="breadcrumb" aria-label="Breadcrumb" itemscope="" itemtype="https://schema.org/BreadcrumbList">
+          <span itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
             <a itemprop="item" href="https://testneurodivergentes.com/"><span itemprop="name">Inicio</span></a>
             <meta itemprop="position" content="1">
           </span>
           <span aria-hidden="true">/</span>
-          <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <span itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
             <span itemprop="name">Tests Neurodivergentes Online</span>
             <meta itemprop="position" content="2">
           </span>
@@ -2933,37 +2857,18 @@
     const mobileMenu = document.querySelector(".mobile-menu");
 
     if (mobileMenu) {
-      const mobileMenuTrigger = mobileMenu.querySelector("summary");
-
-      const syncMenuState = () => {
-        const isOpen = mobileMenu.open;
-        document.body.classList.toggle("menu-open", isOpen);
-        mobileMenuTrigger.setAttribute("aria-label", isOpen ? "Cerrar menú" : "Abrir menú");
-      };
-
       const closeMenu = () => {
         mobileMenu.open = false;
-        syncMenuState();
       };
 
       mobileMenu.querySelectorAll("a").forEach((link) => {
         link.addEventListener("click", closeMenu);
       });
 
-      mobileMenu.addEventListener("toggle", syncMenuState);
-
-      document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape" && mobileMenu.open) {
-          closeMenu();
-        }
-      });
-
       const desktopMedia = window.matchMedia("(min-width: 1280px)");
       const syncMenu = () => {
         if (desktopMedia.matches) {
           closeMenu();
-        } else {
-          syncMenuState();
         }
       };
 
@@ -2976,5 +2881,30 @@
       }
     }
   </script>
-</body>
-</html>
+<script>
+window.addEventListener("load", () => {
+  const rows = [];
+  rows.push(`innerWidth=${window.innerWidth}`);
+  rows.push(`scrollWidth=${document.documentElement.scrollWidth}`);
+  const nodes = [...document.querySelectorAll("body *")];
+  for (const el of nodes) {
+    const rect = el.getBoundingClientRect();
+    if (rect.right > window.innerWidth + 1 || rect.left < -1) {
+      rows.push(`${el.tagName.toLowerCase()}.${(el.className || '').toString().replace(/\s+/g, '.')}`.replace(/\.$/, '') + ` | left=${rect.left.toFixed(1)} right=${rect.right.toFixed(1)} width=${rect.width.toFixed(1)} text=${(el.textContent || '').trim().slice(0, 80)}`);
+    }
+  }
+  const pre = document.createElement("pre");
+  pre.id = "debug-overflow";
+  pre.style.whiteSpace = "pre-wrap";
+  pre.style.font = "14px/1.4 monospace";
+  pre.style.padding = "12px";
+  pre.style.margin = "0";
+  pre.style.background = "#fff3cd";
+  pre.style.color = "#111";
+  pre.textContent = rows.join("
+");
+  document.body.prepend(pre);
+});
+</script>
+
+</body></html>
