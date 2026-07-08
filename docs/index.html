@@ -215,17 +215,142 @@
     }
 
     .desktop-nav a,
+    .desktop-nav summary,
     .menu-panel a,
+    .menu-panel summary,
     .chip-link,
     .topic-link {
       text-decoration: none;
     }
 
     .desktop-nav a:hover,
+    .desktop-nav summary:hover,
     .menu-panel a:hover,
+    .menu-panel summary:hover,
     .chip-link:hover,
     .topic-link:hover {
       color: var(--accent-dark);
+    }
+
+    .nav-group,
+    .menu-group {
+      position: relative;
+    }
+
+    .nav-trigger,
+    .menu-trigger {
+      list-style: none;
+      cursor: pointer;
+    }
+
+    .nav-trigger::-webkit-details-marker,
+    .menu-trigger::-webkit-details-marker {
+      display: none;
+    }
+
+    .nav-trigger {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .menu-trigger {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      min-height: 3.6rem;
+      padding: 0.95rem 0;
+      color: var(--ink);
+      font-size: clamp(1.18rem, 5vw, 1.55rem);
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .nav-arrow,
+    .menu-arrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-dark);
+      font-size: 1.22em;
+      animation: arrowBlink 1.15s ease-in-out infinite;
+      transform-origin: center;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .nav-group[open] .nav-arrow,
+    .menu-group[open] .menu-arrow {
+      animation: none;
+      transform: rotate(180deg);
+      opacity: 0.92;
+    }
+
+    .nav-submenu {
+      display: grid;
+      gap: 0.35rem;
+      padding: 0.55rem;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.98);
+      border: 1px solid rgba(15, 23, 42, 0.1);
+      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+    }
+
+    .nav-submenu a {
+      display: flex;
+      align-items: center;
+      min-height: auto;
+      padding: 0.82rem 0.95rem;
+      border-radius: 14px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 700;
+      line-height: 1.25;
+      background: transparent;
+    }
+
+    .nav-submenu a:hover,
+    .nav-submenu a:focus-visible {
+      background: rgba(59, 130, 246, 0.1);
+      color: var(--accent-dark);
+    }
+
+    .menu-submenu {
+      display: grid;
+      gap: 0;
+      padding: 0 0 0.45rem 1rem;
+    }
+
+    .menu-group {
+      border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+    }
+
+    .menu-group[open] .menu-trigger {
+      color: var(--accent-dark);
+    }
+
+    .menu-submenu a {
+      min-height: auto;
+      padding: 0.7rem 0;
+      border-bottom: 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 4vw, 1.15rem);
+      font-weight: 600;
+    }
+
+    .menu-submenu a:last-child {
+      border-bottom: 0;
+    }
+
+    @keyframes arrowBlink {
+      0%,
+      100% {
+        opacity: 0.42;
+      }
+
+      50% {
+        opacity: 1;
+      }
     }
 
     .mobile-menu {
@@ -236,7 +361,7 @@
       z-index: 30;
     }
 
-    .mobile-menu summary {
+    .mobile-menu > summary {
       list-style: none;
       cursor: pointer;
       display: inline-flex;
@@ -254,16 +379,16 @@
       position: relative;
     }
 
-    .mobile-menu[open] summary {
+    .mobile-menu[open] > summary {
       background: transparent;
       border-color: transparent;
     }
 
-    .mobile-menu summary::-webkit-details-marker {
+    .mobile-menu > summary::-webkit-details-marker {
       display: none;
     }
 
-    .mobile-menu summary::before {
+    .mobile-menu > summary::before {
       content: "";
       width: 1.15rem;
       height: 0.92rem;
@@ -293,7 +418,7 @@
       z-index: 60;
     }
 
-    .mobile-menu[open] summary {
+    .mobile-menu[open] > summary {
       position: fixed;
       top: calc(1rem + env(safe-area-inset-top, 0px));
       right: 5%;
@@ -340,7 +465,7 @@
     }
 
     .hero {
-      padding: 1.4rem 0 1.25rem;
+      padding: 0;
     }
 
     .breadcrumb {
@@ -363,10 +488,11 @@
     }
 
     .hero-shell {
-      margin-top: 1rem;
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: minmax(0, 1fr);
+      margin-top: 0;
+      display: block;
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
     }
 
     .hero-panel,
@@ -400,12 +526,57 @@
       opacity: 0.58;
     }
 
+    .hero-panel.hero-feature {
+      padding: clamp(0.35rem, 1.4vw, 0.9rem) 10% clamp(2rem, 5vw, 3.75rem);
+      min-height: clamp(34rem, 82vh, 52rem);
+    }
+
+    .hero-panel.hero-feature::before {
+      inset: -6%;
+      background: url("./assets/test-gratis-familia.png") center center / cover no-repeat;
+      filter: blur(24px);
+      transform: scale(1.14);
+      opacity: 0.28;
+    }
+
+    .hero-panel.hero-feature::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.97) 0%, rgba(255, 255, 255, 0.93) 34%, rgba(255, 255, 255, 0.82) 62%, rgba(255, 255, 255, 0.9) 100%),
+        radial-gradient(circle at 12% 18%, rgba(59, 130, 246, 0.14), transparent 20%),
+        radial-gradient(circle at 86% 24%, rgba(245, 158, 11, 0.12), transparent 18%);
+      pointer-events: none;
+    }
+
     .hero-content {
       position: relative;
       z-index: 1;
       display: grid;
       gap: 0.95rem;
       min-width: 0;
+    }
+
+    .hero-content.hero-content-wide {
+      width: 100%;
+      max-width: none;
+      margin: 0;
+      gap: 1.1rem;
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-areas:
+        "copy"
+        "findings"
+        "visual"
+        "callout";
+      align-items: start;
+    }
+
+    .hero-copy {
+      grid-area: copy;
+      display: grid;
+      gap: 1rem;
+      max-width: 72ch;
     }
 
     .eyebrow,
@@ -429,12 +600,19 @@
 
     .hero h1 {
       font-size: clamp(1.95rem, 10vw, 4.9rem);
-      max-width: 8.5ch;
-      overflow-wrap: anywhere;
+      max-width: 18ch;
+      overflow-wrap: normal;
+      word-break: normal;
+      hyphens: none;
+      text-wrap: balance;
+    }
+
+    .hero-title-nowrap {
+      white-space: nowrap;
     }
 
     .hero-lead {
-      max-width: 70ch;
+      max-width: 72ch;
       font-size: 1rem;
       color: var(--muted);
     }
@@ -499,6 +677,85 @@
       grid-template-columns: minmax(0, 1fr);
     }
 
+    .hero-findings {
+      grid-area: findings;
+      margin-top: 0.4rem;
+      display: grid;
+      gap: 1rem;
+      width: 100%;
+      margin-inline: auto;
+      justify-items: center;
+    }
+
+    .hero-findings > .tag {
+      justify-self: center;
+    }
+
+    .hero-metrics {
+      width: 100%;
+    }
+
+    .hero-visual {
+      grid-area: visual;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 0;
+      padding-top: 0.5rem;
+    }
+
+    .hero-visual-frame {
+      width: min(100%, 27rem);
+      aspect-ratio: 1 / 1;
+      max-height: min(72vw, 30rem);
+      border-radius: 50%;
+      overflow: hidden;
+      box-sizing: border-box;
+      padding: clamp(0.8rem, 2vw, 1.15rem);
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.99) 0%, rgba(255, 255, 255, 0.95) 62%, rgba(255, 255, 255, 0.52) 84%, rgba(255, 255, 255, 0.16) 100%);
+      filter:
+        drop-shadow(0 0 18px rgba(255, 255, 255, 0.98))
+        drop-shadow(0 0 42px rgba(255, 255, 255, 0.92))
+        drop-shadow(0 24px 40px rgba(37, 99, 235, 0.14));
+    }
+
+    .hero-visual-image {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+      border-radius: 50%;
+      -webkit-mask-image: radial-gradient(circle at center, #000 74%, rgba(0, 0, 0, 0.88) 84%, rgba(0, 0, 0, 0.58) 91%, rgba(0, 0, 0, 0.24) 96%, transparent 100%);
+      mask-image: radial-gradient(circle at center, #000 74%, rgba(0, 0, 0, 0.88) 84%, rgba(0, 0, 0, 0.58) 91%, rgba(0, 0, 0, 0.24) 96%, transparent 100%);
+    }
+
+    .hero-metrics .metric-card {
+      padding: 1.15rem 1.15rem 1.25rem;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.52);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+      backdrop-filter: blur(14px);
+    }
+
+    .hero-metrics .metric-card strong {
+      font-size: 1.12rem;
+    }
+
+    .hero-callout {
+      grid-area: callout;
+      margin-top: 0.25rem;
+      width: 100%;
+      max-width: 100%;
+      margin-inline: auto;
+      padding: 1rem 1.15rem;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.62);
+      border: 0;
+      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.06);
+      backdrop-filter: blur(12px);
+    }
+
     .metric-card,
     .audience-card,
     .route-card,
@@ -560,6 +817,10 @@
       border-bottom: 0;
     }
 
+    .intro-grid > .card {
+      border-bottom: 0;
+    }
+
     .section-kicker {
       color: var(--accent-dark);
       font-size: 0.84rem;
@@ -589,6 +850,12 @@
     .callout strong {
       display: block;
       margin-bottom: 0.35rem;
+    }
+
+    .summary-callout {
+      width: min(100%, 58rem);
+      margin-inline: auto;
+      text-align: center;
     }
 
     .content-list,
@@ -699,6 +966,21 @@
       display: grid;
       gap: 1rem;
       grid-template-columns: minmax(0, 1fr);
+      width: 100%;
+      max-width: 74rem;
+      margin-inline: auto;
+    }
+
+    #neurodesarrollo > .section-kicker,
+    #neurodesarrollo > .section-title,
+    #neurodesarrollo > .section-intro,
+    #neurodesarrollo > .callout {
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    #neurodesarrollo > .callout {
+      width: min(100%, 46rem);
     }
 
     .topic-slab {
@@ -816,10 +1098,16 @@
     }
 
     .footer-shell {
-      margin: 1.2rem 0 2.4rem;
+      margin: 1.2rem auto 2.4rem;
       border-radius: 0;
       padding: 1.4rem 0 0;
       border-top: 1px solid rgba(148, 163, 184, 0.12);
+    }
+
+    .footer-shell .section-title {
+      max-width: none;
+      text-align: center;
+      margin-inline: auto;
     }
 
     .footer-shell p,
@@ -850,7 +1138,7 @@
       }
 
       .hero {
-        padding: 1.85rem 0 1.7rem;
+        padding: 0;
       }
 
       .hero-panel,
@@ -881,6 +1169,14 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
+      .intro-grid .summary-callout {
+        grid-column: 1 / -1;
+      }
+
+      .hero-metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
       .grid-three,
       .faq-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -893,9 +1189,43 @@
     }
 
     @media (min-width: 1024px) {
+      .footer-shell {
+        width: min(60vw, 100%);
+      }
+
+      .reference-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.85rem 2rem;
+      }
+
+      .reference-list li {
+        margin-top: 0;
+      }
+
       .hero-shell {
-        grid-template-columns: minmax(0, 1.3fr) minmax(320px, 0.7fr);
-        align-items: stretch;
+        display: block;
+      }
+
+      .hero-content.hero-content-wide {
+        column-gap: clamp(1.75rem, 4vw, 4.75rem);
+        grid-template-columns: minmax(0, 0.95fr) minmax(300px, 0.78fr);
+        grid-template-areas:
+          "copy visual"
+          "findings findings"
+          "callout callout";
+      }
+
+      .hero-visual {
+        justify-content: center;
+        align-self: start;
+        padding-top: clamp(0.5rem, 2vw, 1.5rem);
+      }
+
+      .hero-visual-frame {
+        width: min(100%, 34rem);
+        max-height: min(70vh, 34rem);
+        transform: translateY(10%);
       }
 
       .section-stack {
@@ -939,20 +1269,48 @@
         padding: 0.78rem 1rem;
         border-radius: 999px;
         background: rgba(255, 255, 255, 0.96);
-        border: 1px solid rgba(15, 23, 42, 0.10);
+        border: 0;
         color: var(--muted);
         font-size: 0.9rem;
         font-weight: 700;
         line-height: 1;
-        transition: border-color 0.18s ease, background 0.18s ease, color 0.18s ease, transform 0.18s ease;
+        transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
+      }
+
+      .nav-trigger {
+        flex: 0 0 auto;
+        padding: 0.78rem 1rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.96);
+        border: 0;
+        color: var(--muted);
+        font-size: 0.9rem;
+        font-weight: 700;
+        line-height: 1;
+        transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
       }
 
       .desktop-nav a:hover,
-      .desktop-nav a:focus-visible {
+      .desktop-nav a:focus-visible,
+      .nav-trigger:hover,
+      .nav-trigger:focus-visible,
+      .nav-group[open] .nav-trigger {
         background: rgba(59, 130, 246, 0.12);
-        border-color: rgba(59, 130, 246, 0.22);
         color: var(--accent-dark);
         transform: translateY(-1px);
+      }
+
+      .nav-group {
+        display: flex;
+        align-items: center;
+      }
+
+      .nav-submenu {
+        position: absolute;
+        top: calc(100% + 0.65rem);
+        right: 0;
+        min-width: 18rem;
+        z-index: 35;
       }
 
       .mobile-menu {
@@ -961,6 +1319,10 @@
 
       .grid-three,
       .faq-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .hero-metrics {
         grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
@@ -975,8 +1337,13 @@
     }
 
     @media (min-width: 1440px) {
-      .hero-panel:first-child {
-        padding-right: 2.4rem;
+      .hero-panel.hero-feature {
+        padding-inline: 10%;
+      }
+
+      .hero-visual-frame {
+        width: min(100%, 38rem);
+        max-height: min(72vh, 38rem);
       }
     }
   </style>
@@ -1133,33 +1500,48 @@
           <span class="brand-line">Tests Neurodivergentes</span>
           <span class="brand-line-sub">Online</span>
         </span>
-        <span class="brand-note">Guía clara para entender señales, responder test y decidir próximos pasos</span>
       </a>
 
       <nav class="desktop-nav" aria-label="Navegación principal">
         <a href="#inicio">Inicio</a>
-        <a href="#neurodesarrollo">Neurodesarrollo</a>
-        <a href="#ansiedad">Ansiedad</a>
-        <a href="#estado-animo">Estado de ánimo</a>
-        <a href="#funciones-ejecutivas">Funciones ejecutivas</a>
-        <a href="#sueno">Sueño</a>
+        <details class="nav-group">
+          <summary class="nav-trigger">
+            <span>Factores importantes</span>
+            <span class="nav-arrow" aria-hidden="true">▾</span>
+          </summary>
+          <div class="nav-submenu">
+            <a href="#neurodesarrollo">Neurodesarrollo</a>
+            <a href="#ansiedad">Ansiedad</a>
+            <a href="#estado-animo">Estado de ánimo</a>
+            <a href="#funciones-ejecutivas">Funciones ejecutivas</a>
+            <a href="#sueno">Sueño</a>
+          </div>
+        </details>
         <a href="#quienes-somos">Quiénes somos</a>
         <a href="#proximos-pasos">Próximos pasos</a>
-        <a href="#evaluaciones">Evaluaciones</a>
+        <a href="./test-pscicologicos-gratuitos.html">Evaluaciones</a>
       </nav>
 
       <details class="mobile-menu">
         <summary aria-label="Abrir menú"><span class="sr-only">Menú</span></summary>
         <nav class="menu-panel" aria-label="Menú móvil">
           <a href="#inicio">Inicio</a>
-          <a href="#neurodesarrollo">Neurodesarrollo</a>
-          <a href="#ansiedad">Ansiedad</a>
-          <a href="#estado-animo">Estado de ánimo</a>
-          <a href="#funciones-ejecutivas">Funciones ejecutivas</a>
-          <a href="#sueno">Sueño</a>
+          <details class="menu-group">
+            <summary class="menu-trigger">
+              <span>Factores importantes</span>
+              <span class="menu-arrow" aria-hidden="true">▾</span>
+            </summary>
+            <div class="menu-submenu">
+              <a href="#neurodesarrollo">Neurodesarrollo</a>
+              <a href="#ansiedad">Ansiedad</a>
+              <a href="#estado-animo">Estado de ánimo</a>
+              <a href="#funciones-ejecutivas">Funciones ejecutivas</a>
+              <a href="#sueno">Sueño</a>
+            </div>
+          </details>
           <a href="#quienes-somos">Quiénes somos</a>
           <a href="#proximos-pasos">Próximos pasos</a>
-          <a href="#evaluaciones">Evaluaciones</a>
+          <a href="./test-pscicologicos-gratuitos.html">Evaluaciones</a>
         </nav>
       </details>
     </div>
@@ -1168,40 +1550,66 @@
   <main id="contenido">
     <section class="hero" id="inicio">
       <div class="container">
-        <nav class="breadcrumb" aria-label="Breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
-          <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <a itemprop="item" href="https://testneurodivergentes.com/"><span itemprop="name">Inicio</span></a>
-            <meta itemprop="position" content="1">
-          </span>
-          <span aria-hidden="true">/</span>
-          <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <span itemprop="name">Tests Neurodivergentes Online</span>
-            <meta itemprop="position" content="2">
-          </span>
-        </nav>
-
         <div class="hero-shell">
-          <article class="hero-panel">
-            <div class="hero-content">
-              <span class="eyebrow">Guía en español para tests y resultados</span>
-              <h1>Tests Neurodivergentes Online</h1>
-              <p class="hero-lead">
-                Tests gratuitos de cribado psicológico y neuropsicológico para adultos, adolescentes, niños,
-                padres y educadores. Esta página reúne información amplia sobre test psicológicos online, TDAH,
-                autismo, ansiedad, depresión, burnout, funciones ejecutivas, autoestima, sueño, impulsividad y
-                regulación emocional para que la persona comprenda mejor sus señales antes de decidir el siguiente paso.
-              </p>
-              <p class="hero-lead">
-                No estás entrando a una landing breve ni a una colección vacía de formularios. Estás en el mapa
-                principal del proyecto: una guía extensa diseñada para responder dudas frecuentes, explicar qué es un
-                test de cribado, aclarar sus límites, ordenar las áreas de evaluación y ayudarte a usar los resultados
-                con criterio, calma y responsabilidad.
-              </p>
-              <div class="hero-actions">
-                <a class="button" href="#evaluaciones">Comenzar evaluación</a>
-                <a class="button-secondary" href="#faq">Ver preguntas frecuentes</a>
+          <article class="hero-panel hero-feature">
+            <div class="hero-content hero-content-wide">
+              <div class="hero-copy">
+                <span class="eyebrow">Guía en español para tests y resultados</span>
+                <h1>Tests <span class="hero-title-nowrap">Neurodivergentes</span> Online</h1>
+                <p class="hero-lead">
+                  Tests gratuitos de cribado psicológico y neuropsicológico para adultos, adolescentes, niños,
+                  padres y educadores. Esta página reúne información amplia sobre test psicológicos online, TDAH,
+                  autismo, ansiedad, depresión, burnout, funciones ejecutivas, autoestima, sueño, impulsividad y
+                  regulación emocional para que la persona comprenda mejor sus señales antes de decidir el siguiente paso.
+                </p>
+                <p class="hero-lead">
+                  No estás entrando a una landing breve ni a una colección vacía de formularios. Estás en el mapa
+                  principal del proyecto: una guía extensa diseñada para responder dudas frecuentes, explicar qué es un
+                  test de cribado, aclarar sus límites, ordenar las áreas de evaluación y ayudarte a usar los resultados
+                  con criterio, calma y responsabilidad.
+                </p>
+                <div class="hero-actions">
+                  <a class="button" href="./test-pscicologicos-gratuitos.html">Comenzar evaluación</a>
+                  <a class="button-secondary" href="#faq">Ver preguntas frecuentes</a>
+                </div>
               </div>
-              <div class="callout">
+
+              <div class="hero-findings">
+                <span class="tag">Qué vas a encontrar aquí</span>
+                <div class="metrics hero-metrics">
+                  <div class="metric-card">
+                    <strong>Mapa completo de evaluaciones</strong>
+                    <p>
+                      Rutas internas preparadas para TDAH, TEA, ansiedad general, ansiedad social, depresión, burnout,
+                      estrés, organización, procrastinación, déficit ejecutivo, sueño, autoestima, impulsividad,
+                      perfeccionismo y dependencia emocional.
+                    </p>
+                  </div>
+                  <div class="metric-card">
+                    <strong>Contenido pensado para múltiples perfiles</strong>
+                    <p>
+                      Adultos que sospechan un patrón, padres que observan señales tempranas, docentes que necesitan un
+                      lenguaje claro, universitarios bajo presión, empresas preocupadas por burnout y psicólogos que
+                      quieren recursos de orientación previos a la consulta.
+                    </p>
+                  </div>
+                  <div class="metric-card">
+                    <strong>Enfoque de uso responsable</strong>
+                    <p>
+                      Esta home prioriza educación, prevención y detección temprana. No ofrece etiquetas definitivas ni
+                      respuestas mágicas; ofrece contexto para tomar decisiones más informadas.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="hero-visual">
+                <div class="hero-visual-frame">
+                  <img src="./assets/test-gratis-familia.png" alt="" class="hero-visual-image">
+                </div>
+              </div>
+
+              <div class="callout hero-callout">
                 <strong>Aviso importante</strong>
                 <p>
                   Los resultados representan únicamente un cribado orientativo y nunca sustituyen una evaluación
@@ -1210,43 +1618,12 @@
               </div>
             </div>
           </article>
-
-          <aside class="hero-panel">
-            <div class="hero-content">
-              <span class="tag">Qué vas a encontrar aquí</span>
-              <div class="metrics">
-                <div class="metric-card">
-                  <strong>Mapa completo de evaluaciones</strong>
-                  <p>
-                    Rutas internas preparadas para TDAH, TEA, ansiedad general, ansiedad social, depresión, burnout,
-                    estrés, organización, procrastinación, déficit ejecutivo, sueño, autoestima, impulsividad,
-                    perfeccionismo y dependencia emocional.
-                  </p>
-                </div>
-                <div class="metric-card">
-                  <strong>Contenido pensado para múltiples perfiles</strong>
-                  <p>
-                    Adultos que sospechan un patrón, padres que observan señales tempranas, docentes que necesitan un
-                    lenguaje claro, universitarios bajo presión, empresas preocupadas por burnout y psicólogos que
-                    quieren recursos de orientación previos a la consulta.
-                  </p>
-                </div>
-                <div class="metric-card">
-                  <strong>Enfoque de uso responsable</strong>
-                  <p>
-                    Esta home prioriza educación, prevención y detección temprana. No ofrece etiquetas definitivas ni
-                    respuestas mágicas; ofrece contexto para tomar decisiones más informadas.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </aside>
         </div>
       </div>
     </section>
 
     <div class="container section-stack">
-      <section class="grid-two" aria-label="Resumen inicial">
+      <section class="grid-two intro-grid" aria-label="Resumen inicial">
         <article class="card" id="quienes-somos">
           <p class="section-kicker">Quiénes somos</p>
           <h2 class="section-title">Una guía digital de orientación, no una consulta profesional.</h2>
@@ -1298,14 +1675,14 @@
             confianza y alinea el contenido con un enfoque de EEAT: experiencia útil, conocimiento bien organizado,
             transparencia sobre límites y un tono claramente responsable.
           </p>
-          <div class="callout">
-            <strong>Recordatorio clave</strong>
-            <p>
-              Los resultados representan únicamente un cribado orientativo y nunca sustituyen una evaluación realizada
-              por un profesional de la salud mental.
-            </p>
-          </div>
         </article>
+        <div class="callout summary-callout">
+          <strong>Recordatorio clave</strong>
+          <p>
+            Los resultados representan únicamente un cribado orientativo y nunca sustituyen una evaluación realizada
+            por un profesional de la salud mental.
+          </p>
+        </div>
       </section>
 
       <section class="grid-two" aria-label="Detección temprana y público objetivo">
@@ -1465,156 +1842,6 @@
             </p>
           </div>
         </article>
-      </section>
-
-      <section class="card route-directory" id="evaluaciones">
-        <p class="section-kicker">Mapa central del sitio</p>
-        <h2 class="section-title">Evaluaciones preparadas para distribuir autoridad SEO y orientar al usuario.</h2>
-        <p class="section-intro">
-          Esta home enlaza a las áreas estratégicas del proyecto para que la navegación sea clara tanto para personas
-          como para motores de búsqueda. Cada bloque responde a una intención distinta: síntomas de TDAH, test de
-          autismo, ansiedad, depresión, burnout, organización, procrastinación, déficit ejecutivo, autoestima, sueño e
-          impulsividad. El objetivo no es dispersar, sino ayudar a que cada visitante encuentre rápido el recorrido que
-          mejor encaja con su duda principal.
-        </p>
-        <div class="route-grid">
-          <article class="route-card">
-            <div>
-              <p class="section-kicker">Neurodesarrollo</p>
-              <h3>TDAH Adultos</h3>
-              <p>Indicadores de inatención, impulsividad, manejo del tiempo y deterioro funcional en la adultez.</p>
-            </div>
-            <a class="pill-route" href="/evaluaciones/tdah-adultos">Realizar evaluación</a>
-          </article>
-          <article class="route-card">
-            <div>
-              <p class="section-kicker">Neurodesarrollo</p>
-              <h3>TDAH Infantil</h3>
-              <p>Señales tempranas en infancia y adolescencia, observables en casa, escuela y rutinas.</p>
-            </div>
-            <a class="pill-route" href="/evaluaciones/tdah-infantil">Realizar evaluación</a>
-          </article>
-          <article class="route-card">
-            <div>
-              <p class="section-kicker">Neurodesarrollo</p>
-              <h3>TEA Adultos</h3>
-              <p>Orientación inicial sobre comunicación social, rigidez, sensibilidad sensorial y camuflaje.</p>
-            </div>
-            <a class="pill-route" href="/evaluaciones/tea-adultos">Realizar evaluación</a>
-          </article>
-          <article class="route-card">
-            <div>
-              <p class="section-kicker">Neurodesarrollo</p>
-              <h3>TEA Infantil</h3>
-              <p>Cribado inicial para observar desarrollo social, intereses restringidos y adaptaciones sensoriales.</p>
-            </div>
-            <a class="pill-route" href="/evaluaciones/tea-infantil">Realizar evaluación</a>
-          </article>
-          <article class="route-card">
-            <div>
-              <p class="section-kicker">Ansiedad</p>
-              <h3>Ansiedad General</h3>
-              <p>Preocupación persistente, tensión física, anticipación negativa y dificultad para desconectar.</p>
-            </div>
-            <a class="pill-route" href="/evaluaciones/ansiedad-general">Realizar evaluación</a>
-          </article>
-          <article class="route-card">
-            <div>
-              <p class="section-kicker">Ansiedad</p>
-              <h3>Ansiedad Social</h3>
-              <p>Miedo a exposición, juicio externo, vergüenza intensa y conductas evitativas.</p>
-            </div>
-            <a class="pill-route" href="/evaluaciones/ansiedad-social">Realizar evaluación</a>
-          </article>
-          <article class="route-card">
-            <div>
-              <p class="section-kicker">Estado de ánimo</p>
-              <h3>Depresión</h3>
-              <p>Ánimo bajo, pérdida de interés, fatiga, lentitud, culpa y alteraciones del funcionamiento diario.</p>
-            </div>
-            <a class="pill-route" href="/evaluaciones/depresion">Realizar evaluación</a>
-          </article>
-          <article class="route-card">
-            <div>
-              <p class="section-kicker">Estado de ánimo</p>
-              <h3>Burnout</h3>
-              <p>Agotamiento relacionado con el trabajo, cinismo, desconexión y menor eficacia percibida.</p>
-            </div>
-            <a class="pill-route" href="/evaluaciones/burnout">Realizar evaluación</a>
-          </article>
-          <article class="route-card">
-            <div>
-              <p class="section-kicker">Estado de ánimo</p>
-              <h3>Estrés</h3>
-              <p>Alta carga, hiperactivación, irritabilidad, tensión sostenida y desgaste del cuerpo y la mente.</p>
-            </div>
-            <a class="pill-route" href="/evaluaciones/estres">Realizar evaluación</a>
-          </article>
-          <article class="route-card">
-            <div>
-              <p class="section-kicker">Funciones ejecutivas</p>
-              <h3>Organización</h3>
-              <p>Dificultad para ordenar tareas, sostener rutinas, jerarquizar prioridades y cerrar pendientes.</p>
-            </div>
-            <a class="pill-route" href="/evaluaciones/organizacion">Realizar evaluación</a>
-          </article>
-          <article class="route-card">
-            <div>
-              <p class="section-kicker">Funciones ejecutivas</p>
-              <h3>Procrastinación</h3>
-              <p>Postergación repetida, bloqueo ante tareas, evitación y malestar asociado a la ejecución.</p>
-            </div>
-            <a class="pill-route" href="/evaluaciones/procrastinacion">Realizar evaluación</a>
-          </article>
-          <article class="route-card">
-            <div>
-              <p class="section-kicker">Funciones ejecutivas</p>
-              <h3>Déficit Ejecutivo</h3>
-              <p>Planificación, control inhibitorio, memoria de trabajo y flexibilidad cognitiva comprometidas.</p>
-            </div>
-            <a class="pill-route" href="/evaluaciones/deficit-ejecutivo">Realizar evaluación</a>
-          </article>
-          <article class="route-card">
-            <div>
-              <p class="section-kicker">Sueño</p>
-              <h3>Calidad del Sueño</h3>
-              <p>Sueño insuficiente, despertares, mala recuperación y repercusión sobre energía, atención y memoria.</p>
-            </div>
-            <a class="pill-route" href="/evaluaciones/calidad-sueno">Realizar evaluación</a>
-          </article>
-          <article class="route-card">
-            <div>
-              <p class="section-kicker">Regulación emocional</p>
-              <h3>Autoestima</h3>
-              <p>Autocrítica intensa, inseguridad, comparación constante y sensación de insuficiencia.</p>
-            </div>
-            <a class="pill-route" href="/evaluaciones/autoestima">Realizar evaluación</a>
-          </article>
-          <article class="route-card">
-            <div>
-              <p class="section-kicker">Regulación emocional</p>
-              <h3>Impulsividad</h3>
-              <p>Reacciones rápidas, decisiones precipitadas, dificultad para pausar y arrepentimiento posterior.</p>
-            </div>
-            <a class="pill-route" href="/evaluaciones/impulsividad">Realizar evaluación</a>
-          </article>
-          <article class="route-card">
-            <div>
-              <p class="section-kicker">Regulación emocional</p>
-              <h3>Perfeccionismo</h3>
-              <p>Autoexigencia alta, miedo al error, bloqueo por estándares rígidos y desgaste emocional.</p>
-            </div>
-            <a class="pill-route" href="/evaluaciones/perfeccionismo">Realizar evaluación</a>
-          </article>
-          <article class="route-card">
-            <div>
-              <p class="section-kicker">Regulación emocional</p>
-              <h3>Dependencia emocional</h3>
-              <p>Necesidad intensa de aprobación, temor a abandono y dificultad para sostener límites sanos.</p>
-            </div>
-            <a class="pill-route" href="/evaluaciones/dependencia-emocional">Realizar evaluación</a>
-          </article>
-        </div>
       </section>
 
       <section class="card topic-section" id="neurodesarrollo">
