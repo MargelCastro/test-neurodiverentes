@@ -6,8 +6,113 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
-    <title>Test Infantil de Cribado TDA / TDAH</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Test gratis de TDAH infantil | Cribado para padres</title>
+    <meta
+      name="description"
+      content="Uno de nuestros test gratuitos, con 60 preguntas para que padres, madres o tutores exploren indicadores relacionados con TDA y TDAH infantil."
+    />
+    <meta
+      name="robots"
+      content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+    />
+    <link
+      rel="canonical"
+      href="https://testneurodivergentes.com/TDA/Examenes/test-gratuito-de-tdah-en-ni%C3%B1os.html"
+    />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Tests Neurodivergentes Online" />
+    <meta
+      property="og:title"
+      content="Test gratis de TDAH infantil | Cribado para padres"
+    />
+    <meta
+      property="og:description"
+      content="Este test gratis contiene 60 preguntas para que padres, madres o tutores exploren indicadores relacionados con TDA y TDAH infantil."
+    />
+    <meta
+      property="og:url"
+      content="https://testneurodivergentes.com/TDA/Examenes/test-gratuito-de-tdah-en-ni%C3%B1os.html"
+    />
+    <meta
+      property="og:image"
+      content="https://testneurodivergentes.com/assets/test-gratis-familia.png"
+    />
+    <meta
+      property="og:image:alt"
+      content="Familia conversando sobre una evaluación infantil"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Test gratis de TDAH infantil | Cribado para padres"
+    />
+    <meta
+      name="twitter:description"
+      content="Uno de nuestros test gratuitos para explorar indicadores relacionados con TDA y TDAH infantil mediante 60 preguntas."
+    />
+    <meta
+      name="twitter:image"
+      content="https://testneurodivergentes.com/assets/test-gratis-familia.png"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://testneurodivergentes.com/TDA/Examenes/test-gratuito-de-tdah-en-ni%C3%B1os.html#webpage",
+            "url": "https://testneurodivergentes.com/TDA/Examenes/test-gratuito-de-tdah-en-ni%C3%B1os.html",
+            "name": "Test gratis de TDAH infantil",
+            "description": "Este test gratis contiene 60 preguntas para que padres, madres o tutores exploren indicadores relacionados con TDA y TDAH infantil.",
+            "inLanguage": "es",
+            "isPartOf": {
+              "@id": "https://testneurodivergentes.com/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://testneurodivergentes.com/TDA/Examenes/test-gratuito-de-tdah-en-ni%C3%B1os.html#breadcrumb"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://testneurodivergentes.com/TDA/Examenes/test-gratuito-de-tdah-en-ni%C3%B1os.html#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Inicio",
+                "item": "https://testneurodivergentes.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Evaluaciones",
+                "item": "https://testneurodivergentes.com/test-psicologicos-gratis.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "TDA y TDAH",
+                "item": "https://testneurodivergentes.com/TDA/test-TDA-y-TDAH-gratuito.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Test infantil",
+                "item": "https://testneurodivergentes.com/TDA/Examenes/test-gratuito-de-tdah-en-ni%C3%B1os.html"
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../styles/tailwind-tests.min.css" />
     <style>
       :root {
         color-scheme: dark;
@@ -21,12 +126,21 @@
         overflow: hidden;
       }
 
+      body.pause-open {
+        overflow: hidden;
+      }
+
+      :focus-visible {
+        outline: 3px solid #60a5fa;
+        outline-offset: 3px;
+      }
+
       .touch-target {
         min-height: 72px;
       }
 
       .safe-main {
-        padding-bottom: calc(12rem + env(safe-area-inset-bottom));
+        padding-bottom: calc(13rem + env(safe-area-inset-bottom));
       }
 
       .safe-nav {
@@ -44,19 +158,86 @@
         }
 
         body.quiz-lock-scroll .app-main {
-          height: 100vh;
+          height: calc(100vh - var(--quiz-site-header-height));
+          min-height: 0;
+          overflow-y: auto;
         }
 
         body.quiz-lock-scroll .app-layout {
           height: 100%;
         }
       }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
     </style>
+    <link rel="stylesheet" href="../../styles/sistema-visual.css" />
   </head>
-  <body class="min-h-screen bg-slate-950 text-white disclaimer-open">
+  <body
+    class="min-h-screen bg-slate-950 text-white disclaimer-open"
+    data-visual-theme="dark"
+  >
+    <div
+      id="pauseOverlay"
+      class="hidden fixed inset-0 z-[60] flex items-center justify-center bg-slate-950/90 p-4 backdrop-blur-md sm:p-6"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="pauseTitle"
+      aria-describedby="pauseSummary"
+      aria-hidden="true"
+    >
+      <div
+        class="w-full max-w-xl rounded-[2rem] border border-blue-400/30 bg-slate-900 p-6 text-center shadow-2xl shadow-black/50 sm:p-8"
+      >
+        <div
+          class="inline-flex items-center rounded-full border border-blue-400/30 bg-blue-500/10 px-4 py-2 text-sm font-semibold text-blue-200"
+        >
+          Progreso guardado
+        </div>
+        <h2 id="pauseTitle" class="mt-5 text-3xl font-bold">Test en pausa</h2>
+        <p
+          id="pauseSummary"
+          class="mt-4 text-base leading-relaxed text-slate-300"
+        ></p>
+        <p class="mt-2 text-sm leading-relaxed text-slate-400">
+          Puedes continuar ahora o volver a Evaluaciones. Las respuestas
+          permanecerán guardadas en este dispositivo.
+        </p>
+        <div class="mt-6 grid gap-3 sm:grid-cols-2">
+          <button
+            id="resumeBtn"
+            type="button"
+            class="touch-target rounded-2xl bg-blue-600 px-4 py-4 text-base font-bold text-white"
+          >
+            Continuar test
+          </button>
+          <button
+            id="pauseExitBtn"
+            type="button"
+            class="touch-target rounded-2xl bg-slate-800 px-4 py-4 text-base font-semibold text-white"
+          >
+            Guardar y salir
+          </button>
+        </div>
+      </div>
+    </div>
+
     <div
       id="guardianDisclaimer"
       class="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/88 p-4 backdrop-blur-md sm:p-6"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="guardianTitle"
+      aria-describedby="guardianDescription"
+      aria-hidden="false"
     >
       <div
         class="relative w-full max-w-3xl rounded-[2rem] border border-red-400/30 bg-slate-900/95 p-6 text-center shadow-2xl shadow-black/50 sm:p-8 xl:p-10"
@@ -77,12 +258,14 @@
             Aviso importante
           </div>
           <h2
+            id="guardianTitle"
             class="mt-5 text-3xl font-bold leading-tight text-white sm:text-4xl xl:text-[2.8rem]"
           >
             Este cribado infantil debe ser respondido exclusivamente por el
             padre, madre o tutor legal del menor.
           </h2>
           <p
+            id="guardianDescription"
             class="mt-6 text-base leading-relaxed text-slate-200 sm:text-lg xl:text-xl"
           >
             La información generada es únicamente orientativa y esta basada en
@@ -108,6 +291,62 @@
     <div
       class="app-shell min-h-screen bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.16),transparent_34%),radial-gradient(circle_at_bottom,rgba(15,23,42,0.92),rgba(2,6,23,1))]"
     >
+      <header class="quiz-site-header">
+        <div class="quiz-site-header-inner">
+          <a class="quiz-site-brand" href="../../index.html#inicio">
+            <span class="quiz-site-brand-text">
+              <span class="quiz-site-brand-main">Tests Neurodivergentes</span>
+              <span class="quiz-site-brand-sub">Online</span>
+            </span>
+          </a>
+
+          <nav class="quiz-desktop-nav" aria-label="Navegación principal">
+            <a href="../../index.html#inicio">Inicio</a>
+            <details class="nav-group quiz-nav-group">
+              <summary class="quiz-nav-trigger">
+                <span>Factores importantes</span>
+                <span class="quiz-nav-arrow" aria-hidden="true">▾</span>
+              </summary>
+              <div class="quiz-nav-submenu">
+                <a href="../../test-psicologicos-gratis.html#neurodesarrollo">Neurodesarrollo</a>
+                <a href="../../test-psicologicos-gratis.html#ansiedad">Ansiedad</a>
+                <a href="../../test-psicologicos-gratis.html#estado-animo">Estado de ánimo</a>
+                <a href="../../test-psicologicos-gratis.html#funciones-ejecutivas">Funciones ejecutivas</a>
+                <a href="../../test-psicologicos-gratis.html#sueno">Sueño</a>
+              </div>
+            </details>
+            <a href="../../index.html#quienes-somos">Quiénes somos</a>
+            <a href="../../index.html#proximos-pasos">Próximos pasos</a>
+            <a href="../../test-psicologicos-gratis.html#evaluaciones">Evaluaciones</a>
+          </nav>
+
+          <details class="mobile-menu quiz-mobile-menu">
+            <summary aria-label="Abrir menú">
+              <span class="sr-only">Menú</span>
+            </summary>
+            <nav class="quiz-menu-panel" aria-label="Menú móvil">
+              <a href="../../index.html#inicio">Inicio</a>
+              <details class="quiz-menu-group">
+                <summary class="quiz-menu-trigger">
+                  <span>Factores importantes</span>
+                  <span class="quiz-menu-arrow" aria-hidden="true">▾</span>
+                </summary>
+                <div class="quiz-menu-submenu">
+                  <a href="../../test-psicologicos-gratis.html#neurodesarrollo">Neurodesarrollo</a>
+                  <a href="../../test-psicologicos-gratis.html#ansiedad">Ansiedad</a>
+                  <a href="../../test-psicologicos-gratis.html#estado-animo">Estado de ánimo</a>
+                  <a href="../../test-psicologicos-gratis.html#funciones-ejecutivas">Funciones ejecutivas</a>
+                  <a href="../../test-psicologicos-gratis.html#sueno">Sueño</a>
+                </div>
+              </details>
+              <a href="../../index.html#quienes-somos">Quiénes somos</a>
+              <a href="../../index.html#proximos-pasos">Próximos pasos</a>
+              <a href="../../test-psicologicos-gratis.html#evaluaciones">Evaluaciones</a>
+            </nav>
+          </details>
+        </div>
+      </header>
+
       <main
         class="app-main mx-auto min-h-screen w-full max-w-7xl safe-main px-4 pt-5 sm:px-6 sm:pt-8 lg:px-8"
       >
@@ -133,6 +372,23 @@
               escuela. Esta herramienta es orientativa y no reemplaza una
               evaluación pediátrica o psicológica.
             </p>
+
+            <div class="mt-4 grid max-w-md grid-cols-2 gap-3">
+              <button
+                id="restartQuizBtn"
+                type="button"
+                class="min-h-12 rounded-2xl border border-slate-700 bg-slate-900/80 px-3 py-3 text-sm font-semibold text-slate-200 transition hover:bg-slate-800"
+              >
+                Reiniciar
+              </button>
+              <button
+                id="exitBtn"
+                type="button"
+                class="min-h-12 rounded-2xl border border-slate-700 bg-slate-900/80 px-3 py-3 text-sm font-semibold text-slate-200 transition hover:bg-slate-800"
+              >
+                Salir
+              </button>
+            </div>
 
             <div
               class="mt-4 hidden rounded-3xl border border-slate-800 bg-slate-900/70 p-5 text-sm leading-relaxed text-slate-300 xl:block"
@@ -182,20 +438,41 @@
                   id="progress"
                   class="h-2.5 rounded-full bg-blue-500 transition-all duration-300"
                   style="width: 1%"
+                  role="progressbar"
+                  aria-label="Progreso del cuestionario"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuenow="1"
+                  aria-valuetext="Pregunta 1 de 60"
                 ></div>
               </div>
+
+              <p
+                id="quizStatus"
+                class="sr-only"
+                aria-live="polite"
+                aria-atomic="true"
+              ></p>
 
               <h2
                 id="question"
                 class="mt-6 max-w-4xl text-xl font-semibold leading-snug sm:text-2xl xl:text-3xl"
+                tabindex="-1"
               ></h2>
 
-              <div id="options" class="mt-6 grid gap-3 md:grid-cols-2"></div>
+              <div
+                id="options"
+                class="mt-6 grid gap-3 md:grid-cols-2"
+                role="radiogroup"
+                aria-labelledby="question"
+              ></div>
             </section>
 
             <section
               id="result"
               class="hidden rounded-3xl border border-slate-800 bg-slate-900/90 p-5 shadow-2xl shadow-slate-950/30 sm:p-6 xl:p-8"
+              tabindex="-1"
+              aria-live="polite"
             ></section>
           </div>
         </div>
@@ -203,28 +480,41 @@
 
       <nav
         class="fixed bottom-0 left-0 right-0 border-t border-slate-800 bg-slate-950/95 px-4 pt-3 backdrop-blur safe-nav"
+        aria-label="Navegación del cuestionario"
       >
         <div
           class="mx-auto grid w-full max-w-7xl gap-3 xl:grid-cols-[minmax(0,320px)_minmax(0,1fr)]"
         >
           <div class="hidden xl:block"></div>
           <div class="flex justify-center xl:w-[82%] xl:justify-self-center">
-            <div class="grid w-full max-w-4xl grid-cols-2 gap-3 sm:grid-cols-3">
+            <div
+              class="mx-auto grid w-full max-w-4xl grid-cols-2 place-items-stretch gap-3 text-center sm:grid-cols-4"
+            >
               <button
                 id="prevBtn"
-                class="touch-target w-full rounded-2xl bg-slate-800 px-4 py-4 text-base font-semibold text-white transition disabled:cursor-not-allowed disabled:opacity-40"
+                type="button"
+                class="touch-target flex w-full items-center justify-center rounded-2xl bg-slate-800 px-4 py-4 text-center text-base font-semibold text-white transition disabled:cursor-not-allowed disabled:opacity-40"
               >
                 Atrás
               </button>
               <button
+                id="pauseBtn"
+                type="button"
+                class="touch-target flex w-full items-center justify-center rounded-2xl border border-slate-700 bg-slate-900 px-4 py-4 text-center text-base font-semibold text-white transition"
+              >
+                Pausar
+              </button>
+              <button
                 id="nextBtn"
-                class="touch-target w-full rounded-2xl bg-blue-600 px-4 py-4 text-base font-semibold text-white transition disabled:cursor-not-allowed disabled:opacity-40"
+                type="button"
+                class="touch-target flex w-full items-center justify-center rounded-2xl bg-blue-600 px-4 py-4 text-center text-base font-semibold text-white transition disabled:cursor-not-allowed disabled:opacity-40"
               >
                 Siguiente
               </button>
               <button
                 id="viewResultsBtn"
-                class="touch-target col-span-2 w-full rounded-2xl bg-emerald-600 px-4 py-4 text-base font-semibold text-white transition disabled:cursor-not-allowed disabled:opacity-40 sm:col-span-1"
+                type="button"
+                class="touch-target flex w-full items-center justify-center rounded-2xl bg-emerald-800 px-4 py-4 text-center text-base font-semibold text-white transition disabled:cursor-not-allowed disabled:opacity-40"
                 disabled
               >
                 Ver resultados
@@ -235,6 +525,9 @@
       </nav>
     </div>
 
-    <script src="./child-tda-tdah.js"></script>
+    <script src="../../JS/shared/navigation.js" defer></script>
+    <script src="../../JS/shared/test-accessibility.js" defer></script>
+    <script src="../../JS/shared/test-storage.js" defer></script>
+    <script src="./child-tda-tdah.js" defer></script>
   </body>
 </html>

@@ -1,0 +1,7 @@
+{
+  "name": "tests-neurodivergentes-online",
+  "private": true,
+  "scripts": {
+    "test": "node --test --test-concurrency=1 tests/site-structure.test.mjs tests/quiz-flow.test.mjs"
+  }
+}

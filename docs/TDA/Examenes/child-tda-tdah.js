@@ -1,3 +1,5 @@
+window.SiteNavigation.init();
+
 const questionGroups = [
   {
     id: "A",
@@ -113,14 +115,25 @@ const options = [
   { label: "Casi siempre", value: 4 }
 ];
 
+const TEST_ID = "tdah-infantil";
+const DIRECTORY_URL = "../../test-psicologicos-gratis.html";
+const testStorage = window.TestStorage.create({
+  testId: TEST_ID,
+  totalQuestions: questions.length,
+  validAnswerValues: options.map((option) => option.value)
+});
+
 let currentIndex = 0;
 let answers = Array(questions.length).fill(null);
+let startedAt = new Date().toISOString();
+let progressCompleted = false;
 
 const questionEl = document.getElementById("question");
 const optionsEl = document.getElementById("options");
 const currentEl = document.getElementById("current");
 const totalQuestionsEl = document.getElementById("totalQuestions");
 const progressEl = document.getElementById("progress");
+const quizStatusEl = document.getElementById("quizStatus");
 const sectionNameEl = document.getElementById("sectionName");
 const questionMetaEl = document.getElementById("questionMeta");
 const answeredCountEl = document.getElementById("answeredCount");
@@ -131,9 +144,59 @@ const resultEl = document.getElementById("result");
 const quizCardEl = document.getElementById("quizCard");
 const guardianDisclaimerEl = document.getElementById("guardianDisclaimer");
 const closeGuardianDisclaimerBtn = document.getElementById("closeGuardianDisclaimer");
+const pauseOverlayEl = document.getElementById("pauseOverlay");
+const pauseSummaryEl = document.getElementById("pauseSummary");
+const pauseBtn = document.getElementById("pauseBtn");
+const resumeBtn = document.getElementById("resumeBtn");
+const pauseExitBtn = document.getElementById("pauseExitBtn");
+const exitBtn = document.getElementById("exitBtn");
+const restartQuizBtn = document.getElementById("restartQuizBtn");
 const desktopViewport = window.matchMedia("(min-width: 1024px)");
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const {
+  focusElement,
+  getScrollBehavior,
+  handleDialogKeydown
+} = window.TestAccessibility;
+let dialogTrigger = null;
 
 totalQuestionsEl.textContent = questions.length;
+
+function scrollBehavior() {
+  return getScrollBehavior(reducedMotion);
+}
+
+function focusQuestion() {
+  focusElement(questionEl);
+}
+
+function clearSavedProgress() {
+  testStorage.clear();
+}
+
+function loadSavedProgress() {
+  const progress = testStorage.load();
+
+  if (!progress) {
+    return false;
+  }
+
+  currentIndex = progress.currentQuestion;
+  answers = progress.answers;
+  startedAt = progress.startedAt;
+  progressCompleted = progress.completed;
+  return true;
+}
+
+function saveProgress(completed = progressCompleted) {
+  progressCompleted = completed;
+  testStorage.save({
+    currentQuestion: currentIndex,
+    answers,
+    startedAt,
+    completed: progressCompleted
+  });
+}
 
 function countAnswered() {
   return answers.filter((answer) => answer !== null).length;
@@ -145,9 +208,52 @@ function isTestComplete() {
 
 function syncDesktopScroll() {
   const disclaimerVisible = Boolean(guardianDisclaimerEl && !guardianDisclaimerEl.classList.contains("hidden"));
+  const pauseVisible = !pauseOverlayEl.classList.contains("hidden");
   document.body.classList.toggle("disclaimer-open", disclaimerVisible);
-  const shouldLockScroll = disclaimerVisible || (desktopViewport.matches && resultEl.classList.contains("hidden"));
+  document.body.classList.toggle("pause-open", pauseVisible);
+  const shouldLockScroll =
+    disclaimerVisible ||
+    pauseVisible ||
+    (desktopViewport.matches && resultEl.classList.contains("hidden"));
   document.body.classList.toggle("quiz-lock-scroll", shouldLockScroll);
+}
+
+function pauseTest() {
+  saveProgress(progressCompleted);
+  pauseSummaryEl.textContent = `Llevas ${countAnswered()} de ${questions.length} preguntas respondidas.`;
+  dialogTrigger = document.activeElement;
+  pauseOverlayEl.classList.remove("hidden");
+  pauseOverlayEl.setAttribute("aria-hidden", "false");
+  syncDesktopScroll();
+  requestAnimationFrame(() => resumeBtn.focus());
+}
+
+function resumeTest() {
+  pauseOverlayEl.classList.add("hidden");
+  pauseOverlayEl.setAttribute("aria-hidden", "true");
+  syncDesktopScroll();
+
+  if (dialogTrigger instanceof HTMLElement) {
+    dialogTrigger.focus();
+  }
+}
+
+function exitToDirectory() {
+  saveProgress(progressCompleted);
+  window.location.href = DIRECTORY_URL;
+}
+
+function requestRestart() {
+  const hasProgress = countAnswered() > 0 || progressCompleted;
+
+  if (
+    hasProgress &&
+    !window.confirm("¿Deseas reiniciar el test? Se eliminarán todas las respuestas guardadas.")
+  ) {
+    return;
+  }
+
+  restartTest();
 }
 
 function closeGuardianDisclaimer() {
@@ -156,40 +262,42 @@ function closeGuardianDisclaimer() {
   }
 
   guardianDisclaimerEl.classList.add("hidden");
+  guardianDisclaimerEl.setAttribute("aria-hidden", "true");
   syncDesktopScroll();
+  focusQuestion();
 }
 
 function scoreTone(score) {
   if (score <= 35) {
     return {
-      shortLabel: "Normal",
-      fillClass: "bg-blue-600",
-      borderClass: "border-blue-400",
-      surfaceClass: "border-blue-500/40 bg-blue-950/30",
-      titleClass: "text-blue-100",
-      metaClass: "text-blue-200/75",
-      scoreClass: "text-blue-300",
-      chipClass: "border-blue-400/30 bg-blue-500/10 text-blue-200"
+      shortLabel: "Indicadores bajos",
+      fillClass: "bg-emerald-800",
+      borderClass: "border-emerald-400",
+      surfaceClass: "border-emerald-500/40 bg-emerald-950/30",
+      titleClass: "text-emerald-100",
+      metaClass: "text-emerald-200/75",
+      scoreClass: "text-emerald-300",
+      chipClass: "border-emerald-400/30 bg-emerald-500/10 text-emerald-200"
     };
   }
 
   if (score <= 45) {
     return {
-      shortLabel: "Ligero",
-      fillClass: "bg-green-600",
-      borderClass: "border-green-400",
-      surfaceClass: "border-green-500/40 bg-green-950/25",
-      titleClass: "text-green-100",
-      metaClass: "text-green-200/75",
-      scoreClass: "text-green-300",
-      chipClass: "border-green-400/30 bg-green-500/10 text-green-200"
+      shortLabel: "Indicadores levemente elevados",
+      fillClass: "bg-amber-800",
+      borderClass: "border-amber-300",
+      surfaceClass: "border-amber-500/40 bg-amber-950/25",
+      titleClass: "text-amber-100",
+      metaClass: "text-amber-200/75",
+      scoreClass: "text-amber-300",
+      chipClass: "border-amber-400/30 bg-amber-500/10 text-amber-200"
     };
   }
 
   if (score <= 60) {
     return {
-      shortLabel: "Elevado",
-      fillClass: "bg-orange-600",
+      shortLabel: "Indicadores elevados",
+      fillClass: "bg-orange-800",
       borderClass: "border-orange-400",
       surfaceClass: "border-orange-500/40 bg-orange-950/25",
       titleClass: "text-orange-100",
@@ -200,8 +308,8 @@ function scoreTone(score) {
   }
 
   return {
-    shortLabel: "Severo",
-    fillClass: "bg-red-600",
+    shortLabel: "Indicadores muy elevados",
+    fillClass: "bg-red-800",
     borderClass: "border-red-400",
     surfaceClass: "border-red-500/40 bg-red-950/25",
     titleClass: "text-red-100",
@@ -211,36 +319,36 @@ function scoreTone(score) {
   };
 }
 
-function resultBand(score, subtype = "TDAH") {
+function resultBand(score) {
   const tone = scoreTone(score);
 
   if (score <= 35) {
     return {
-      label: "Normal (sin TDA o TDAH)",
-      description: "El puntaje se mantiene en rango normal para este cribado infantil, sin señales marcadas de TDA o TDAH.",
+      label: "Indicadores bajos",
+      description: "Las respuestas muestran una presencia baja de indicadores relacionados con atención, hiperactividad e impulsividad.",
       ...tone
     };
   }
 
   if (score <= 45) {
     return {
-      label: `${subtype} ligero`,
-      description: `El cribado cae en una franja ligera compatible con ${subtype} y conviene confirmarlo con una evaluacion profesional infantil.`,
+      label: "Indicadores levemente elevados",
+      description: "Las respuestas muestran algunos indicadores levemente elevados que conviene observar en casa, escuela y otras actividades.",
       ...tone
     };
   }
 
   if (score <= 60) {
     return {
-      label: subtype,
-      description: `El cribado marca un diagnostico orientativo de ${subtype} y conviene una evaluacion profesional infantil para confirmarlo.`,
+      label: "Indicadores elevados relacionados con TDAH",
+      description: "Las respuestas muestran indicadores elevados relacionados con TDAH. Conviene comentarlos con un profesional infantil cualificado.",
       ...tone
     };
   }
 
   return {
-    label: `${subtype} severo`,
-    description: `El puntaje sale muy alto para este cribado y marca un diagnostico orientativo severo de ${subtype}, por lo que amerita evaluacion profesional prioritaria.`,
+    label: "Indicadores muy elevados relacionados con TDAH",
+    description: "Las respuestas muestran indicadores muy elevados relacionados con TDAH. Se recomienda solicitar una evaluación profesional infantil.",
     ...tone
   };
 }
@@ -302,38 +410,38 @@ function profileInterpretation(finalScore, sections) {
   const supportStrong = school >= 46 && contexts >= 46;
   const supportPartial = school >= 36 || contexts >= 36;
   const tone = scoreTone(Math.max(finalScore, attention, hyperactivity, school, regulation));
-  let label = "Perfil orientativo sin subtipo claro";
-  let description = "El resultado no separa con claridad un patrón predominantemente inatento o hiperactivo.";
+  let label = "Patrón de respuestas sin predominio claro";
+  let description = "Las respuestas no muestran un predominio claro entre indicadores de inatención e hiperactividad/impulsividad.";
 
   if (finalScore <= 35 && !attentionHigh && !hyperactivityHigh) {
-    label = "Sin señales claras de TDA / TDAH infantil";
-    description = "El cribado no muestra un patrón relevante de inatención ni de hiperactividad/impulsividad para la edad.";
+    label = "Indicadores bajos en las áreas principales";
+    description = "Las respuestas muestran indicadores bajos de inatención e hiperactividad/impulsividad.";
   } else if (finalScore <= 45) {
     if (attention > hyperactivity + 8) {
-      label = "Rasgos leves con predominio inatento";
-      description = "Aparecen señales leves centradas más en atención, escucha y seguimiento que en inquietud motora.";
+      label = "Indicadores leves con mayor presencia inatenta";
+      description = "Los indicadores leves aparecen con mayor frecuencia en atención, escucha y seguimiento.";
     } else if (hyperactivity > attention + 8) {
-      label = "Rasgos leves con predominio hiperactivo";
-      description = "Aparecen señales leves centradas más en hiperactividad, impulsividad y espera que en atención sostenida.";
+      label = "Indicadores leves con mayor presencia hiperactiva";
+      description = "Los indicadores leves aparecen con mayor frecuencia en hiperactividad, impulsividad y dificultad para esperar.";
     } else {
-      label = "Rasgos leves mixtos";
-      description = "Hay señales leves repartidas entre atención e impulsividad, todavía sin un patrón fuerte.";
+      label = "Indicadores leves mixtos";
+      description = "Los indicadores leves se distribuyen entre atención, hiperactividad e impulsividad.";
     }
   } else if (attentionHigh && hyperactivityHigh) {
-    label = "Perfil orientativo: TDAH combinado infantil";
-    description = "Se elevan tanto la inatención como la hiperactividad/impulsividad en el cribado.";
+    label = "Indicadores elevados en atención e hiperactividad";
+    description = "Las áreas de atención e hiperactividad/impulsividad presentan elevación al mismo tiempo.";
   } else if (attentionHigh) {
-    label = "Perfil orientativo: TDA infantil con predominio inatento";
-    description = "Predominan las dificultades de atención, seguimiento y organización frente a la inquietud motora.";
+    label = "Indicadores elevados con mayor presencia inatenta";
+    description = "Los indicadores de atención, seguimiento y organización tienen mayor presencia que la inquietud motora.";
   } else if (hyperactivityHigh) {
-    label = "Perfil orientativo: TDAH infantil con predominio hiperactivo/impulsivo";
-    description = "Predominan la inquietud, la impulsividad y la dificultad para esperar o frenarse.";
+    label = "Indicadores elevados con mayor presencia hiperactiva/impulsiva";
+    description = "Los indicadores de inquietud, impulsividad y dificultad para esperar tienen mayor presencia.";
   } else if (schoolHigh) {
-    label = "Rasgos relevantes con impacto escolar";
-    description = "El impacto en tareas, materiales y rendimiento escolar sale especialmente elevado.";
+    label = "Indicadores elevados en el área escolar";
+    description = "Las respuestas sobre tareas, materiales y funcionamiento escolar presentan una elevación particular.";
   } else if (attention >= 36 || hyperactivity >= 36) {
-    label = "Rasgos parciales sin predominio firme";
-    description = "Hay elevación parcial en atención o hiperactividad, pero todavía sin un subtipo claro.";
+    label = "Indicadores parciales sin predominio claro";
+    description = "Existe elevación parcial en atención o hiperactividad, sin un predominio definido.";
   }
 
   let supportText = "La confirmación del patrón debe revisar casa, escuela y el impacto funcional para la edad.";
@@ -376,11 +484,18 @@ function renderQuestion() {
   sectionNameEl.textContent = currentQuestion.title;
   questionMetaEl.textContent = currentQuestion.meta;
   answeredCountEl.textContent = `${answered} respondidas`;
-  progressEl.style.width = `${((currentIndex + 1) / questions.length) * 100}%`;
+  const progressValue = Math.round(((currentIndex + 1) / questions.length) * 100);
+  progressEl.style.width = `${progressValue}%`;
+  progressEl.setAttribute("aria-valuenow", String(progressValue));
+  progressEl.setAttribute(
+    "aria-valuetext",
+    `Pregunta ${currentIndex + 1} de ${questions.length}`
+  );
+  quizStatusEl.textContent = `Pregunta ${currentIndex + 1} de ${questions.length}. ${answered} respondidas. ${currentQuestion.title}.`;
 
   optionsEl.innerHTML = "";
 
-  options.forEach((option) => {
+  options.forEach((option, optionIndex) => {
     const selected = answers[currentIndex] === option.value;
     const button = document.createElement("button");
 
@@ -393,15 +508,43 @@ function renderQuestion() {
         : "border-slate-700 bg-slate-800 hover:bg-slate-700"
     ].join(" ");
 
-    button.setAttribute("aria-pressed", String(selected));
+    button.setAttribute("role", "radio");
+    button.setAttribute("aria-checked", String(selected));
+    button.tabIndex = selected || (answers[currentIndex] === null && optionIndex === 0) ? 0 : -1;
     button.innerHTML = `
       <span class="text-base font-semibold sm:text-lg">${option.label}</span>
     `;
 
     button.addEventListener("click", () => {
       answers[currentIndex] = option.value;
+      saveProgress(false);
       hideResult();
       renderQuestion();
+      optionsEl.querySelector('[aria-checked="true"]')?.focus({ preventScroll: true });
+    });
+
+    button.addEventListener("keydown", (event) => {
+      const forward = event.key === "ArrowDown" || event.key === "ArrowRight";
+      const backward = event.key === "ArrowUp" || event.key === "ArrowLeft";
+
+      if (!forward && !backward && event.key !== "Home" && event.key !== "End") {
+        return;
+      }
+
+      event.preventDefault();
+      let targetIndex = optionIndex;
+
+      if (forward) {
+        targetIndex = (optionIndex + 1) % options.length;
+      } else if (backward) {
+        targetIndex = (optionIndex - 1 + options.length) % options.length;
+      } else if (event.key === "Home") {
+        targetIndex = 0;
+      } else {
+        targetIndex = options.length - 1;
+      }
+
+      optionsEl.querySelectorAll('[role="radio"]')[targetIndex].click();
     });
 
     optionsEl.appendChild(button);
@@ -421,7 +564,7 @@ function renderQuestion() {
   }
 }
 
-function showResult() {
+function showResult({ persist = true } = {}) {
   if (!isTestComplete()) {
     return;
   }
@@ -431,7 +574,11 @@ function showResult() {
   const finalScore = Math.round((totalRaw / maxRaw) * 100);
   const sections = sectionScores();
   const profile = profileInterpretation(finalScore, sections);
-  const band = resultBand(finalScore, profile.subtype || "TDAH");
+  const band = resultBand(finalScore);
+
+  if (persist) {
+    saveProgress(true);
+  }
 
   resultEl.classList.remove("hidden");
   resultEl.innerHTML = `
@@ -440,11 +587,11 @@ function showResult() {
     <div class="mt-5 rounded-3xl border ${band.borderClass} ${band.fillClass} p-5">
       <div class="flex flex-wrap items-start justify-between gap-4">
         <div>
-          <p class="text-sm uppercase tracking-[0.2em] text-white/80">Diagnostico</p>
+          <p class="text-sm uppercase tracking-[0.2em] text-white/80">Nivel de indicadores</p>
           <p class="mt-2 text-2xl font-bold sm:text-3xl">${band.label}</p>
         </div>
         <div class="rounded-2xl border border-white/20 bg-white/10 px-4 py-3 text-right">
-          <p class="text-xs uppercase tracking-[0.18em] text-white/70">Puntaje final</p>
+          <p class="text-xs uppercase tracking-[0.18em] text-white/80">Puntaje final</p>
           <p class="mt-2 text-3xl font-bold sm:text-4xl">${finalScore}/100</p>
         </div>
       </div>
@@ -490,20 +637,20 @@ function showResult() {
       <h3 class="text-lg font-semibold">Escala de colores</h3>
       <div class="mt-3 overflow-hidden rounded-2xl border border-slate-800">
         <div class="grid grid-cols-[auto,1fr] items-center gap-3 border-b border-slate-800 bg-slate-800/60 px-4 py-3">
-          <span class="h-4 w-4 rounded-full bg-blue-500"></span>
-          <p class="text-sm text-slate-200">0 a 35 puntos: Normal (sin TDA o TDAH)</p>
+          <span class="h-4 w-4 rounded-full bg-emerald-500"></span>
+          <p class="text-sm text-slate-200">0 a 35 puntos: indicadores bajos</p>
         </div>
         <div class="grid grid-cols-[auto,1fr] items-center gap-3 border-b border-slate-800 bg-slate-900 px-4 py-3">
-          <span class="h-4 w-4 rounded-full bg-green-500"></span>
-          <p class="text-sm text-slate-200">36 a 45 puntos: TDA o TDAH ligero</p>
+          <span class="h-4 w-4 rounded-full bg-amber-400"></span>
+          <p class="text-sm text-slate-200">36 a 45 puntos: indicadores levemente elevados</p>
         </div>
         <div class="grid grid-cols-[auto,1fr] items-center gap-3 border-b border-slate-800 bg-slate-800/60 px-4 py-3">
           <span class="h-4 w-4 rounded-full bg-orange-500"></span>
-          <p class="text-sm text-slate-200">46 a 60 puntos: TDA o TDAH</p>
+          <p class="text-sm text-slate-200">46 a 60 puntos: indicadores elevados relacionados con TDAH</p>
         </div>
         <div class="grid grid-cols-[auto,1fr] items-center gap-3 bg-slate-900 px-4 py-3">
           <span class="h-4 w-4 rounded-full bg-red-500"></span>
-          <p class="text-sm text-slate-200">61 a 100 puntos: TDA o TDAH severo</p>
+          <p class="text-sm text-slate-200">61 a 100 puntos: indicadores muy elevados relacionados con TDAH</p>
         </div>
       </div>
     </div>
@@ -533,18 +680,36 @@ function showResult() {
     </div>
 
     <div class="mt-6 rounded-2xl bg-slate-800 p-4 text-sm leading-relaxed text-slate-300">
-      Este cuestionario es un cribado observacional para niños y adolescentes menores de 15 años. No reemplaza una valoración pediátrica,
-      psicológica o neuropsicológica. Un diagnóstico profesional debe confirmar duración, presencia en más de un entorno, impacto escolar y social,
-      y descartar otras causas.
+      <p class="font-semibold text-white">Una orientación inicial para buscar claridad profesional</p>
+      <p class="mt-2">
+        Este resultado funciona como una evaluación de cribado que puede ayudar a la familia a decidir si conviene
+        iniciar un proceso diagnóstico profesional. Se basa en indicadores de inatención, hiperactividad e impulsividad
+        descritos en fuentes clínicas y sanitarias de referencia sobre TDAH infantil.
+      </p>
+      <p class="mt-2">
+        Si estos indicadores afectan la vida familiar, escolar o social del menor, consultar con pediatría, psicología
+        o neuropsicología es un paso razonable y útil. Un profesional podrá revisar la duración, el comportamiento en
+        distintos entornos y otras causas que pueden producir síntomas similares, para confirmar o descartar TDAH.
+        Este cuestionario por sí solo no constituye un diagnóstico médico o psicológico.
+      </p>
+      <p class="mt-3 text-xs text-slate-400">
+        Fuentes de referencia:
+        <a class="underline hover:text-white" href="https://www.cdc.gov/adhd/diagnosis/index.html" target="_blank" rel="noreferrer">CDC — Diagnóstico del TDAH</a>
+        ·
+        <a class="underline hover:text-white" href="https://www.nimh.nih.gov/health/publications/attention-deficit-hyperactivity-disorder-what-you-need-to-know" target="_blank" rel="noreferrer">NIMH — Información sobre TDAH</a>
+      </p>
     </div>
 
-    <div class="mt-6 grid gap-3 sm:grid-cols-2">
+    <div class="mt-6 grid gap-3 sm:grid-cols-3">
       <button id="reviewBtn" type="button" class="touch-target rounded-2xl bg-slate-800 px-4 py-4 text-base font-semibold text-white">
         Revisar respuestas
       </button>
       <button id="restartBtn" type="button" class="touch-target rounded-2xl bg-white px-4 py-4 text-base font-bold text-slate-950">
         Repetir test
       </button>
+      <a href="${DIRECTORY_URL}" class="touch-target flex items-center justify-center rounded-2xl border border-slate-700 bg-slate-900 px-4 py-4 text-center text-base font-semibold text-white">
+        Volver a Evaluaciones
+      </a>
     </div>
   `;
 
@@ -554,19 +719,25 @@ function showResult() {
   syncDesktopScroll();
 
   reviewBtn.addEventListener("click", () => {
-    quizCardEl.scrollIntoView({ behavior: "smooth", block: "start" });
+    quizCardEl.scrollIntoView({ behavior: scrollBehavior(), block: "start" });
+    focusQuestion();
   });
 
-  restartBtn.addEventListener("click", restartTest);
-  resultEl.scrollIntoView({ behavior: "smooth", block: "start" });
+  restartBtn.addEventListener("click", requestRestart);
+  resultEl.scrollIntoView({ behavior: scrollBehavior(), block: "start" });
+  resultEl.focus({ preventScroll: true });
 }
 
 function restartTest() {
   currentIndex = 0;
   answers = Array(questions.length).fill(null);
+  startedAt = new Date().toISOString();
+  progressCompleted = false;
+  clearSavedProgress();
   hideResult();
   renderQuestion();
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  window.scrollTo({ top: 0, behavior: scrollBehavior() });
+  focusQuestion();
 }
 
 prevBtn.addEventListener("click", () => {
@@ -575,9 +746,11 @@ prevBtn.addEventListener("click", () => {
   }
 
   currentIndex -= 1;
+  saveProgress(false);
   hideResult();
   renderQuestion();
-  quizCardEl.scrollIntoView({ behavior: "smooth", block: "start" });
+  quizCardEl.scrollIntoView({ behavior: scrollBehavior(), block: "start" });
+  focusQuestion();
 });
 
 nextBtn.addEventListener("click", () => {
@@ -590,9 +763,11 @@ nextBtn.addEventListener("click", () => {
   }
 
   currentIndex += 1;
+  saveProgress(false);
   hideResult();
   renderQuestion();
-  quizCardEl.scrollIntoView({ behavior: "smooth", block: "start" });
+  quizCardEl.scrollIntoView({ behavior: scrollBehavior(), block: "start" });
+  focusQuestion();
 });
 
 if (viewResultsBtn) {
@@ -605,6 +780,15 @@ if (viewResultsBtn) {
   });
 }
 
+pauseBtn.addEventListener("click", pauseTest);
+resumeBtn.addEventListener("click", resumeTest);
+pauseOverlayEl.addEventListener("keydown", (event) => {
+  handleDialogKeydown(event, pauseOverlayEl, resumeTest);
+});
+pauseExitBtn.addEventListener("click", exitToDirectory);
+exitBtn.addEventListener("click", exitToDirectory);
+restartQuizBtn.addEventListener("click", requestRestart);
+
 if (typeof desktopViewport.addEventListener === "function") {
   desktopViewport.addEventListener("change", syncDesktopScroll);
 } else {
@@ -613,7 +797,21 @@ if (typeof desktopViewport.addEventListener === "function") {
 
 if (closeGuardianDisclaimerBtn) {
   closeGuardianDisclaimerBtn.addEventListener("click", closeGuardianDisclaimer);
+  guardianDisclaimerEl.addEventListener("keydown", (event) => {
+    handleDialogKeydown(event, guardianDisclaimerEl, closeGuardianDisclaimer);
+  });
 }
 
+const progressRestored = loadSavedProgress();
+
 renderQuestion();
+
+if (progressRestored && progressCompleted) {
+  showResult({ persist: false });
+}
+
 syncDesktopScroll();
+
+if (!guardianDisclaimerEl.classList.contains("hidden")) {
+  requestAnimationFrame(() => closeGuardianDisclaimerBtn.focus());
+}

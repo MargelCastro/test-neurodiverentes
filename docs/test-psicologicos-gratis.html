@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
-    <title>Test Gratuitos | Tests Neurodivergentes Online</title>
+    <title>Test gratis | Tests Neurodivergentes Online</title>
     <meta
       name="description"
       content="Test gratuitos de cribado psicológico y neuropsicológico para TDAH, TEA, ansiedad, depresión, burnout, sueño, autoestima y funciones ejecutivas."
@@ -30,7 +30,7 @@
     <meta property="og:site_name" content="Tests Neurodivergentes Online" />
     <meta
       property="og:title"
-      content="Test Gratuitos | Tests Neurodivergentes Online"
+      content="Test gratis | Tests Neurodivergentes Online"
     />
     <meta
       property="og:description"
@@ -40,14 +40,26 @@
       property="og:url"
       content="https://testneurodivergentes.com/test-psicologicos-gratis.html"
     />
-    <meta name="twitter:card" content="summary" />
+    <meta
+      property="og:image"
+      content="https://testneurodivergentes.com/assets/test-neurodivergentes.png"
+    />
+    <meta
+      property="og:image:alt"
+      content="Ilustración sobre tests y neurodivergencia"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Test Gratuitos | Tests Neurodivergentes Online"
+      content="Test gratis | Tests Neurodivergentes Online"
     />
     <meta
       name="twitter:description"
       content="Acceso directo a test gratuitos de cribado psicológico y neuropsicológico para adultos, adolescentes, niños, familias, docentes y profesionales."
+    />
+    <meta
+      name="twitter:image"
+      content="https://testneurodivergentes.com/assets/test-neurodivergentes.png"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -1483,6 +1495,7 @@
         }
       }
     </style>
+    <link rel="stylesheet" href="./styles/sistema-visual.css" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -1508,7 +1521,7 @@
             "@type": "CollectionPage",
             "@id": "https://testneurodivergentes.com/test-psicologicos-gratis.html#webpage",
             "url": "https://testneurodivergentes.com/test-psicologicos-gratis.html",
-            "name": "Test Gratuitos",
+            "name": "Test gratis",
             "description": "Página que reúne los test gratuitos de cribado psicológico y neuropsicológico del proyecto.",
             "isPartOf": {
               "@id": "https://testneurodivergentes.com/#website"
@@ -1531,7 +1544,7 @@
               {
                 "@type": "ListItem",
                 "position": 2,
-                "name": "Test Gratuitos",
+                "name": "Test gratis",
                 "item": "https://testneurodivergentes.com/test-psicologicos-gratis.html"
               }
             ]
@@ -1540,12 +1553,12 @@
       }
     </script>
   </head>
-  <body>
+  <body data-visual-theme="light">
     <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
 
     <header class="site-header">
       <div class="container header-inner">
-        <a class="brand" href="#inicio">
+        <a class="brand" href="./index.html#inicio">
           <span class="brand-mark">
             <span class="brand-line">Tests Neurodivergentes</span>
             <span class="brand-line-sub">Online</span>
@@ -1553,7 +1566,7 @@
         </a>
 
         <nav class="desktop-nav" aria-label="Navegación principal">
-          <a href="#inicio">Inicio</a>
+          <a href="./index.html#inicio">Inicio</a>
           <details class="nav-group">
             <summary class="nav-trigger">
               <span>Factores importantes</span>
@@ -1567,9 +1580,9 @@
               <a href="#sueno">Sueño</a>
             </div>
           </details>
-          <a href="#quienes-somos">Quiénes somos</a>
-          <a href="#proximos-pasos">Próximos pasos</a>
-          <a href="./test-psicologicos-gratis.html">Evaluaciones</a>
+          <a href="./index.html#quienes-somos">Quiénes somos</a>
+          <a href="./index.html#proximos-pasos">Próximos pasos</a>
+          <a href="#evaluaciones">Evaluaciones</a>
         </nav>
 
         <details class="mobile-menu">
@@ -1577,7 +1590,7 @@
             <span class="sr-only">Menú</span>
           </summary>
           <nav class="menu-panel" aria-label="Menú móvil">
-            <a href="#inicio">Inicio</a>
+            <a href="./index.html#inicio">Inicio</a>
             <details class="menu-group">
               <summary class="menu-trigger">
                 <span>Factores importantes</span>
@@ -1591,9 +1604,9 @@
                 <a href="#sueno">Sueño</a>
               </div>
             </details>
-            <a href="#quienes-somos">Quiénes somos</a>
-            <a href="#proximos-pasos">Próximos pasos</a>
-            <a href="./test-psicologicos-gratis.html">Evaluaciones</a>
+            <a href="./index.html#quienes-somos">Quiénes somos</a>
+            <a href="./index.html#proximos-pasos">Próximos pasos</a>
+            <a href="#evaluaciones">Evaluaciones</a>
           </nav>
         </details>
       </div>
@@ -1608,7 +1621,7 @@
                 <div class="hero-copy">
                   <span class="eyebrow">Test gratuitos de cribado</span>
                   <h1>
-                    Evaluaciones gratuitas para explorar señales con más
+                    Test gratis para explorar señales con más
                     claridad.
                   </h1>
                   <p class="hero-lead">
@@ -1634,11 +1647,36 @@
                 </div>
 
                 <div class="hero-visual">
-                  <img
-                    src="./assets/test-neurodivergentes.png"
-                    alt=""
-                    class="hero-visual-image"
-                  />
+                  <picture class="hero-visual-picture">
+                    <source
+                      type="image/avif"
+                      srcset="
+                        ./assets/test-neurodivergentes-480.avif 480w,
+                        ./assets/test-neurodivergentes-768.avif 768w,
+                        ./assets/test-neurodivergentes-1181.avif 1181w
+                      "
+                      sizes="(min-width: 1280px) 38rem, (min-width: 900px) 34rem, 90vw"
+                    />
+                    <source
+                      type="image/webp"
+                      srcset="
+                        ./assets/test-neurodivergentes-480.webp 480w,
+                        ./assets/test-neurodivergentes-768.webp 768w,
+                        ./assets/test-neurodivergentes-1181.webp 1181w
+                      "
+                      sizes="(min-width: 1280px) 38rem, (min-width: 900px) 34rem, 90vw"
+                    />
+                    <img
+                      src="./assets/test-neurodivergentes.png"
+                      alt=""
+                      class="hero-visual-image"
+                      width="1181"
+                      height="1181"
+                      loading="eager"
+                      fetchpriority="high"
+                      decoding="async"
+                    />
+                  </picture>
                 </div>
 
                 <div class="callout hero-callout">
@@ -1657,7 +1695,7 @@
 
       <div class="container section-stack">
         <section class="card route-directory" id="evaluaciones">
-          <p class="section-kicker">Test gratuitos</p>
+          <p class="section-kicker">Test gratis</p>
           <h2 class="section-title">
             Evaluaciones preparadas para orientar al usuario y organizar el
             acceso a cada test.
@@ -1672,7 +1710,7 @@
             de inmediato a la evaluación correspondiente.
           </p>
           <div class="route-grid">
-            <article class="route-card is-available">
+            <article class="route-card is-available" id="neurodesarrollo">
               <div>
                 <p class="section-kicker">Neurodesarrollo</p>
                 <h3>TDAH Adultos</h3>
@@ -1724,7 +1762,7 @@
                 >Próximamente</span
               >
             </article>
-            <article class="route-card is-coming">
+            <article class="route-card is-coming" id="ansiedad">
               <div>
                 <p class="section-kicker">Ansiedad</p>
                 <h3>Ansiedad General</h3>
@@ -1750,7 +1788,7 @@
                 >Próximamente</span
               >
             </article>
-            <article class="route-card is-coming">
+            <article class="route-card is-coming" id="estado-animo">
               <div>
                 <p class="section-kicker">Estado de ánimo</p>
                 <h3>Depresión</h3>
@@ -1789,7 +1827,7 @@
                 >Próximamente</span
               >
             </article>
-            <article class="route-card is-coming">
+            <article class="route-card is-coming" id="funciones-ejecutivas">
               <div>
                 <p class="section-kicker">Funciones ejecutivas</p>
                 <h3>Organización</h3>
@@ -1828,7 +1866,7 @@
                 >Próximamente</span
               >
             </article>
-            <article class="route-card is-coming">
+            <article class="route-card is-coming" id="sueno">
               <div>
                 <p class="section-kicker">Sueño</p>
                 <h3>Calidad del Sueño</h3>
@@ -1999,55 +2037,7 @@
         </footer>
       </div>
     </main>
-    <script>
-      const mobileMenu = document.querySelector(".mobile-menu");
-
-      if (mobileMenu) {
-        const mobileMenuTrigger = mobileMenu.querySelector("summary");
-
-        const syncMenuState = () => {
-          const isOpen = mobileMenu.open;
-          document.body.classList.toggle("menu-open", isOpen);
-          mobileMenuTrigger.setAttribute(
-            "aria-label",
-            isOpen ? "Cerrar menú" : "Abrir menú",
-          );
-        };
-
-        const closeMenu = () => {
-          mobileMenu.open = false;
-          syncMenuState();
-        };
-
-        mobileMenu.querySelectorAll("a").forEach((link) => {
-          link.addEventListener("click", closeMenu);
-        });
-
-        mobileMenu.addEventListener("toggle", syncMenuState);
-
-        document.addEventListener("keydown", (event) => {
-          if (event.key === "Escape" && mobileMenu.open) {
-            closeMenu();
-          }
-        });
-
-        const desktopMedia = window.matchMedia("(min-width: 1280px)");
-        const syncMenu = () => {
-          if (desktopMedia.matches) {
-            closeMenu();
-          } else {
-            syncMenuState();
-          }
-        };
-
-        syncMenu();
-
-        if (desktopMedia.addEventListener) {
-          desktopMedia.addEventListener("change", syncMenu);
-        } else {
-          desktopMedia.addListener(syncMenu);
-        }
-      }
-    </script>
+    <script src="./JS/shared/navigation.js" defer></script>
+    <script src="./JS/test-psicologicos-gratis.js" defer></script>
   </body>
 </html>
