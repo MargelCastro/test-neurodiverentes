@@ -281,10 +281,28 @@ body[data-visual-theme].menu-open {
 
 .quiz-menu-submenu {
   display: grid;
-  gap: 0.3rem;
+  gap: 0.75rem;
   margin: 0.25rem 0 0.45rem;
   padding-left: 0.8rem;
   border-left: 2px solid rgba(59, 130, 246, 0.35);
+}
+
+.quiz-menu-submenu .menu-menu-section,
+.quiz-nav-submenu .nav-menu-section {
+  display: grid;
+  align-content: start;
+  gap: 0.1rem;
+}
+
+.quiz-menu-submenu .menu-menu-label,
+.quiz-nav-submenu .nav-menu-label {
+  padding: 0.65rem 0.75rem 0.25rem;
+  color: #60a5fa;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1.25;
+  text-transform: uppercase;
 }
 
 .quiz-menu-submenu a {
@@ -345,10 +363,13 @@ body[data-visual-theme].menu-open {
   .quiz-nav-submenu {
     position: absolute;
     top: calc(100% + 0.55rem);
-    left: 0;
+    right: 0;
     display: grid;
-    width: 17rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: min(44rem, calc(100vw - 2rem));
+    max-height: min(70vh, 42rem);
     gap: 0.25rem;
+    overflow-y: auto;
     padding: 0.65rem;
     border: 1px solid rgba(148, 163, 184, 0.22);
     border-radius: 1rem;

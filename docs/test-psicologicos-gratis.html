@@ -341,12 +341,32 @@
 
       .nav-submenu {
         display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: start;
         gap: 0.35rem;
         padding: 0.55rem;
         border-radius: 20px;
         background: rgba(255, 255, 255, 0.98);
         border: 1px solid rgba(15, 23, 42, 0.1);
         box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+      }
+
+      .nav-menu-section,
+      .menu-menu-section {
+        display: grid;
+        align-content: start;
+        gap: 0.1rem;
+      }
+
+      .nav-menu-label,
+      .menu-menu-label {
+        padding: 0.7rem 0.95rem 0.35rem;
+        color: var(--accent-dark);
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        line-height: 1.25;
+        text-transform: uppercase;
       }
 
       .nav-submenu a {
@@ -370,7 +390,7 @@
 
       .menu-submenu {
         display: grid;
-        gap: 0;
+        gap: 0.75rem;
         padding: 0 0 0.45rem 1rem;
       }
 
@@ -384,11 +404,15 @@
 
       .menu-submenu a {
         min-height: auto;
-        padding: 0.7rem 0;
+        padding: 0.55rem 0.75rem;
         border-bottom: 0;
         color: var(--muted);
         font-size: clamp(1rem, 4vw, 1.15rem);
         font-weight: 600;
+      }
+
+      .menu-menu-label {
+        padding-left: 0.75rem;
       }
 
       .menu-submenu a:last-child {
@@ -486,8 +510,9 @@
         min-height: 100dvh;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         gap: 0.3rem;
+        overflow-y: auto;
         padding: calc(6.5rem + env(safe-area-inset-top, 0px)) 5%
           calc(2rem + env(safe-area-inset-bottom, 0px));
         background:
@@ -1457,7 +1482,9 @@
           position: absolute;
           top: calc(100% + 0.65rem);
           right: 0;
-          min-width: 18rem;
+          width: min(44rem, calc(100vw - 2rem));
+          max-height: min(70vh, 42rem);
+          overflow-y: auto;
           z-index: 35;
         }
 
@@ -1569,15 +1596,39 @@
           <a href="./index.html#inicio">Inicio</a>
           <details class="nav-group">
             <summary class="nav-trigger">
-              <span>Factores importantes</span>
+              <span>Neurodivergencias</span>
               <span class="nav-arrow" aria-hidden="true">▾</span>
             </summary>
-            <div class="nav-submenu">
-              <a href="#neurodesarrollo">Neurodesarrollo</a>
-              <a href="#ansiedad">Ansiedad</a>
-              <a href="#estado-animo">Estado de ánimo</a>
-              <a href="#funciones-ejecutivas">Funciones ejecutivas</a>
-              <a href="#sueno">Sueño</a>
+            <div class="nav-submenu" aria-label="Evaluaciones por categoría">
+              <section class="nav-menu-section">
+                <span class="nav-menu-label">TDAH y autismo</span>
+                <a href="./TDA/TDAH.html">TDAH Adultos</a>
+                <a href="./TDA/TDAH.html">TDAH Infantil</a>
+                <a href="#tea-adultos">TEA Adultos</a>
+                <a href="#tea-infantil">TEA Infantil</a>
+              </section>
+              <section class="nav-menu-section">
+                <span class="nav-menu-label">Ansiedad y estado de ánimo</span>
+                <a href="#ansiedad">Ansiedad General</a>
+                <a href="#ansiedad-social">Ansiedad Social</a>
+                <a href="#estado-animo">Depresión</a>
+                <a href="#burnout">Burnout</a>
+                <a href="#estres">Estrés</a>
+              </section>
+              <section class="nav-menu-section">
+                <span class="nav-menu-label">Funciones ejecutivas</span>
+                <a href="#funciones-ejecutivas">Organización</a>
+                <a href="#procrastinacion">Procrastinación</a>
+                <a href="#deficit-ejecutivo">Déficit Ejecutivo</a>
+                <a href="#impulsividad">Impulsividad</a>
+                <a href="#perfeccionismo">Perfeccionismo</a>
+              </section>
+              <section class="nav-menu-section">
+                <span class="nav-menu-label">Bienestar personal</span>
+                <a href="#sueno">Calidad del Sueño</a>
+                <a href="#autoestima">Autoestima</a>
+                <a href="#dependencia-emocional">Dependencia emocional</a>
+              </section>
             </div>
           </details>
           <a href="./index.html#quienes-somos">Quiénes somos</a>
@@ -1593,15 +1644,39 @@
             <a href="./index.html#inicio">Inicio</a>
             <details class="menu-group">
               <summary class="menu-trigger">
-                <span>Factores importantes</span>
+                <span>Neurodivergencias</span>
                 <span class="menu-arrow" aria-hidden="true">▾</span>
               </summary>
               <div class="menu-submenu">
-                <a href="#neurodesarrollo">Neurodesarrollo</a>
-                <a href="#ansiedad">Ansiedad</a>
-                <a href="#estado-animo">Estado de ánimo</a>
-                <a href="#funciones-ejecutivas">Funciones ejecutivas</a>
-                <a href="#sueno">Sueño</a>
+                <section class="menu-menu-section">
+                  <span class="menu-menu-label">TDAH y autismo</span>
+                  <a href="./TDA/TDAH.html">TDAH Adultos</a>
+                  <a href="./TDA/TDAH.html">TDAH Infantil</a>
+                  <a href="#tea-adultos">TEA Adultos</a>
+                  <a href="#tea-infantil">TEA Infantil</a>
+                </section>
+                <section class="menu-menu-section">
+                  <span class="menu-menu-label">Ansiedad y estado de ánimo</span>
+                  <a href="#ansiedad">Ansiedad General</a>
+                  <a href="#ansiedad-social">Ansiedad Social</a>
+                  <a href="#estado-animo">Depresión</a>
+                  <a href="#burnout">Burnout</a>
+                  <a href="#estres">Estrés</a>
+                </section>
+                <section class="menu-menu-section">
+                  <span class="menu-menu-label">Funciones ejecutivas</span>
+                  <a href="#funciones-ejecutivas">Organización</a>
+                  <a href="#procrastinacion">Procrastinación</a>
+                  <a href="#deficit-ejecutivo">Déficit Ejecutivo</a>
+                  <a href="#impulsividad">Impulsividad</a>
+                  <a href="#perfeccionismo">Perfeccionismo</a>
+                </section>
+                <section class="menu-menu-section">
+                  <span class="menu-menu-label">Bienestar personal</span>
+                  <a href="#sueno">Calidad del Sueño</a>
+                  <a href="#autoestima">Autoestima</a>
+                  <a href="#dependencia-emocional">Dependencia emocional</a>
+                </section>
               </div>
             </details>
             <a href="./index.html#quienes-somos">Quiénes somos</a>
@@ -1736,7 +1811,7 @@
                 >Realizar evaluación</a
               >
             </article>
-            <article class="route-card is-coming">
+              <article class="route-card is-coming" id="tea-adultos">
               <div>
                 <p class="section-kicker">Neurodesarrollo</p>
                 <h3>TEA Adultos</h3>
@@ -1749,7 +1824,7 @@
                 >Próximamente</span
               >
             </article>
-            <article class="route-card is-coming">
+              <article class="route-card is-coming" id="tea-infantil">
               <div>
                 <p class="section-kicker">Neurodesarrollo</p>
                 <h3>TEA Infantil</h3>
@@ -1775,7 +1850,7 @@
                 >Próximamente</span
               >
             </article>
-            <article class="route-card is-coming">
+              <article class="route-card is-coming" id="ansiedad-social">
               <div>
                 <p class="section-kicker">Ansiedad</p>
                 <h3>Ansiedad Social</h3>
@@ -1801,7 +1876,7 @@
                 >Próximamente</span
               >
             </article>
-            <article class="route-card is-coming">
+              <article class="route-card is-coming" id="burnout">
               <div>
                 <p class="section-kicker">Estado de ánimo</p>
                 <h3>Burnout</h3>
@@ -1814,7 +1889,7 @@
                 >Próximamente</span
               >
             </article>
-            <article class="route-card is-coming">
+              <article class="route-card is-coming" id="estres">
               <div>
                 <p class="section-kicker">Estado de ánimo</p>
                 <h3>Estrés</h3>
@@ -1840,7 +1915,7 @@
                 >Próximamente</span
               >
             </article>
-            <article class="route-card is-coming">
+              <article class="route-card is-coming" id="procrastinacion">
               <div>
                 <p class="section-kicker">Funciones ejecutivas</p>
                 <h3>Procrastinación</h3>
@@ -1853,7 +1928,7 @@
                 >Próximamente</span
               >
             </article>
-            <article class="route-card is-coming">
+              <article class="route-card is-coming" id="deficit-ejecutivo">
               <div>
                 <p class="section-kicker">Funciones ejecutivas</p>
                 <h3>Déficit Ejecutivo</h3>
@@ -1879,7 +1954,7 @@
                 >Próximamente</span
               >
             </article>
-            <article class="route-card is-coming">
+              <article class="route-card is-coming" id="autoestima">
               <div>
                 <p class="section-kicker">Regulación emocional</p>
                 <h3>Autoestima</h3>
@@ -1892,7 +1967,7 @@
                 >Próximamente</span
               >
             </article>
-            <article class="route-card is-coming">
+              <article class="route-card is-coming" id="impulsividad">
               <div>
                 <p class="section-kicker">Regulación emocional</p>
                 <h3>Impulsividad</h3>
@@ -1905,7 +1980,7 @@
                 >Próximamente</span
               >
             </article>
-            <article class="route-card is-coming">
+              <article class="route-card is-coming" id="perfeccionismo">
               <div>
                 <p class="section-kicker">Regulación emocional</p>
                 <h3>Perfeccionismo</h3>
@@ -1918,7 +1993,7 @@
                 >Próximamente</span
               >
             </article>
-            <article class="route-card is-coming">
+              <article class="route-card is-coming" id="dependencia-emocional">
               <div>
                 <p class="section-kicker">Regulación emocional</p>
                 <h3>Dependencia emocional</h3>

@@ -295,12 +295,32 @@
 
     .nav-submenu {
       display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: start;
       gap: 0.35rem;
       padding: 0.55rem;
       border-radius: 20px;
       background: rgba(255, 255, 255, 0.98);
       border: 1px solid rgba(15, 23, 42, 0.1);
       box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+    }
+
+    .nav-menu-section,
+    .menu-menu-section {
+      display: grid;
+      align-content: start;
+      gap: 0.1rem;
+    }
+
+    .nav-menu-label,
+    .menu-menu-label {
+      padding: 0.7rem 0.95rem 0.35rem;
+      color: var(--accent-dark);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      line-height: 1.25;
+      text-transform: uppercase;
     }
 
     .nav-submenu a {
@@ -324,7 +344,7 @@
 
     .menu-submenu {
       display: grid;
-      gap: 0;
+      gap: 0.75rem;
       padding: 0 0 0.45rem 1rem;
     }
 
@@ -338,11 +358,15 @@
 
     .menu-submenu a {
       min-height: auto;
-      padding: 0.7rem 0;
+      padding: 0.55rem 0.75rem;
       border-bottom: 0;
       color: var(--muted);
       font-size: clamp(1rem, 4vw, 1.15rem);
       font-weight: 600;
+    }
+
+    .menu-menu-label {
+      padding-left: 0.75rem;
     }
 
     .menu-submenu a:last-child {
@@ -439,8 +463,9 @@
       min-height: 100dvh;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       gap: 0.3rem;
+      overflow-y: auto;
       padding:
         calc(6.5rem + env(safe-area-inset-top, 0px))
         5%
@@ -1440,7 +1465,9 @@
         position: absolute;
         top: calc(100% + 0.65rem);
         right: 0;
-        min-width: 18rem;
+        width: min(44rem, calc(100vw - 2rem));
+        max-height: min(70vh, 42rem);
+        overflow-y: auto;
         z-index: 35;
       }
 
@@ -1646,15 +1673,39 @@
         <a href="#inicio">Inicio</a>
         <details class="nav-group">
           <summary class="nav-trigger">
-            <span>Factores importantes</span>
+            <span>Neurodivergencias</span>
             <span class="nav-arrow" aria-hidden="true">▾</span>
           </summary>
-          <div class="nav-submenu">
-            <a href="./test-psicologicos-gratis.html#neurodesarrollo">Neurodesarrollo</a>
-            <a href="./test-psicologicos-gratis.html#ansiedad">Ansiedad</a>
-            <a href="./test-psicologicos-gratis.html#estado-animo">Estado de ánimo</a>
-            <a href="./test-psicologicos-gratis.html#funciones-ejecutivas">Funciones ejecutivas</a>
-            <a href="./test-psicologicos-gratis.html#sueno">Sueño</a>
+          <div class="nav-submenu" aria-label="Evaluaciones por categoría">
+            <section class="nav-menu-section">
+              <span class="nav-menu-label">TDAH y autismo</span>
+              <a href="./TDA/TDAH.html">TDAH Adultos</a>
+              <a href="./TDA/TDAH.html">TDAH Infantil</a>
+              <a href="./test-psicologicos-gratis.html#tea-adultos">TEA Adultos</a>
+              <a href="./test-psicologicos-gratis.html#tea-infantil">TEA Infantil</a>
+            </section>
+            <section class="nav-menu-section">
+              <span class="nav-menu-label">Ansiedad y estado de ánimo</span>
+              <a href="./test-psicologicos-gratis.html#ansiedad">Ansiedad General</a>
+              <a href="./test-psicologicos-gratis.html#ansiedad-social">Ansiedad Social</a>
+              <a href="./test-psicologicos-gratis.html#estado-animo">Depresión</a>
+              <a href="./test-psicologicos-gratis.html#burnout">Burnout</a>
+              <a href="./test-psicologicos-gratis.html#estres">Estrés</a>
+            </section>
+            <section class="nav-menu-section">
+              <span class="nav-menu-label">Funciones ejecutivas</span>
+              <a href="./test-psicologicos-gratis.html#funciones-ejecutivas">Organización</a>
+              <a href="./test-psicologicos-gratis.html#procrastinacion">Procrastinación</a>
+              <a href="./test-psicologicos-gratis.html#deficit-ejecutivo">Déficit Ejecutivo</a>
+              <a href="./test-psicologicos-gratis.html#impulsividad">Impulsividad</a>
+              <a href="./test-psicologicos-gratis.html#perfeccionismo">Perfeccionismo</a>
+            </section>
+            <section class="nav-menu-section">
+              <span class="nav-menu-label">Bienestar personal</span>
+              <a href="./test-psicologicos-gratis.html#sueno">Calidad del Sueño</a>
+              <a href="./test-psicologicos-gratis.html#autoestima">Autoestima</a>
+              <a href="./test-psicologicos-gratis.html#dependencia-emocional">Dependencia emocional</a>
+            </section>
           </div>
         </details>
         <a href="#quienes-somos">Quiénes somos</a>
@@ -1668,15 +1719,39 @@
           <a href="#inicio">Inicio</a>
           <details class="menu-group">
             <summary class="menu-trigger">
-              <span>Factores importantes</span>
+              <span>Neurodivergencias</span>
               <span class="menu-arrow" aria-hidden="true">▾</span>
             </summary>
             <div class="menu-submenu">
-              <a href="./test-psicologicos-gratis.html#neurodesarrollo">Neurodesarrollo</a>
-              <a href="./test-psicologicos-gratis.html#ansiedad">Ansiedad</a>
-              <a href="./test-psicologicos-gratis.html#estado-animo">Estado de ánimo</a>
-              <a href="./test-psicologicos-gratis.html#funciones-ejecutivas">Funciones ejecutivas</a>
-              <a href="./test-psicologicos-gratis.html#sueno">Sueño</a>
+              <section class="menu-menu-section">
+                <span class="menu-menu-label">TDAH y autismo</span>
+                <a href="./TDA/TDAH.html">TDAH Adultos</a>
+                <a href="./TDA/TDAH.html">TDAH Infantil</a>
+                <a href="./test-psicologicos-gratis.html#tea-adultos">TEA Adultos</a>
+                <a href="./test-psicologicos-gratis.html#tea-infantil">TEA Infantil</a>
+              </section>
+              <section class="menu-menu-section">
+                <span class="menu-menu-label">Ansiedad y estado de ánimo</span>
+                <a href="./test-psicologicos-gratis.html#ansiedad">Ansiedad General</a>
+                <a href="./test-psicologicos-gratis.html#ansiedad-social">Ansiedad Social</a>
+                <a href="./test-psicologicos-gratis.html#estado-animo">Depresión</a>
+                <a href="./test-psicologicos-gratis.html#burnout">Burnout</a>
+                <a href="./test-psicologicos-gratis.html#estres">Estrés</a>
+              </section>
+              <section class="menu-menu-section">
+                <span class="menu-menu-label">Funciones ejecutivas</span>
+                <a href="./test-psicologicos-gratis.html#funciones-ejecutivas">Organización</a>
+                <a href="./test-psicologicos-gratis.html#procrastinacion">Procrastinación</a>
+                <a href="./test-psicologicos-gratis.html#deficit-ejecutivo">Déficit Ejecutivo</a>
+                <a href="./test-psicologicos-gratis.html#impulsividad">Impulsividad</a>
+                <a href="./test-psicologicos-gratis.html#perfeccionismo">Perfeccionismo</a>
+              </section>
+              <section class="menu-menu-section">
+                <span class="menu-menu-label">Bienestar personal</span>
+                <a href="./test-psicologicos-gratis.html#sueno">Calidad del Sueño</a>
+                <a href="./test-psicologicos-gratis.html#autoestima">Autoestima</a>
+                <a href="./test-psicologicos-gratis.html#dependencia-emocional">Dependencia emocional</a>
+              </section>
             </div>
           </details>
           <a href="#quienes-somos">Quiénes somos</a>
@@ -1695,7 +1770,7 @@
             <div class="hero-content hero-content-wide">
               <div class="hero-copy">
                 <span class="eyebrow">Guía en español para tests y resultados</span>
-                <h1>Tests <span class="hero-title-nowrap">Neurodivergentes</span> Online</h1>
+                <h1>Tests de <span class="hero-title-nowrap">Neurodivergencia </span>Gratis Online</h1>
                 <p class="hero-lead">
                   Test gratuitos de cribado psicológico y neuropsicológico para adultos, adolescentes, niños,
                   padres y educadores. Esta página reúne información amplia sobre test psicológicos online, TDAH,
