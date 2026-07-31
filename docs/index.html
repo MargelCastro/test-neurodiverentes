@@ -11,6 +11,20 @@
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <link rel="canonical" href="https://testneurodivergentes.com/">
   <link rel="sitemap" type="application/xml" title="Sitemap" href="https://testneurodivergentes.com/sitemap.xml">
+  <link
+    rel="preload"
+    as="image"
+    href="./assets/tests-neurodivergentes-gratis-familia-portada-movil.webp"
+    media="(max-width: 767px)"
+    fetchpriority="high"
+  >
+  <link
+    rel="preload"
+    as="image"
+    href="./assets/tests-neurodivergentes-gratis-familia-portada-escritorio.webp"
+    media="(min-width: 768px)"
+    fetchpriority="high"
+  >
   <meta property="og:locale" content="es_ES">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Tests Neurodivergentes Online">
@@ -20,7 +34,7 @@
     content="Guía pilar en español sobre test psicológicos online de cribado: TDAH, TEA, ansiedad, depresión, burnout, sueño, autoestima y funciones ejecutivas."
   >
   <meta property="og:url" content="https://testneurodivergentes.com/">
-  <meta property="og:image" content="https://testneurodivergentes.com/assets/test-gratis-familia.png">
+  <meta property="og:image" content="https://testneurodivergentes.com/assets/tests-neurodivergentes-gratis-familia-portada-escritorio.webp">
   <meta property="og:image:alt" content="Familia conversando sobre evaluaciones de neurodivergencia">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Tests Neurodivergentes Online | Guía y test de cribado">
@@ -28,7 +42,7 @@
     name="twitter:description"
     content="Test gratis de cribado psicológico y neuropsicológico para adultos, adolescentes, niños, familias, docentes y profesionales."
   >
-  <meta name="twitter:image" content="https://testneurodivergentes.com/assets/test-gratis-familia.png">
+  <meta name="twitter:image" content="https://testneurodivergentes.com/assets/tests-neurodivergentes-gratis-familia-portada-escritorio.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -519,15 +533,22 @@
       opacity: 0.4;
     }
 
-    .hero-shell {
-      margin-top: 0;
-      display: block;
+    .hero {
+      padding: 0;
+    }
+
+    .hero-banner {
+      position: relative;
+      display: grid;
       width: 100vw;
       margin-left: calc(50% - 50vw);
       margin-right: calc(50% - 50vw);
+      min-height: calc(100svh - 4.75rem);
+      overflow: hidden;
+      isolation: isolate;
+      background: #e7dfc9;
     }
 
-    .hero-panel,
     .card,
     .callout,
     .faq-item,
@@ -539,76 +560,63 @@
       backdrop-filter: none;
     }
 
-    .hero-panel {
-      padding: 1.1rem 0 1.3rem;
-      border-radius: 0;
-      overflow: hidden;
-      position: relative;
-      min-width: 0;
+    .hero-banner-media {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      width: 100%;
+      height: 100%;
     }
 
-    .hero-panel::before {
+    .hero-banner-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .hero-banner::after {
       content: "";
       position: absolute;
       inset: 0;
+      z-index: -1;
       background:
-        radial-gradient(circle at 16% 22%, rgba(59, 130, 246, 0.18), transparent 30%),
-        radial-gradient(circle at 88% 18%, rgba(245, 158, 11, 0.16), transparent 24%);
-      pointer-events: none;
-      opacity: 0.58;
-    }
-
-    .hero-panel.hero-feature {
-      padding: clamp(0.35rem, 1.4vw, 0.9rem) 10% clamp(2rem, 5vw, 3.75rem);
-      min-height: clamp(34rem, 82vh, 52rem);
-    }
-
-    .hero-panel.hero-feature::before {
-      inset: -6%;
-      background: url("./assets/test-gratis-familia.png") center center / cover no-repeat;
-      filter: blur(24px);
-      transform: scale(1.14);
-      opacity: 0.28;
-    }
-
-    .hero-panel.hero-feature::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(90deg, rgba(255, 255, 255, 0.97) 0%, rgba(255, 255, 255, 0.93) 34%, rgba(255, 255, 255, 0.82) 62%, rgba(255, 255, 255, 0.9) 100%),
-        radial-gradient(circle at 12% 18%, rgba(59, 130, 246, 0.14), transparent 20%),
-        radial-gradient(circle at 86% 24%, rgba(245, 158, 11, 0.12), transparent 18%);
+        linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.94) 0%,
+          rgba(255, 255, 255, 0.86) 42%,
+          rgba(255, 255, 255, 0.52) 68%,
+          rgba(255, 255, 255, 0.18) 100%
+        );
       pointer-events: none;
     }
 
-    .hero-content {
+    .hero-banner-content {
       position: relative;
       z-index: 1;
-      display: grid;
-      gap: 0.95rem;
-      min-width: 0;
+      display: flex;
+      align-items: flex-start;
+      min-height: calc(100svh - 4.75rem);
+      padding-top: clamp(1.5rem, 6vh, 4rem);
+      padding-bottom: clamp(7rem, 16vh, 10rem);
     }
 
-    .hero-content.hero-content-wide {
-      width: 100%;
-      max-width: none;
-      margin: 0;
-      gap: 1.1rem;
-      grid-template-columns: minmax(0, 1fr);
-      grid-template-areas:
-        "copy"
-        "index"
-        "visual"
-        "findings"
-        "callout";
-      align-items: start;
+    .hero-support {
+      display: grid;
+      justify-items: center;
+      gap: 1.2rem;
+      padding-top: clamp(1.5rem, 4vw, 3rem);
+      padding-bottom: clamp(1.5rem, 4vw, 3rem);
     }
 
     .hero-copy {
+      position: relative;
+      z-index: 2;
       grid-area: copy;
       display: grid;
       gap: 1rem;
+      width: 100%;
+      min-width: 0;
       max-width: 72ch;
     }
 
@@ -632,6 +640,8 @@
     }
 
     .hero h1 {
+      position: relative;
+      z-index: 2;
       font-size: clamp(1.95rem, 10vw, 4.9rem);
       max-width: 18ch;
       overflow-wrap: normal;
@@ -641,7 +651,7 @@
     }
 
     .hero-title-nowrap {
-      white-space: nowrap;
+      white-space: normal;
     }
 
     .hero-lead {
@@ -659,13 +669,42 @@
     }
 
     .hero-actions {
+      position: absolute;
+      left: 50%;
+      bottom: clamp(2rem, 5vh, 3.5rem);
+      z-index: 3;
       flex-direction: column;
-      align-items: stretch;
+      align-items: center;
+      justify-content: center;
+      width: min(calc(100% - 2rem), 18rem);
+      transform: translateX(-50%);
+    }
+
+    .hero-actions .button {
+      width: 100%;
+      margin-inline: 0;
+      animation: hero-cta-pulse 2.8s ease-in-out infinite;
+    }
+
+    @keyframes hero-cta-pulse {
+      0%,
+      100% {
+        box-shadow:
+          0 14px 28px rgba(37, 99, 235, 0.24),
+          0 0 0 0 rgba(59, 130, 246, 0.24);
+      }
+
+      50% {
+        box-shadow:
+          0 20px 38px rgba(37, 99, 235, 0.34),
+          0 0 0 0.55rem rgba(59, 130, 246, 0);
+      }
     }
 
     .home-index {
-      grid-area: index;
       width: 100%;
+      margin-inline: auto;
+      justify-self: center;
       padding: 1rem;
       border-radius: var(--radius-md);
       border: 1px solid rgba(59, 130, 246, 0.18);
@@ -680,6 +719,7 @@
       font-weight: 800;
       letter-spacing: 0.08em;
       text-transform: uppercase;
+      text-align: center;
       color: var(--accent-dark);
     }
 
@@ -762,7 +802,6 @@
     }
 
     .hero-findings {
-      grid-area: findings;
       margin-top: 0.4rem;
       display: grid;
       gap: 1rem;
@@ -779,40 +818,6 @@
       width: 100%;
     }
 
-    .hero-visual {
-      grid-area: visual;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-width: 0;
-      padding-top: 0.5rem;
-    }
-
-    .hero-visual-frame {
-      width: min(100%, 27rem);
-      aspect-ratio: 1 / 1;
-      max-height: min(72vw, 30rem);
-      border-radius: 50%;
-      overflow: hidden;
-      box-sizing: border-box;
-      padding: clamp(0.8rem, 2vw, 1.15rem);
-      background: radial-gradient(circle, rgba(255, 255, 255, 0.99) 0%, rgba(255, 255, 255, 0.95) 62%, rgba(255, 255, 255, 0.52) 84%, rgba(255, 255, 255, 0.16) 100%);
-      filter:
-        drop-shadow(0 0 18px rgba(255, 255, 255, 0.98))
-        drop-shadow(0 0 42px rgba(255, 255, 255, 0.92))
-        drop-shadow(0 24px 40px rgba(37, 99, 235, 0.14));
-    }
-
-    .hero-visual-image {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: contain;
-      border-radius: 50%;
-      -webkit-mask-image: radial-gradient(circle at center, #000 74%, rgba(0, 0, 0, 0.88) 84%, rgba(0, 0, 0, 0.58) 91%, rgba(0, 0, 0, 0.24) 96%, transparent 100%);
-      mask-image: radial-gradient(circle at center, #000 74%, rgba(0, 0, 0, 0.88) 84%, rgba(0, 0, 0, 0.58) 91%, rgba(0, 0, 0, 0.24) 96%, transparent 100%);
-    }
-
     .hero-metrics .metric-card {
       padding: 1.15rem 1.15rem 1.25rem;
       border-radius: var(--radius-md);
@@ -827,7 +832,6 @@
     }
 
     .hero-callout {
-      grid-area: callout;
       margin-top: 0.25rem;
       width: 100%;
       max-width: 100%;
@@ -1276,11 +1280,6 @@
         display: block;
       }
 
-      .hero {
-        padding: 0;
-      }
-
-      .hero-panel,
       .card,
       .footer-shell {
         padding-top: 1.6rem;
@@ -1352,36 +1351,36 @@
         margin-top: 0;
       }
 
-      .hero-shell {
-        display: block;
+      .hero-banner::after {
+        background:
+          linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.96) 0%,
+            rgba(255, 255, 255, 0.92) 34%,
+            rgba(255, 255, 255, 0.7) 52%,
+            rgba(255, 255, 255, 0.16) 74%,
+            rgba(255, 255, 255, 0.04) 100%
+          );
       }
 
-      .hero-content.hero-content-wide {
-        column-gap: clamp(1.75rem, 4vw, 4.75rem);
-        grid-template-columns: minmax(0, 0.95fr) minmax(300px, 0.78fr);
-        grid-template-areas:
-          "copy visual"
-          "index index"
-          "findings findings"
-          "callout callout";
+      .hero-banner-content {
+        align-items: center;
+        padding-top: clamp(2rem, 5vh, 4rem);
+        padding-bottom: clamp(7rem, 14vh, 9rem);
+      }
+
+      .hero-banner .hero-copy {
+        max-width: min(56vw, 52rem);
+      }
+
+      .hero-title-nowrap {
+        white-space: nowrap;
       }
 
       .home-index {
         width: min(100%, 68rem);
         margin-inline: auto;
         justify-self: center;
-      }
-
-      .hero-visual {
-        justify-content: center;
-        align-self: start;
-        padding-top: clamp(0.5rem, 2vw, 1.5rem);
-      }
-
-      .hero-visual-frame {
-        width: min(100%, 34rem);
-        max-height: min(70vh, 34rem);
-        transform: translateY(10%);
       }
 
       .section-stack {
@@ -1502,16 +1501,12 @@
       }
     }
 
-    @media (min-width: 1440px) {
-      .hero-panel.hero-feature {
-        padding-inline: 10%;
-      }
-
-      .hero-visual-frame {
-        width: min(100%, 38rem);
-        max-height: min(72vh, 38rem);
+    @media (prefers-reduced-motion: reduce) {
+      .hero-actions .button {
+        animation: none;
       }
     }
+
   </style>
   <link rel="stylesheet" href="./styles/sistema-visual.css">
   <script type="application/ld+json">
@@ -1679,8 +1674,8 @@
           <div class="nav-submenu" aria-label="Evaluaciones por categoría">
             <section class="nav-menu-section">
               <span class="nav-menu-label">TDAH y autismo</span>
-              <a href="./TDA/TDAH.html">TDAH Adultos</a>
-              <a href="./TDA/TDAH.html">TDAH Infantil</a>
+              <a href="./TDA/que-es-el-tdah.html">TDAH Adultos</a>
+              <a href="./TDA/que-es-el-tdah.html">TDAH Infantil</a>
               <a href="./test-psicologicos-gratis.html#tea-adultos">TEA Adultos</a>
               <a href="./test-psicologicos-gratis.html#tea-infantil">TEA Infantil</a>
             </section>
@@ -1725,8 +1720,8 @@
             <div class="menu-submenu">
               <section class="menu-menu-section">
                 <span class="menu-menu-label">TDAH y autismo</span>
-                <a href="./TDA/TDAH.html">TDAH Adultos</a>
-                <a href="./TDA/TDAH.html">TDAH Infantil</a>
+                <a href="./TDA/que-es-el-tdah.html">TDAH Adultos</a>
+                <a href="./TDA/que-es-el-tdah.html">TDAH Infantil</a>
                 <a href="./test-psicologicos-gratis.html#tea-adultos">TEA Adultos</a>
                 <a href="./test-psicologicos-gratis.html#tea-infantil">TEA Infantil</a>
               </section>
@@ -1764,11 +1759,24 @@
 
   <main id="contenido">
     <section class="hero" id="inicio">
-      <div class="container">
-        <div class="hero-shell">
-          <article class="hero-panel hero-feature">
-            <div class="hero-content hero-content-wide">
-              <div class="hero-copy">
+      <article class="hero-banner">
+        <picture class="hero-banner-media" aria-hidden="true">
+          <source
+            media="(max-width: 767px)"
+            srcset="./assets/tests-neurodivergentes-gratis-familia-portada-movil.webp"
+          >
+          <img
+            src="./assets/tests-neurodivergentes-gratis-familia-portada-escritorio.webp"
+            alt=""
+            width="1672"
+            height="941"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          >
+        </picture>
+        <div class="container hero-banner-content">
+          <div class="hero-copy">
                 <span class="eyebrow">Guía en español para tests y resultados</span>
                 <h1>Tests de <span class="hero-title-nowrap">Neurodivergencia </span>Gratis Online</h1>
                 <p class="hero-lead">
@@ -1777,19 +1785,16 @@
                   autismo, ansiedad, depresión, burnout, funciones ejecutivas, autoestima, sueño, impulsividad y
                   regulación emocional para que la persona comprenda mejor sus señales antes de decidir el siguiente paso.
                 </p>
-                <div class="hero-actions">
-                  <a class="button" href="./test-psicologicos-gratis.html">Comenzar evaluación</a>
-                  <a class="button-secondary" href="#faq">Ver preguntas frecuentes</a>
-                </div>
-                <p class="hero-lead">
-                  No estás entrando a una landing breve ni a una colección vacía de formularios. Estás en el mapa
-                  principal del proyecto: una guía extensa diseñada para responder dudas frecuentes, explicar qué es un
-                  test de cribado, aclarar sus límites, ordenar las áreas de evaluación y ayudarte a usar los resultados
-                  con criterio, calma y responsabilidad.
-                </p>
-              </div>
+          </div>
+          <div class="hero-actions">
+            <a class="button" href="./test-psicologicos-gratis.html#evaluaciones">Comenzar test gratuito</a>
+          </div>
+        </div>
+      </article>
+    </section>
 
-              <nav class="home-index" aria-labelledby="home-index-title">
+    <div class="container hero-support">
+      <nav class="home-index" aria-labelledby="home-index-title">
                 <h2 class="home-index-title" id="home-index-title">Explora esta guía</h2>
                 <div class="home-index-links">
                   <a class="home-index-link" href="./test-psicologicos-gratis.html">Ver evaluaciones</a>
@@ -1799,83 +1804,7 @@
                   <a class="home-index-link" href="#faq">Preguntas frecuentes</a>
                 </div>
               </nav>
-
-              <div class="hero-findings">
-                <span class="tag">Qué vas a encontrar aquí</span>
-                <div class="metrics hero-metrics">
-                  <div class="metric-card">
-                    <strong>Mapa completo de evaluaciones</strong>
-                    <p>
-                      Rutas internas preparadas para TDAH, TEA, ansiedad general, ansiedad social, depresión, burnout,
-                      estrés, organización, procrastinación, déficit ejecutivo, sueño, autoestima, impulsividad,
-                      perfeccionismo y dependencia emocional.
-                    </p>
-                  </div>
-                  <div class="metric-card">
-                    <strong>Contenido pensado para múltiples perfiles</strong>
-                    <p>
-                      Adultos que sospechan un patrón, padres que observan señales tempranas, docentes que necesitan un
-                      lenguaje claro, universitarios bajo presión, empresas preocupadas por burnout y psicólogos que
-                      quieren recursos de orientación previos a la consulta.
-                    </p>
-                  </div>
-                  <div class="metric-card">
-                    <strong>Enfoque de uso responsable</strong>
-                    <p>
-                      Esta home prioriza educación, prevención y detección temprana. No ofrece etiquetas definitivas ni
-                      respuestas mágicas; ofrece contexto para tomar decisiones más informadas.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="hero-visual">
-                <div class="hero-visual-frame">
-                  <picture class="hero-visual-picture">
-                    <source
-                      type="image/avif"
-                      srcset="
-                        ./assets/test-gratis-familia-480.avif 480w,
-                        ./assets/test-gratis-familia-768.avif 768w,
-                        ./assets/test-gratis-familia-1181.avif 1181w
-                      "
-                      sizes="(min-width: 1280px) 38rem, (min-width: 1024px) 34rem, 90vw"
-                    >
-                    <source
-                      type="image/webp"
-                      srcset="
-                        ./assets/test-gratis-familia-480.webp 480w,
-                        ./assets/test-gratis-familia-768.webp 768w,
-                        ./assets/test-gratis-familia-1181.webp 1181w
-                      "
-                      sizes="(min-width: 1280px) 38rem, (min-width: 1024px) 34rem, 90vw"
-                    >
-                    <img
-                      src="./assets/test-gratis-familia.png"
-                      alt=""
-                      class="hero-visual-image"
-                      width="1181"
-                      height="1181"
-                      loading="eager"
-                      fetchpriority="high"
-                      decoding="async"
-                    >
-                  </picture>
-                </div>
-              </div>
-
-              <div class="callout hero-callout">
-                <strong>Aviso importante</strong>
-                <p>
-                  Los resultados representan únicamente un cribado orientativo y nunca sustituyen una evaluación
-                  realizada por un profesional de la salud mental.
-                </p>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
+    </div>
 
     <div class="container section-stack">
       <section class="grid-two intro-grid" aria-label="Resumen inicial">
@@ -2751,9 +2680,9 @@
         </details>
       </section>
 
-      <footer class="footer-shell">
+      <section class="footer-shell" aria-labelledby="fuentes-oficiales">
         <p class="section-kicker">Fuentes base y cierre</p>
-        <h2 class="section-title">Referencias oficiales para orientar el contenido y un último recordatorio ético.</h2>
+        <h2 class="section-title" id="fuentes-oficiales">Referencias oficiales para orientar el contenido y un último recordatorio ético.</h2>
         <p>
           Esta página está escrita con un enfoque de salud digital responsable y se apoya en lineamientos y materiales
           informativos de instituciones reconocidas para comprender TDAH, ansiedad, depresión, salud mental infantil,
@@ -2772,17 +2701,27 @@
           <li><a href="https://www.nhlbi.nih.gov/health/sleep/why-sleep-important" target="_blank" rel="noreferrer">NHLBI: por qué el sueño es importante</a></li>
           <li><a href="https://www.nhlbi.nih.gov/health/sleep-deprivation/health-effects" target="_blank" rel="noreferrer">NHLBI: efectos de la privación de sueño sobre la salud y el funcionamiento</a></li>
         </ul>
-        <div class="legal-note">
-          <strong>Uso responsable final</strong>
-          <p>
-            Los resultados representan únicamente un cribado orientativo y nunca sustituyen una evaluación realizada por
-            un profesional de la salud mental. Si existe riesgo inmediato o malestar intenso, busca ayuda urgente en los
-            servicios disponibles de tu localidad.
-          </p>
-        </div>
-      </footer>
+      </section>
     </div>
   </main>
+  <footer class="site-responsible-footer">
+    <div class="site-responsible-footer__inner">
+      <div class="site-responsible-footer__notice">
+        <strong>Uso responsable</strong>
+        <p>
+          Los resultados representan únicamente un cribado orientativo y nunca
+          sustituyen una evaluación realizada por un profesional de la salud
+          mental. Si existe riesgo inmediato o malestar intenso, busca ayuda
+          urgente en los servicios disponibles de tu localidad.
+        </p>
+      </div>
+      <div class="site-responsible-footer__identity">
+        <p class="site-responsible-footer__eyebrow">Orientación responsable</p>
+        <strong>Tests Neurodivergentes Online</strong>
+        <span>Información y cribado orientativo en español.</span>
+      </div>
+    </div>
+  </footer>
   <script src="./JS/shared/navigation.js" defer></script>
   <script src="./JS/index.js" defer></script>
 </body>

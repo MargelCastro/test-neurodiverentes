@@ -42,7 +42,7 @@
     />
     <meta
       property="og:image"
-      content="https://testneurodivergentes.com/assets/test-neurodivergentes.png"
+      content="https://testneurodivergentes.com/assets/test-neurodivergentes-1181.webp"
     />
     <meta
       property="og:image:alt"
@@ -59,7 +59,7 @@
     />
     <meta
       name="twitter:image"
-      content="https://testneurodivergentes.com/assets/test-neurodivergentes.png"
+      content="https://testneurodivergentes.com/assets/test-neurodivergentes-1181.webp"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -580,8 +580,7 @@
       .card,
       .callout,
       .faq-item,
-      .table-wrap,
-      .footer-shell {
+      .table-wrap {
         border: 0;
         background: transparent;
         box-shadow: none;
@@ -622,7 +621,7 @@
 
       .hero-panel.hero-feature::before {
         inset: -6%;
-        background: url("./assets/test-neurodivergentes.png") center center /
+        background: url("./assets/test-neurodivergentes-1181.webp") center center /
           cover no-repeat;
         filter: blur(24px);
         transform: scale(1.14);
@@ -1256,37 +1255,6 @@
         color: var(--muted);
       }
 
-      .footer-shell {
-        margin: 1.2rem auto 2.4rem;
-        border-radius: 0;
-        padding: 1.4rem 0 0;
-        border-top: 1px solid rgba(148, 163, 184, 0.12);
-      }
-
-      .footer-shell .section-title {
-        max-width: none;
-        text-align: center;
-        margin-inline: auto;
-      }
-
-      .footer-shell p,
-      .footer-shell li {
-        color: var(--muted);
-      }
-
-      .legal-note {
-        margin-top: 1rem;
-        padding: 1rem;
-        border-radius: 0;
-        background: rgba(239, 246, 255, 0.96);
-        border: 0;
-      }
-
-      .reference-list a,
-      .table-wrap a {
-        color: var(--accent-dark);
-      }
-
       @media (min-width: 640px) {
         .brand {
           max-width: min(24rem, calc(100vw - 9rem));
@@ -1301,10 +1269,9 @@
         }
 
         .hero-panel,
-        .card,
-        .footer-shell {
-          padding-top: 1.6rem;
-          padding-bottom: 1.8rem;
+        .card {
+          padding-top: 4rem;
+          padding-bottom: 3rem;
         }
 
         .card.route-directory {
@@ -1348,20 +1315,6 @@
       }
 
       @media (min-width: 1024px) {
-        .footer-shell {
-          width: 100%;
-        }
-
-        .reference-list {
-          display: grid;
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-          gap: 0.85rem 2rem;
-        }
-
-        .reference-list li {
-          margin-top: 0;
-        }
-
         .hero-shell {
           display: block;
         }
@@ -1602,8 +1555,8 @@
             <div class="nav-submenu" aria-label="Evaluaciones por categoría">
               <section class="nav-menu-section">
                 <span class="nav-menu-label">TDAH y autismo</span>
-                <a href="./TDA/TDAH.html">TDAH Adultos</a>
-                <a href="./TDA/TDAH.html">TDAH Infantil</a>
+                <a href="./TDA/que-es-el-tdah.html">TDAH Adultos</a>
+                <a href="./TDA/que-es-el-tdah.html">TDAH Infantil</a>
                 <a href="#tea-adultos">TEA Adultos</a>
                 <a href="#tea-infantil">TEA Infantil</a>
               </section>
@@ -1650,8 +1603,8 @@
               <div class="menu-submenu">
                 <section class="menu-menu-section">
                   <span class="menu-menu-label">TDAH y autismo</span>
-                  <a href="./TDA/TDAH.html">TDAH Adultos</a>
-                  <a href="./TDA/TDAH.html">TDAH Infantil</a>
+                  <a href="./TDA/que-es-el-tdah.html">TDAH Adultos</a>
+                  <a href="./TDA/que-es-el-tdah.html">TDAH Infantil</a>
                   <a href="#tea-adultos">TEA Adultos</a>
                   <a href="#tea-infantil">TEA Infantil</a>
                 </section>
@@ -1696,8 +1649,7 @@
                 <div class="hero-copy">
                   <span class="eyebrow">Test gratuitos de cribado</span>
                   <h1>
-                    Test gratis para explorar señales con más
-                    claridad.
+                    Test neurodivergentes gratis
                   </h1>
                   <p class="hero-lead">
                     Esta página reúne los accesos directos a los test gratuitos
@@ -1706,32 +1658,14 @@
                     sueño, autoestima, impulsividad, perfeccionismo y
                     dependencia emocional.
                   </p>
-                  <p class="hero-lead">
-                    El objetivo es que puedas encontrar rápido el recorrido que
-                    más se parece a tu duda principal y pasar al cuestionario
-                    adecuado sin perderte entre demasiadas secciones. Si primero
-                    quieres contexto, explicaciones y preguntas frecuentes,
-                    puedes volver a la guía principal.
-                  </p>
+
                   <div class="hero-actions">
-                    <a class="button" href="#evaluaciones">Ver evaluaciones</a>
-                    <a class="button-secondary" href="./index.html#inicio"
-                      >Volver a la guía principal</a
-                    >
+                    <a class="button" href="#evaluaciones">Ver test gratuitos</a>
                   </div>
                 </div>
 
                 <div class="hero-visual">
                   <picture class="hero-visual-picture">
-                    <source
-                      type="image/avif"
-                      srcset="
-                        ./assets/test-neurodivergentes-480.avif 480w,
-                        ./assets/test-neurodivergentes-768.avif 768w,
-                        ./assets/test-neurodivergentes-1181.avif 1181w
-                      "
-                      sizes="(min-width: 1280px) 38rem, (min-width: 900px) 34rem, 90vw"
-                    />
                     <source
                       type="image/webp"
                       srcset="
@@ -1742,7 +1676,7 @@
                       sizes="(min-width: 1280px) 38rem, (min-width: 900px) 34rem, 90vw"
                     />
                     <img
-                      src="./assets/test-neurodivergentes.png"
+                      src="./assets/test-neurodivergentes-1181.webp"
                       alt=""
                       class="hero-visual-image"
                       width="1181"
@@ -1754,14 +1688,6 @@
                   </picture>
                 </div>
 
-                <div class="callout hero-callout">
-                  <strong>Uso responsable</strong>
-                  <p>
-                    Los resultados representan únicamente un cribado orientativo
-                    y nunca sustituyen una evaluación realizada por un
-                    profesional de la salud mental.
-                  </p>
-                </div>
               </div>
             </article>
           </div>
@@ -1772,18 +1698,15 @@
         <section class="card route-directory" id="evaluaciones">
           <p class="section-kicker">Test gratis</p>
           <h2 class="section-title">
-            Evaluaciones preparadas para orientar al usuario y organizar el
-            acceso a cada test.
+            Evaluaciones preparadas para orientarte y organizar el acceso a cada
+            test.
           </h2>
           <p class="section-intro">
-            Esta página reúne en un solo lugar los test gratuitos del proyecto
-            para que el acceso sea más directo y claro. Cada bloque responde a
-            una duda distinta: síntomas de TDAH, test de autismo, ansiedad,
-            depresión, burnout, organización, procrastinación, déficit
-            ejecutivo, autoestima, sueño e impulsividad. La idea es que puedas
-            identificar rápido el área que mejor encaja con tu situación y pasar
-            de inmediato a la evaluación correspondiente.
+            Explora las evaluaciones gratuitas por área y elige la que mejor
+            corresponda con tu duda principal. Cada recorrido está diseñado para
+            llevarte directamente al cuestionario adecuado.
           </p>
+
           <div class="route-grid">
             <article class="route-card is-available" id="neurodesarrollo">
               <div>
@@ -2008,110 +1931,26 @@
             </article>
           </div>
         </section>
-
-        <footer class="footer-shell">
-          <p class="section-kicker">Fuentes base y cierre</p>
-          <h2 class="section-title">
-            Referencias oficiales para orientar el contenido y un último
-            recordatorio ético.
-          </h2>
-          <p>
-            Esta página está escrita con un enfoque de salud digital responsable
-            y se apoya en lineamientos y materiales informativos de
-            instituciones reconocidas para comprender TDAH, ansiedad, depresión,
-            salud mental infantil, burnout y sueño. Aun así, el valor principal
-            del sitio no está en reemplazar esos recursos ni en competir con una
-            consulta profesional, sino en traducir información compleja a una
-            experiencia de orientación más clara para el público
-            hispanohablante.
-          </p>
-          <ul class="reference-list">
-            <li>
-              <a
-                href="https://www.nimh.nih.gov/health/publications/attention-deficit-hyperactivity-disorder-what-you-need-to-know"
-                target="_blank"
-                rel="noreferrer"
-                >NIMH: guía sobre TDAH en niños, adolescentes y adultos</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.nimh.nih.gov/health/topics/anxiety-disorders"
-                target="_blank"
-                rel="noreferrer"
-                >NIMH: trastornos de ansiedad</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.nimh.nih.gov/health/publications/depression"
-                target="_blank"
-                rel="noreferrer"
-                >NIMH: depresión</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.nimh.nih.gov/health/publications/children-and-mental-health"
-                target="_blank"
-                rel="noreferrer"
-                >NIMH: cuándo los niños pueden beneficiarse de una evaluación</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://medlineplus.gov/lab-tests/autism-spectrum-disorder-asd-screening/"
-                target="_blank"
-                rel="noreferrer"
-                >MedlinePlus: cribado de TEA y sus límites diagnósticos</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://medlineplus.gov/autismspectrumdisorder.html"
-                target="_blank"
-                rel="noreferrer"
-                >MedlinePlus: información general sobre autismo</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.who.int/standards/classifications/frequently-asked-questions/burn-out-an-occupational-phenomenon"
-                target="_blank"
-                rel="noreferrer"
-                >OMS: burnout como fenómeno ocupacional</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.nhlbi.nih.gov/health/sleep/why-sleep-important"
-                target="_blank"
-                rel="noreferrer"
-                >NHLBI: por qué el sueño es importante</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.nhlbi.nih.gov/health/sleep-deprivation/health-effects"
-                target="_blank"
-                rel="noreferrer"
-                >NHLBI: efectos de la privación de sueño sobre la salud y el
-                funcionamiento</a
-              >
-            </li>
-          </ul>
-          <div class="legal-note">
-            <strong>Uso responsable final</strong>
-            <p>
-              Los resultados representan únicamente un cribado orientativo y
-              nunca sustituyen una evaluación realizada por un profesional de la
-              salud mental. Si existe riesgo inmediato o malestar intenso, busca
-              ayuda urgente en los servicios disponibles de tu localidad.
-            </p>
-          </div>
-        </footer>
       </div>
     </main>
+    <footer class="site-responsible-footer">
+      <div class="site-responsible-footer__inner">
+        <div class="site-responsible-footer__notice">
+          <strong>Uso responsable</strong>
+          <p>
+            Los resultados representan únicamente un cribado orientativo y nunca
+            sustituyen una evaluación realizada por un profesional de la salud
+            mental. Si existe riesgo inmediato o malestar intenso, busca ayuda
+            urgente en los servicios disponibles de tu localidad.
+          </p>
+        </div>
+        <div class="site-responsible-footer__identity">
+          <p class="site-responsible-footer__eyebrow">Orientación responsable</p>
+          <strong>Tests Neurodivergentes Online</strong>
+          <span>Información y cribado orientativo en español.</span>
+        </div>
+      </div>
+    </footer>
     <script src="./JS/shared/navigation.js" defer></script>
     <script src="./JS/test-psicologicos-gratis.js" defer></script>
   </body>
