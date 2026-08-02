@@ -25,6 +25,19 @@ function walk(directory, extension) {
 const htmlFiles = walk(docsRoot, ".html");
 const jsFiles = walk(docsRoot, ".js");
 
+test("todos los HTML enlazan la Política de Privacidad desde el footer", () => {
+  for (const file of htmlFiles) {
+    const html = fs.readFileSync(file, "utf8");
+    const footer = html.match(/<footer\b[\s\S]*?<\/footer>/i)?.[0] ?? "";
+
+    assert.match(
+      footer,
+      /href=["'][^"']*politica-de-privacidad\.html["']/i,
+      path.relative(docsRoot, file)
+    );
+  }
+});
+
 test("todos los JavaScript tienen sintaxis válida", () => {
   for (const file of jsFiles) {
     const result = spawnSync(process.execPath, ["--check", file], {
